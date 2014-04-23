@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+	<path>beech35.ac</path>
+
+	<specular>
+    <red-prop>specular/red</red-prop>
+    <green-prop>specular/green</green-prop>
+    <blue-prop>specular/blue</blue-prop>
+  </specular>
+
+  <emission>
+    <red-prop>emission/red</red-prop>
+    <green-prop>emission/green</green-prop>
+    <blue-prop>emission/blue</blue-prop>
+  </emission>
+
+	<!-- Cockpit -->
+	<!--model>
+		<name>interior</name>
+		<path>Aircraft/pa28-236/Models/pa28-236-intererior.ac</path>
+		<offsets>
+			<x-m>  0.00 </x-m>
+			<y-m>  0.00 </y-m>
+			<z-m>  0.00 </z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model-->
+					
+</PropertyList>
