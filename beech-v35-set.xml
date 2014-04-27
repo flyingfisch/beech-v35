@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <PropertyList>
-        
+    <sim>
         <description>Beech V35 Bonanza</description>
         <aircraft-version>0.0.1</aircraft-version>
         <author>flyingfisch</author>
@@ -12,30 +12,41 @@
             <model type="int">2</model>
         </rating>
 
-        <flight-model>jsb</flight-model>
+        <flight-model>yasim</flight-model>
         <aero>beech-v35</aero>
-        
+
+        <!-- x/y/z == right/up/back -->
+        <view n="0">
+            <internal archive="y">true</internal>
+            <config>
+                <x-offset-m archive="y">-.201772</x-offset-m> 
+                <y-offset-m archive="y">.470801</y-offset-m>   
+                <z-offset-m archive="y">2.2531</z-offset-m>   
+                <pitch-offset-deg>-15</pitch-offset-deg>
+            </config>
+        </view>
+
         <!--<startup>
-            <splash-texture>Aircraft/pa28-236/Splashes/splash.png</splash-texture>
-            <splash-title>Beech V35 Bonanza</splash-title>
+        <splash-texture>Aircraft/pa28-236/Splashes/splash.png</splash-texture>
+        <splash-title>Beech V35 Bonanza</splash-title>
         </startup>-->
-        
+
         <model>
-            <path>Models/beech35.xml</path>
+            <path>Aircraft/beech-v35/Models/beech-v35.xml</path>
         </model>
-        
+
         <!--<sound>
-            <path>Aircraft/pa28-236/pa28-236-sound.xml</path>
+        <path>Aircraft/pa28-236/pa28-236-sound.xml</path>
         </sound>-->
-        
+
         <!--autopilot>
-            <path></path>
+        <path></path>
         </autopilot-->
-        
+
         <!--<flaps>
-            <setting>0.00</setting>
-            <setting>0.5</setting>
-            <setting>1.00</setting>
+        <setting>0.00</setting>
+        <setting>0.5</setting>
+        <setting>1.00</setting>
         </flaps>-->
 
         <!-- Menubar -->
@@ -43,44 +54,44 @@
 
         <!-- Weights -->
         <weight n="0">
-        <name>Pilot</name>
-        <weight-lb>170</weight-lb>
-        <max-lb>300</max-lb>
-      </weight>
-      <weight n="1">
-        <name>Copilot</name>
-        <weight-lb>0</weight-lb>
-        <max-lb>300</max-lb>
-      </weight>
-      <weight n="2">
-        <name>Left Passenger</name>
-        <weight-lb>0</weight-lb>
-        <max-lb>300</max-lb>
-      </weight>
-      <weight n="3">
-        <name>Right Passenger</name>
-        <weight-lb>0</weight-lb>
-        <max-lb>300</max-lb>
-      </weight>
-      <weight n="4">
-        <name>Baggage</name>
-        <weight-lb>200</weight-lb>
-        <max-lb>200</max-lb>
-      </weight>
-        
+            <name>Pilot</name>
+            <weight-lb>170</weight-lb>
+            <max-lb>300</max-lb>
+        </weight>
+        <weight n="1">
+            <name>Copilot</name>
+            <weight-lb>0</weight-lb>
+            <max-lb>300</max-lb>
+        </weight>
+        <weight n="2">
+            <name>Left Passenger</name>
+            <weight-lb>0</weight-lb>
+            <max-lb>300</max-lb>
+        </weight>
+        <weight n="3">
+            <name>Right Passenger</name>
+            <weight-lb>0</weight-lb>
+            <max-lb>300</max-lb>
+        </weight>
+        <weight n="4">
+            <name>Baggage</name>
+            <weight-lb>200</weight-lb>
+            <max-lb>200</max-lb>
+        </weight>
+
     </sim>
 
-    <!--<instrumentation inlcude="Systems/pa28-236-instrumentation.xml" />-->
+<!--<instrumentation inlcude="Systems/pa28-236-instrumentation.xml" />-->
 
-    <!--<nasal>
-    <pa28>
-      <file>Aircraft/pa28-236/Nasal/pa28.nas</file>
-        <file>Aircraft/pa28-236/Nasal/pa28-electrical.nas</file>
-        <file>Aircraft/pa28-236/Nasal/action-sim.nas</file>
-      <file>Aircraft/pa28-236/Nasal/kr87.nas</file>
-      <file>Aircraft/pa28-236/Nasal/ki266.nas</file>
-        <script><![CDATA[ki266.new(0);]]></script>
-    </pa28>
-    </nasal>-->
+<!--<nasal>
+<pa28>
+<file>Aircraft/pa28-236/Nasal/pa28.nas</file>
+<file>Aircraft/pa28-236/Nasal/pa28-electrical.nas</file>
+<file>Aircraft/pa28-236/Nasal/action-sim.nas</file>
+<file>Aircraft/pa28-236/Nasal/kr87.nas</file>
+<file>Aircraft/pa28-236/Nasal/ki266.nas</file>
+<script><![CDATA[ki266.new(0);]]></script>
+</pa28>
+</nasal>-->
 
 </PropertyList>
