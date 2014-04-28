@@ -78,4 +78,92 @@
         </axis>
     </animation>
 
+    <animation>
+        <type>rotate</type>
+        <object-name>leftmaingeardoor2</object-name>
+        <property>surface-positions/flap-pos-norm</property>
+        <!--<property>gear/gear[0]/position-norm</property>-->
+        <factor>90</factor>
+        <axis>
+            <x1-m>2.324</x1-m>
+            <y1-m>.60483</y1-m>
+            <z1-m>-.52177</z1-m>
+
+            <x2-m>2.842</x2-m>
+            <y2-m>.60483</y2-m>
+            <z2-m>-.52269</z2-m>
+        </axis>
+        <interpolation>
+            <ind>0</ind><dep>0</dep>
+            <ind>.5</ind><dep>-90</dep>
+            <ind>1</ind><dep>0</dep>
+        </interpolation>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>leftmaingeardoor1</object-name>
+        <property>surface-positions/flap-pos-norm</property>
+        <!--<property>gear/gear[0]/position-norm</property>-->
+        <factor>-90</factor>
+        <axis>
+            <x1-m>2.265</x1-m>
+            <y1-m>1.557</y1-m>
+            <z1-m>-.38894</z1-m>
+
+            <x2-m>2.875</x2-m>
+            <y2-m>1.557</y2-m>
+            <z2-m>-.39215</z2-m>
+        </axis>
+        <interpolation>
+            <ind>0</ind><dep>0</dep>
+            <ind>.5</ind><dep>90</dep>
+            <ind>1</ind><dep>90</dep>
+        </interpolation>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>rightmaingeardoor2</object-name>
+        <property>surface-positions/flap-pos-norm</property>
+        <!--<property>gear/gear[0]/position-norm</property>-->
+        <factor>-90</factor>
+        <axis>
+            <x1-m>2.324</x1-m>
+            <y1-m>-.60483</y1-m>
+            <z1-m>-.52177</z1-m>
+
+            <x2-m>2.842</x2-m>
+            <y2-m>-.60483</y2-m>
+            <z2-m>-.52269</z2-m>
+        </axis>
+        <interpolation>
+            <ind>0</ind><dep>0</dep>
+            <ind>.5</ind><dep>90</dep>
+            <ind>1</ind><dep>0</dep>
+        </interpolation>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>rightmaingeardoor1</object-name>
+        <property>surface-positions/flap-pos-norm</property>
+        <!--<property>gear/gear[0]/position-norm</property>-->
+        <!--<factor>90</factor>-->
+        <axis>
+            <x1-m>2.265</x1-m>
+            <y1-m>-1.557</y1-m>
+            <z1-m>-.38894</z1-m>
+
+            <x2-m>2.875</x2-m>
+            <y2-m>-1.557</y2-m>
+            <z2-m>-.39215</z2-m>
+        </axis>
+        <interpolation>
+            <entry><ind>0</ind><dep>0</dep></entry>
+            <entry><ind>.5</ind><dep>-90</dep></entry>
+            <entry><ind>1</ind><dep>-90</dep></entry>
+        </interpolation>
+    </animation>
+
 </PropertyList>

@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+
+<airplane mass="1675" >
+
+<approach ... >
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="..."/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="1"/>
+    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1"/>
+    <control-setting axis="/controls/gear/gear-down" value="1"/>
+    <control-setting axis="/controls/flight/flaps" value="1"/>
+    ...
+</approach>
+
+<cruise ... >
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="1"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="0.65"/>
+    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1"/>
+    <control-setting axis="/controls/flight/elevator-trim" value="..."/>
+    <control-setting axis="/controls/gear/gear-down" value="0"/>
+    <control-setting axis="/controls/flight/flaps" value="0"/>
+    ...
+</cruise>
+
+
+<cockpit x="..." y="..." z="..." />
+
+
+<fuselage ax="..." ay="..." az="..." bx="..." by="..." bz="..." width="..." taper="..." midpoint="..." />
+
+
+<wing ... >
+    <stall ... />
+    <flap0 ... />
+    <flap1 ... />
+    <control-input axis="/controls/flight/flaps-norm" control="FLAP0"/>
+    <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
+    <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
+    <control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
+    <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
+    <control-speed control="FLAP0" transition-time="..."/>
+</wing>
+
+<hstab ... >
+    <stall ... />
+    <flap0 ... />       
+    <control-input control="FLAP0" axis="/controls/flight/elevator" invert="true"/>
+    <control-input control="FLAP0" axis="/controls/flight/elevator-trim" invert="true"/>      
+    <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+</hstab>
+
+<vstab ... >
+    <stall ... />
+    <flap0 ... />
+    <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
+    <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
+    <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
+</vstab>
+
+
+<propeller ... >
+    <actionpt x="..." y="0" z="..."/>
+    <control-input axis="/controls/engines/engine[0]/propeller-pitch" control="ADVANCE"/>
+    <piston-engine ... >
+        <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
+        <control-input axis="/controls/engines/engine[0]/starter" control="STARTER"/>
+        <control-input axis="/controls/engines/engine[0]/magnetos" control="MAGNETOS"/>
+        <control-input axis="/controls/engines/engine[0]/mixture" control="MIXTURE"/>
+    </piston-engine>
+</propeller>
+
+
+<gear x="..." y="0" z="..." ... >
+    <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+    <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
+    <control-speed control="EXTEND" transition-time="..."/>
+</gear>
+
+<gear x="..." y="..." z="..." ... >
+    <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+    <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
+    <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+    <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
+    <control-speed control="EXTEND" transition-time="..."/>
+</gear>
+
+<gear x="..." y="-..." z="..." ... >
+    <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+    <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
+    <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+    <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
+    <control-speed control="EXTEND" transition-time="..."/>
+</gear>
+
+
+<tank x="..." y="..." z="..." capacity="..." />
+<tank x="..." y="-..." z="..." capacity="..." />
+
+
+<ballast x="..." y="..." z="..." mass="..." />
+
+</airplane>
