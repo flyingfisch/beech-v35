@@ -14,6 +14,11 @@
         <blue-prop>emission/blue</blue-prop>
     </emission>
 
+    <effect>
+         <inherits-from>Models/Effects/bonanza-reflect.xml</inherits-from>
+         <object-name>panelmetallic</object-name>
+    </effect>
+
     <animation>
         <type>rotate</type>
         <object-name>flapleft</object-name>
