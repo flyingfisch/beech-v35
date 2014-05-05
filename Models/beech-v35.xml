@@ -230,13 +230,13 @@
         <object-name>NGDoorRight</object-name>
         <property>gear/gear[0]/position-norm</property>
         <axis>
-            <x1-m>.44657</x1-m>
-            <y1-m>-.11482</y1-m>
-            <z1-m>-.43675</z1-m>
+            <x1-m>1.46725</x1-m>
+            <y1-m>.0996326</y1-m>
+            <z1-m>-.6543324</z1-m>
 
-            <x2-m>1.375</x2-m>
-            <y2-m>-.11482</y2-m>
-            <z2-m>-.55622</z2-m>
+            <x2-m>.4883231</x2-m>
+            <y2-m>.1020363</y2-m>
+            <z2-m>-.5074871</z2-m>
         </axis>
         <interpolation>
             <entry><ind>0</ind><dep>0</dep></entry>
@@ -250,13 +250,13 @@
         <object-name>NGDoorLeft</object-name>
         <property>gear/gear[0]/position-norm</property>
         <axis>
-            <x1-m>.44657</x1-m>
-            <y1-m>.11482</y1-m>
-            <z1-m>-.43675</z1-m>
+            <x1-m>1.46725</x1-m>
+            <y1-m>-.0996326</y1-m>
+            <z1-m>-.6543324</z1-m>
 
-            <x2-m>1.375</x2-m>
-            <y2-m>.11482</y2-m>
-            <z2-m>-.55622</z2-m>
+            <x2-m>.4883231</x2-m>
+            <y2-m>-.1020363</y2-m>
+            <z2-m>-.5074871</z2-m>
         </axis>
         <interpolation>
             <entry><ind>0</ind><dep>0</dep></entry>
@@ -271,17 +271,17 @@
         <object-name>NGChassis</object-name>
         <property>gear/gear[0]/position-norm</property>
         <axis>
-            <x1-m>.62082</x1-m>
-            <y1-m>.01708</y1-m>
-            <z1-m>-.25414</z1-m>
+            <x1-m>.6331722</x1-m>
+            <y1-m>.324972</y1-m>
+            <z1-m>-.4522645</z1-m>
 
-            <x2-m>.62082</x2-m>
-            <y2-m>-.01708</y2-m>
-            <z2-m>-.25414</z2-m>
+            <x2-m>.6331722</x2-m>
+            <y2-m>-.324972</y2-m>
+            <z2-m>-.4522645</z2-m>
         </axis>
         <interpolation>
-            <entry><ind>0</ind><dep>90</dep></entry>
-            <entry><ind>.2</ind><dep>90</dep></entry>
+            <entry><ind>0</ind><dep>100</dep></entry>
+            <entry><ind>.2</ind><dep>100</dep></entry>
             <entry><ind>1</ind><dep>0</dep></entry>
         </interpolation>
     </animation>
