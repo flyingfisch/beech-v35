@@ -21,80 +21,100 @@
 
     <animation>
         <type>rotate</type>
-        <object-name>flapleft</object-name>
-        <property>surface-positions/flap-pos-norm</property>
-        <factor>-30</factor>
-        <axis>
-            <x1-m>3.166</x1-m>
-            <y1-m>-.91928</y1-m>
-            <z1-m>-.45971</z1-m>
-
-            <x2-m>2.965</x2-m>
-            <y2-m>-2.514</y2-m>
-            <z2-m>-.24131</z2-m>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>flapright</object-name>
+        <object-name>leftflap</object-name>
         <property>surface-positions/flap-pos-norm</property>
         <factor>30</factor>
         <axis>
-            <x1-m>3.166</x1-m>
-            <y1-m>.91928</y1-m>
-            <z1-m>-.45971</z1-m>
+            <x1-m>3.1944</x1-m>
+            <y1-m>-2.67032</y1-m>
+            <z1-m>-.3156014</z1-m>
 
-            <x2-m>2.965</x2-m>
-            <y2-m>2.514</y2-m>
-            <z2-m>-.24131</z2-m>
+            <x2-m>3.41933</x2-m>
+            <y2-m>-.5574762</y2-m>
+            <z2-m>-.5845845</z2-m>
         </axis>
     </animation>
 
     <animation>
         <type>rotate</type>
-        <object-name>aileronleft</object-name>
+        <object-name>rightflap</object-name>
+        <property>surface-positions/flap-pos-norm</property>
+        <factor>-30</factor>
+        <axis>
+            <x1-m>3.1944</x1-m>
+            <y1-m>2.67032</y1-m>
+            <z1-m>-.3156014</z1-m>
+
+            <x2-m>3.41933</x2-m>
+            <y2-m>.5574762</y2-m>
+            <z2-m>-.5845845</z2-m>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>leftaileron</object-name>
         <property>surface-positions/left-aileron-pos-norm</property>
         <factor>20</factor>
         <axis>
-            <x1-m>2.685</x1-m>
-            <y1-m>-4.311</y1-m>
-            <z1-m>.04076</z1-m>
+            <x1-m>3.12328</x1-m>
+            <y1-m>-2.67032</y1-m>
+            <z1-m>-.2515406</z1-m>
 
-            <x2-m>2.89</x2-m>
-            <y2-m>-2.514</y2-m>
-            <z2-m>-.18594</z2-m>
+            <x2-m>2.89918</x2-m>
+            <y2-m>-4.62675</y2-m>
+            <z2-m>-.022788</z2-m>
         </axis>
     </animation>
 
     <animation>
         <type>rotate</type>
-        <object-name>aileronright</object-name>
+        <object-name>rightaileron</object-name>
         <property>surface-positions/right-aileron-pos-norm</property>
         <factor>-20</factor>
         <axis>
-            <x1-m>2.685</x1-m>
-            <y1-m>4.311</y1-m>
-            <z1-m>.04076</z1-m>
+            <x1-m>3.12328</x1-m>
+            <y1-m>2.67032</y1-m>
+            <z1-m>-.2515406</z1-m>
 
-            <x2-m>2.89</x2-m>
-            <y2-m>2.514</y2-m>
-            <z2-m>-.18594</z2-m>
+            <x2-m>2.89918</x2-m>
+            <y2-m>4.62675</y2-m>
+            <z2-m>-.022788</z2-m>
         </axis>
     </animation>
 
     <animation>
         <type>rotate</type>
-        <object-name>leftmaingeardoor2</object-name>
+        <object-name>LGearDoor1</object-name>
         <property>gear/gear[0]/position-norm</property>
         <axis>
-            <x1-m>2.324</x1-m>
-            <y1-m>.60483</y1-m>
-            <z1-m>-.52177</z1-m>
+            <x1-m>3.099</x1-m>
+            <y1-m>1.6519</y1-m>
+            <z1-m>-.4607842</z1-m>
 
-            <x2-m>2.842</x2-m>
-            <y2-m>.60483</y2-m>
-            <z2-m>-.52269</z2-m>
+            <x2-m>2.42304</x2-m>
+            <y2-m>1.6519</y2-m>
+            <z2-m>-.4672055</z2-m>
+        </axis>
+        <interpolation>
+            <entry><ind>0</ind><dep>0</dep></entry>
+            <entry><ind>.5</ind><dep>-90</dep></entry>
+            <entry><ind>1</ind><dep>-90</dep></entry>
+        </interpolation>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>LGearDoor2</object-name>
+        <property>gear/gear[0]/position-norm</property>
+        <axis>
+            <x1-m>2.47433</x1-m>
+            <y1-m>.6454892</y1-m>
+            <z1-m>-.6001855</z1-m>
+
+            <x2-m>3.05106</x2-m>
+            <y2-m>.6292573</y2-m>
+            <z2-m>-.5932946</z2-m>
         </axis>
         <interpolation>
             <entry><ind>0</ind><dep>0</dep></entry>
@@ -105,16 +125,16 @@
 
     <animation>
         <type>rotate</type>
-        <object-name>leftmaingeardoor1</object-name>
+        <object-name>RGearDoor1</object-name>
         <property>gear/gear[0]/position-norm</property>
         <axis>
-            <x1-m>2.265</x1-m>
-            <y1-m>1.557</y1-m>
-            <z1-m>-.38894</z1-m>
+            <x1-m>3.099</x1-m>
+            <y1-m>-1.6519</y1-m>
+            <z1-m>-.4607842</z1-m>
 
-            <x2-m>2.875</x2-m>
-            <y2-m>1.557</y2-m>
-            <z2-m>-.39215</z2-m>
+            <x2-m>2.42304</x2-m>
+            <y2-m>-1.6519</y2-m>
+            <z2-m>-.4672055</z2-m>
         </axis>
         <interpolation>
             <entry><ind>0</ind><dep>0</dep></entry>
@@ -125,37 +145,16 @@
 
     <animation>
         <type>rotate</type>
-        <object-name>LGLeft</object-name>
-        <object-name>LGChassisLeft</object-name>
+        <object-name>RGearDoor2</object-name>
         <property>gear/gear[0]/position-norm</property>
         <axis>
-            <x1-m>2.612</x1-m>
-            <y1-m>-1.494</y1-m>
-            <z1-m>-.30459</z1-m>
+            <x1-m>2.47433</x1-m>
+            <y1-m>-.6454892</y1-m>
+            <z1-m>-.6001855</z1-m>
 
-            <x2-m>2.674</x2-m>
-            <y2-m>-1.494</y2-m>
-            <z2-m>-.30459</z2-m>
-        </axis>
-        <interpolation>
-            <entry><ind>0</ind><dep>75.5</dep></entry>
-            <entry><ind>.2</ind><dep>75.5</dep></entry>
-            <entry><ind>1</ind><dep>0</dep></entry>
-        </interpolation>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>rightmaingeardoor2</object-name>
-        <property>gear/gear[0]/position-norm</property>
-        <axis>
-            <x1-m>2.324</x1-m>
-            <y1-m>-.60483</y1-m>
-            <z1-m>-.52177</z1-m>
-
-            <x2-m>2.842</x2-m>
-            <y2-m>-.60483</y2-m>
-            <z2-m>-.52269</z2-m>
+            <x2-m>3.05106</x2-m>
+            <y2-m>-.6292573</y2-m>
+            <z2-m>-.5932946</z2-m>
         </axis>
         <interpolation>
             <entry><ind>0</ind><dep>0</dep></entry>
@@ -170,13 +169,34 @@
         <object-name>LGChassisRight</object-name>
         <property>gear/gear[0]/position-norm</property>
         <axis>
-            <x1-m>2.612</x1-m>
-            <y1-m>1.494</y1-m>
-            <z1-m>-.30459</z1-m>
+            <x1-m>2.80422</x1-m>
+            <y1-m>1.55981</y1-m>
+            <z1-m>-.378781</z1-m>
 
-            <x2-m>2.674</x2-m>
-            <y2-m>1.494</y2-m>
-            <z2-m>-.30459</z2-m>
+            <x2-m>2.72843</x2-m>
+            <y2-m>1.55981</y2-m>
+            <z2-m>-.378781</z2-m>
+        </axis>
+        <interpolation>
+            <entry><ind>0</ind><dep>75.5</dep></entry>
+            <entry><ind>.2</ind><dep>75.5</dep></entry>
+            <entry><ind>1</ind><dep>0</dep></entry>
+        </interpolation>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>LGLeft</object-name>
+        <object-name>LGChassisLeft</object-name>
+        <property>gear/gear[0]/position-norm</property>
+        <axis>
+            <x1-m>2.80422</x1-m>
+            <y1-m>-1.55981</y1-m>
+            <z1-m>-.378781</z1-m>
+
+            <x2-m>2.72843</x2-m>
+            <y2-m>-1.55981</y2-m>
+            <z2-m>-.378781</z2-m>
         </axis>
         <interpolation>
             <entry><ind>0</ind><dep>-75.5</dep></entry>
