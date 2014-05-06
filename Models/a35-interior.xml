@@ -3,7 +3,7 @@
     <path>beecha35int.ac</path>
 
     <effect>
-         <inherits-from>Models/Effects/bonanza-reflect.xml</inherits-from>
+         <inherits-from>Models/Effects/bonanza-reflect</inherits-from>
          <object-name>chromecenter</object-name>
     </effect>
 </PropertyList>
