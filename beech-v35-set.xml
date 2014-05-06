@@ -19,9 +19,9 @@
         <view n="0">
             <internal archive="y">true</internal>
             <config>
-                <x-offset-m archive="y">-.201772</x-offset-m> 
-                <y-offset-m archive="y">.470801</y-offset-m>   
-                <z-offset-m archive="y">2.2531</z-offset-m>   
+                <x-offset-m archive="y">-.279348</x-offset-m> 
+                <y-offset-m archive="y">.495983</y-offset-m>   
+                <z-offset-m archive="y">2.4466</z-offset-m>   
                 <pitch-offset-deg>-15</pitch-offset-deg>
             </config>
         </view>

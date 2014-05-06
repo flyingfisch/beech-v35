@@ -2,6 +2,11 @@
 <PropertyList>
     <path>beech35.ac</path>
 
+    <model>
+        <usage>interior</usage>
+        <path>Models/a35-interior.xml</path>
+    </model>
+
     <specular>
         <red-prop>specular/red</red-prop>
         <green-prop>specular/green</green-prop>
