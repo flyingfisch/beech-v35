@@ -3,7 +3,12 @@
     <path>beecha35int.ac</path>
 
     <effect>
-         <inherits-from>Models/Effects/bonanza-reflect</inherits-from>
-         <object-name>chromecenter</object-name>
+        <inherits-from>Models/Effects/bonanza-reflect</inherits-from>
+        <object-name>chromecenter</object-name>
+        <object-name>yorkport</object-name>
+        <object-name>centerpiece</object-name>
+        <object-name>pbuttontrim</object-name>
     </effect>
+
+    
 </PropertyList>
