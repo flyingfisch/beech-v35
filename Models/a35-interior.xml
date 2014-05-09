@@ -5,10 +5,20 @@
     <effect>
         <inherits-from>Models/Effects/bonanza-reflect</inherits-from>
         <object-name>chromecenter</object-name>
-        <object-name>yorkport</object-name>
+        <object-name>yokeport</object-name>
         <object-name>centerpiece</object-name>
         <object-name>pbuttontrim</object-name>
     </effect>
+
+    <model>
+        <name>VSI Gauge</name>
+        <path>Aircraft/Instruments-3d/vsi/vsi.xml</path>
+        <offsets>
+            <x-m>2.0308</x-m>
+            <y-m>.062342</y-m>
+            <z-m>.344384</z-m>
+        </offsets>
+    </model>
 
     
 </PropertyList>
