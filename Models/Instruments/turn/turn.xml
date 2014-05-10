@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <path>turn.ac</path>
+
+  <animation>
+    <type>material</type>
+    <object-name>Circle</object-name>
+    <object-name>needle</object-name>
+    <object-name>ball</object-name>
+    <emission>
+      <red>1.0</red>
+      <green>0.6</green>
+      <blue>0.3</blue>
+      <factor-prop>sim/model//material/instruments/factor</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>needle</object-name>
+    <property>instrumentation/turn-indicator/indicated-turn-rate</property>
+    <factor>20.0</factor>
+    <min-deg>-30</min-deg>
+    <max-deg>30</max-deg>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>-0.019</z-m>
+    </center>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>ball</object-name>
+    <property>instrumentation/slip-skid-ball/indicated-slip-skid</property>
+    <factor>21</factor>
+    <min-deg>-13</min-deg>
+    <max-deg>13</max-deg>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0.08</z-m>
+    </center>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+<!-- *** LoD *** -->
+  <animation> 
+    <type>range</type>
+    <min-m>0</min-m>
+    <max-m>30</max-m>
+  </animation>
+
+</PropertyList>

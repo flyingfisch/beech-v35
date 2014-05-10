@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <path>tachometer.ac</path>
+
+  <animation>
+    <type>material</type>
+    <object-name>Circle</object-name>
+    <object-name>needle</object-name>
+    <object-name>h</object-name>
+    <object-name>h_1000</object-name>
+    <object-name>h_100</object-name>
+    <object-name>h_10</object-name>
+    <object-name>h_1</object-name>
+    <object-name>h_01</object-name>
+    <emission>
+      <red>1.0</red>
+      <green>0.6</green>
+      <blue>0.3</blue>
+      <factor-prop>sim/model//material/instruments/factor</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>needle</object-name>
+    <property>engines/engine/rpm</property>
+    <interpolation>
+      <entry>
+        <ind>0</ind>
+        <dep>0.0</dep>
+      </entry>
+      <entry>
+        <ind>3500</ind>
+        <dep>280.0</dep>
+      </entry>
+    </interpolation>
+    <axis>
+      <x>-1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>h_1000</object-name>
+    <property>engines/engine[0]/hours-running</property>
+    <factor>0.0001</factor>
+    <step>1000</step>
+    <bias>0.0001</bias>
+    <axis>
+      <x>0.0</x>
+      <y>-1.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>h_100</object-name>
+    <property>engines/engine[0]/hours-running</property>
+    <factor>0.001</factor>
+    <step>100</step>
+    <bias>0.0001</bias>
+    <axis>
+      <x>0.0</x>
+      <y>-1.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>h_10</object-name>
+    <property>engines/engine[0]/hours-running</property>
+    <factor>0.01</factor>
+    <step>10</step>
+    <bias>0.0001</bias>
+    <axis>
+      <x>0.0</x>
+      <y>-1.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>h_1</object-name>
+    <property>engines/engine[0]/hours-running</property>
+    <factor>0.1</factor>
+    <step>1</step>
+    <bias>0.0001</bias>
+    <axis>
+      <x>0.0</x>
+      <y>-1.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>h_01</object-name>
+    <property>engines/engine[0]/hours-running</property>
+    <factor>1</factor>
+    <step>0.1</step>
+    <scroll>0.1</scroll>
+    <bias>0.0001</bias>
+    <axis>
+      <x>0.0</x>
+      <y>-1.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+
+<!-- *** LoD *** -->
+  <animation> 
+    <type>range</type>
+    <min-m>0</min-m>
+    <max-m>30</max-m>
+  </animation>
+
+</PropertyList>

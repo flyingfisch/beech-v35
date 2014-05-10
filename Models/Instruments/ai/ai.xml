@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <path>ai.ac</path>
+
+  <animation>
+    <type>material</type>
+    <object-name>Circle</object-name>
+    <object-name>h_bar</object-name>
+    <object-name>v_bar</object-name>
+    <emission>
+      <red>1.0</red>
+      <green>0.6</green>
+      <blue>0.3</blue>
+      <factor-prop>sim/model//material/instruments/factor</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>knob</object-name>
+    <emission>
+      <red>0.03</red>
+      <green>0.03</green>
+      <blue>0.02</blue>
+      <factor-prop>systems/electrical/outputs/cabin-lights</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>v_bar</object-name>
+    <object-name>h_bar</object-name>
+    <property>instrumentation/attitude-indicator/indicated-roll-deg</property>
+    <factor>1.0</factor>
+    <axis>
+      <x>1.0</x>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>h_bar</object-name>
+    <property>instrumentation/attitude-indicator/indicated-pitch-deg</property>
+    <factor>-0.001</factor>
+    <min-m>-0.05</min-m>
+    <max-m>0.05</max-m>
+    <axis>
+      <z>1.0</z>
+    </axis>
+  </animation>
+
+<!-- *** LoD *** -->
+  <animation> 
+    <type>range</type>
+    <min-m>0</min-m>
+    <max-m>30</max-m>
+  </animation>
+
+</PropertyList>
