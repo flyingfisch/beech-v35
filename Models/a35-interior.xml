@@ -69,5 +69,35 @@
             <z-m>.3278169</z-m>
         </offsets>
     </model>
+
+    <model>
+        <name>alt</name>
+        <path>Models/Instruments/alt/alt.xml</path>
+        <offsets>
+            <x-m>2.02548</x-m>
+            <y-m>-.1612911</y-m>
+            <z-m>.2186485</z-m>
+        </offsets>
+    </model>
+
+    <model>
+        <name>blankdial</name>
+        <path>Models/Instruments/blank/blank.xml</path>
+        <offsets>
+            <x-m>2.02548</x-m>
+            <y-m>.2610878</y-m>
+            <z-m>.2186485</z-m>
+        </offsets>
+    </model>
+
+    <model>
+        <name>dg</name>
+        <path>Models/Instruments/dg/dg.xml</path>
+        <offsets>
+            <x-m>2.02548</x-m>
+            <y-m>-.2610878</y-m>
+            <z-m>.2186485</z-m>
+        </offsets>
+    </model>
     
 </PropertyList>

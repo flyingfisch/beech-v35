@@ -1,0 +1,288 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <path>alt.ac</path>
+
+  <animation>
+    <type>material</type>
+    <object-name>Circle</object-name>
+    <object-name>Circle.001</object-name>
+    <object-name>needle_100</object-name>
+    <object-name>needle_1k</object-name>
+    <object-name>needle_10k</object-name>
+    <emission>
+      <red>1.0</red>
+      <green>0.6</green>
+      <blue>0.3</blue>
+      <factor-prop>sim/model//material/instruments/factor</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>knob</object-name>
+    <emission>
+      <red>0.03</red>
+      <green>0.03</green>
+      <blue>0.02</blue>
+      <factor-prop>systems/electrical/outputs/cabin-lights</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>click_l</object-name>
+    <object-name>click_r</object-name>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>knob</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.1</interval-sec>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/altimeter/setting-inhg</property>
+        <step>0.01</step>
+        <min>27.4</min>
+        <max>31.4</max>
+        <wrap>false</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>knob</object-name>
+    <visible>true</visible>
+    <action>
+      <button>1</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.1</interval-sec>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/altimeter/setting-inhg</property>
+        <step>-0.01</step>
+        <min>27.4</min>
+        <max>31.4</max>
+        <wrap>false</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>click_l</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.1</interval-sec>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/altimeter/setting-inhg</property>
+        <step>-0.01</step>
+        <min>27.4</min>
+        <max>31.4</max>
+        <wrap>false</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>click_r</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.1</interval-sec>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/altimeter/setting-inhg</property>
+        <step>0.01</step>
+        <min>27.4</min>
+        <max>31.4</max>
+        <wrap>false</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>click_l</object-name>
+    <visible>true</visible>
+    <action>
+      <button>1</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.1</interval-sec>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/altimeter/setting-inhg</property>
+        <step>-0.05</step>
+        <min>27.4</min>
+        <max>31.4</max>
+        <wrap>false</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>click_r</object-name>
+    <visible>true</visible>
+    <action>
+      <button>1</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.1</interval-sec>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/altimeter/setting-inhg</property>
+        <step>0.05</step>
+        <min>27.4</min>
+        <max>31.4</max>
+        <wrap>false</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>knob</object-name>
+    <visible>true</visible>
+    <action>
+      <button>3</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/altimeter/setting-inhg</property>
+        <step>0.01</step>
+        <min>27.4</min>
+        <max>31.4</max>
+        <wrap>false</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>knob</object-name>
+    <visible>true</visible>
+    <action>
+      <button>4</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/altimeter/setting-inhg</property>
+        <step>-0.01</step>
+        <min>27.4</min>
+        <max>31.4</max>
+        <wrap>false</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>click_l</object-name>
+    <object-name>click_r</object-name>
+    <visible>true</visible>
+    <action>
+      <button>3</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/altimeter/setting-inhg</property>
+        <step>0.05</step>
+        <min>27.4</min>
+        <max>31.4</max>
+        <wrap>false</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>click_l</object-name>
+    <object-name>click_r</object-name>
+    <visible>true</visible>
+    <action>
+      <button>4</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/altimeter/setting-inhg</property>
+        <step>-0.05</step>
+        <min>27.4</min>
+        <max>31.4</max>
+        <wrap>false</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Circle.001</object-name>
+    <property>instrumentation/altimeter/setting-inhg</property>
+    <interpolation>
+      <entry><ind> 27.9</ind><dep>  210.0</dep></entry>
+      <entry><ind> 29.1</ind><dep>   90.0</dep></entry>
+      <entry><ind> 30.0</ind><dep>    0.0</dep></entry>
+      <entry><ind> 30.9</ind><dep>  -90.0</dep></entry>
+      <entry><ind> 31.4</ind><dep> -140.0</dep></entry>
+    </interpolation>
+    <axis>
+      <x>-1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>needle_100</object-name>
+    <property>instrumentation/altimeter/indicated-altitude-ft</property>
+    <factor>0.36</factor>
+    <axis>
+      <x>-1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>needle_1k</object-name>
+    <property>instrumentation/altimeter/indicated-altitude-ft</property>
+    <factor>0.036</factor>
+    <axis>
+      <x>-1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>needle_10k</object-name>
+    <property>instrumentation/altimeter/indicated-altitude-ft</property>
+    <factor>0.0036</factor>
+    <axis>
+      <x>-1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+<!-- *** LoD *** -->
+  <animation> 
+    <type>range</type>
+    <min-m>0</min-m>
+    <max-m>30</max-m>
+  </animation>
+
+</PropertyList>
