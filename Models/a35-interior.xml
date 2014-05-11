@@ -10,6 +10,12 @@
         <object-name>pbuttontrim</object-name>
     </effect>
 
+    <effect>
+        <inherits-from>Models/Effects/bonanza-reflect-decal</inherits-from>
+        <object-name>pianodecal</object-name>
+    </effect>
+
+    <!-- gauges -->
     <model>
         <name>vsi</name>
         <path>Aircraft/Instruments-3d/vsi/vsi.xml</path>
@@ -28,6 +34,15 @@
             <y-m>-.0563244</y-m>
             <z-m>.352056</z-m>
         </offsets>
+        <overlay>
+            <animation n="100">
+                <type>scale</type>
+                <property>constants/zero</property>
+                <x-offset>1.191</x-offset>
+                <y-offset>1.191</y-offset>
+                <z-offset>1.191</z-offset>
+            </animation>
+        </overlay>
     </model>
 
     <model>
@@ -38,6 +53,15 @@
             <y-m>-.1612911</y-m>
             <z-m>.3278169</z-m>
         </offsets>
+        <overlay>
+            <animation n="100">
+                <type>scale</type>
+                <property>constants/zero</property>
+                <x-offset>1.191</x-offset>
+                <y-offset>1.191</y-offset>
+                <z-offset>1.191</z-offset>
+            </animation>
+        </overlay>
     </model>
 
     <model>
@@ -48,6 +72,15 @@
             <y-m>.1612911</y-m>
             <z-m>.3278169</z-m>
         </offsets>
+        <overlay>
+            <animation n="100">
+                <type>scale</type>
+                <property>constants/zero</property>
+                <x-offset>1.191</x-offset>
+                <y-offset>1.191</y-offset>
+                <z-offset>1.191</z-offset>
+            </animation>
+        </overlay>
     </model>
 
     <model>
@@ -58,6 +91,15 @@
             <y-m>.2610878</y-m>
             <z-m>.3278169</z-m>
         </offsets>
+        <overlay>
+            <animation n="100">
+                <type>scale</type>
+                <property>constants/zero</property>
+                <x-offset>1.191</x-offset>
+                <y-offset>1.191</y-offset>
+                <z-offset>1.191</z-offset>
+            </animation>
+        </overlay>
     </model>
 
     <model>
@@ -78,6 +120,15 @@
             <y-m>-.1612911</y-m>
             <z-m>.2186485</z-m>
         </offsets>
+        <overlay>
+            <animation n="100">
+                <type>scale</type>
+                <property>constants/zero</property>
+                <x-offset>1.191</x-offset>
+                <y-offset>1.191</y-offset>
+                <z-offset>1.191</z-offset>
+            </animation>
+        </overlay>
     </model>
 
     <model>
@@ -98,6 +149,127 @@
             <y-m>-.2610878</y-m>
             <z-m>.2186485</z-m>
         </offsets>
+        <overlay>
+            <animation n="100">
+                <type>scale</type>
+                <property>constants/zero</property>
+                <x-offset>1.191</x-offset>
+                <y-offset>1.191</y-offset>
+                <z-offset>1.191</z-offset>
+            </animation>
+        </overlay>
     </model>
+
+    <!-- temporary blanks -->
+    <model>
+        <name>fuelpressure</name>
+        <path>Models/Instruments/blank/blank.xml</path>
+        <offsets>
+            <x-m>2.02548</x-m>
+            <y-m>.1612911</y-m>
+            <z-m>.2186485</z-m>
+        </offsets>
+    </model>
+
+    <model>
+        <name>suction</name>
+        <path>Models/Instruments/blank/blank.xml</path>
+        <offsets>
+            <x-m>2.02548</x-m>
+            <y-m>.3619415</y-m>
+            <z-m>.3165158</z-m>
+        </offsets>
+    </model>
+
+    <model>
+        <name>suction</name>
+        <path>Models/Instruments/blank/blank.xml</path>
+        <offsets>
+            <x-m>2.02548</x-m>
+            <y-m>.3619415</y-m>
+            <z-m>.3165158</z-m>
+        </offsets>
+    </model>
+
+    <model>
+        <name>extralefttop</name>
+        <path>Models/Instruments/blank/blank.xml</path>
+        <offsets>
+            <x-m>2.02548</x-m>
+            <y-m>-.3619415</y-m>
+            <z-m>.3165158</z-m>
+        </offsets>
+    </model>
+
+    <model>
+        <name>extraleftbottom1</name>
+        <path>Models/Instruments/blank/blank.xml</path>
+        <offsets>
+            <x-m>2.02548</x-m>
+            <y-m>-.4571852</y-m>
+            <z-m>.2109746</z-m>
+        </offsets>
+    </model>
+
+    <model>
+        <name>extraleftbottom2</name>
+        <path>Models/Instruments/blank/blank.xml</path>
+        <offsets>
+            <x-m>2.02548</x-m>
+            <y-m>-.3631198</y-m>
+            <z-m>.2109746</z-m>
+        </offsets>
+    </model>
+
+    <!-- piano buttons -->
+    <animation>
+        <type>rotate</type>
+        <object-name>gearbutton</object-name>
+        <property>controls/gear/gear-status</property>
+        <factor>-20</factor>
+        <offset-deg>0</offset-deg>
+        <axis>
+            <x1-m>2.01918</x1-m>
+            <y1-m>.1557578</y1-m>
+            <z1-m>.0887328</z1-m>
+
+            <x2-m>2.01918</x2-m>
+            <y2-m>.1286031</y2-m>
+            <z2-m>.0887328</z2-m>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>gearbutton</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/gear/gear-down</property>
+                <value>true</value>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>gearbutton</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/gear/gear-status</property>
+                <value>true</value>
+            </binding>
+            <mod-up>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/gear/gear-status</property>
+                    <value>false</value>
+                </binding>
+            </mod-up>
+        </action>
+    </animation>
     
 </PropertyList>
