@@ -71,16 +71,17 @@
   <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
   <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
   <control-output control="FLAP1" side="left"
-      prop="/surface-positions/left-aileron-pos-norm"/>
+          prop="/surface-positions/left-aileron-pos-norm"/>
   <control-output control="FLAP1" side="right"
-      prop="/surface-positions/right-aileron-pos-norm"/>
+          prop="/surface-positions/right-aileron-pos-norm"/>
 </wing>
 
 <hstab x="-7.18" y="0.15" z="0.22" taper="0.57" effectiveness="2.0" incidence="0" 
        length="1.92" chord="1.02" sweep="3.23">
   <stall aoa="16" width="4" peak="1.5"/>
   <flap0 start="0" end="1" lift="2.0" drag="1.1" effectiveness="2"/>
-  <control-input axis="/controls/flight/elevator_in" control="FLAP0"/>
+  <!--<control-input axis="/controls/flight/elevator_in" control="FLAP0"/>-->
+  <control-input axis="/systems/fcs/ruddervator-elevator-component" control="FLAP0" invert="true"/>
   <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
   <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
 </hstab>
@@ -89,19 +90,19 @@
        length="1.6" chord="1.3" sweep="26.6"> <!-- effectiveness="2"-->
   <stall aoa="14" width="3" peak="1.5"/>
   <flap0 start="0" end="1" lift="1.5" drag="1.2"/>
-  <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
+  <!--<control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>-->
+  <control-input axis="/systems/fcs/ruddervator-rudder-component" control="FLAP0" invert="true"/>
   <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
-  <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"
-      min="1" max="-1"/>
+  <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" min="1" max="-1"/>
 </vstab>
 
   <!--  Lycoming O-540-A  -->
   <propeller radius="1"
-  cruise-speed="131" cruise-rpm="2400"
-  cruise-alt="15000" cruise-power="113"
-  takeoff-power="250" takeoff-rpm="2575"
-  x="0.0" y="0.0" z="0.0" mass="600" moment="6" 
-  min-rpm="800" max-rpm="2575"
+    cruise-speed="131" cruise-rpm="2400"
+    cruise-alt="15000" cruise-power="113"
+    takeoff-power="250" takeoff-rpm="2575"
+    x="0.0" y="0.0" z="0.0" mass="600" moment="6" 
+    min-rpm="800" max-rpm="2575"
         fine-stop="1.0" coarse-stop="4.0" >
     <piston-engine eng-rpm="2575" alt="0" eng-power="250"
      displacement="541.5" compression="8.5"/>
@@ -145,10 +146,8 @@
 
 <!-- Fuel  -->
   
-  <tank x="-2.31" y="-1.16" z="-0.479" capacity="168" />
-  <tank x="-2.44" y="-2.32" z="-0.377" capacity="90" />
-  <tank x="-2.44" y="2.32" z="-0.377" capacity="90" />
-  <tank x="-2.31" y="1.16" z="-0.479" capacity="168" />
+  <tank x="-2.31" y="-1.16" z="-0.479" capacity="25" />
+  <tank x="-2.44" y="-2.32" z="-0.377" capacity="25" />
 
 <ballast x="-7.0" y="0" z=".22" mass="-250"/> <!-- Move CG forward -->
 

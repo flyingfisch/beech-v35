@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList>
+    <filter>
+        <name>RVTOR RDDR CPNT</name>
+        <debug>false</debug>
+        <type>gain</type>
+        <gain>
+            <value>1.00</value>
+        </gain>
+        <input>
+            <expression>
+                <sum>
+
+                </sum>
+                <property>/controls/flight/rudder</property>
+                <scale>0.500</scale>
+                <property>/controls/flight/elevator</property>
+                <scale>0.500</scale>
+                <product>
+                    <cos>
+                        <deg2rad>
+                            <property>/systems/fcs/vtail-dihedral-deg</property>
+                        </deg2rad>
+                    </cos>  
+                </product>
+            </expression>    
+        </input>
+        <output>/systems/fcs/ruddervator-rudder-component</output>
+        <config>
+            <Ts>0.050</Ts>
+        </config>
+    </filter>
+
+    <filter>
+        <name>RVTOR ELEV CPNT</name>
+        <debug>false</debug>
+        <type>gain</type>
+        <gain>
+            <value>1.00</alue>
+        </gain>
+        <input>
+            <expression>
+                <sum>
+
+                </sum>
+                <property>/controls/flight/rudder</property>
+                <scale>0.500</scale>
+                <property>/controls/flight/elevator</property>
+                <scale>0.500</scale>
+                <product>
+                    <sin>
+                        <deg2rad>
+                            <property>/systems/fcs/vtail-dihedral-deg</property>
+                        </deg2rad>
+                    </sin>
+                </product>
+            </expression>
+        </input>
+        <output>/systems/fcs/ruddervator-elevator-component</output>
+        <config>
+            <Ts>0.050</Ts>
+        </config>
+    </filter>
+</PropertyList>

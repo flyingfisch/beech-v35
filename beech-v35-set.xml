@@ -6,10 +6,10 @@
         <author>flyingfisch</author>
         <status>development</status>
         <rating>
-            <FDM type="int">2</FDM>
-            <systems type="int">1</systems>
-            <cockpit type="int">0</cockpit>
-            <model type="int">2</model>
+            <FDM type="int">1</FDM>
+            <systems type="int">0</systems>
+            <cockpit type="int">2</cockpit>
+            <model type="int">3</model>
         </rating>
 
         <flight-model>yasim</flight-model>
@@ -25,6 +25,10 @@
                 <pitch-offset-deg>-15</pitch-offset-deg>
             </config>
         </view>
+
+        <autopilot>
+            <path>Systems/vtail.xml</path>
+        </autopilot>
 
         <!--<startup>
         <splash-texture>Aircraft/pa28-236/Splashes/splash.png</splash-texture>

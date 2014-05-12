@@ -263,5 +263,17 @@
             </binding>
         </action>
     </animation>
+
+
+    <!-- other buttons, ignition -->
+    <model>
+        <name>extraleftbottom1</name>
+        <path>Aircraft/Instruments-3d/magneto-switch/mags.xml</path>
+        <offsets>
+            <x-m>2.0478</x-m>
+            <y-m>.01</y-m>
+            <z-m>.02</z-m>
+        </offsets>
+    </model>
     
 </PropertyList>
