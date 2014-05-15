@@ -7,7 +7,13 @@
         <object-name>chromecenter</object-name>
         <object-name>yokeport</object-name>
         <object-name>centerpiece</object-name>
-        <object-name>pbuttontrim</object-name>
+        <object-name>pbuttontrimleft</object-name>
+        <object-name>pbuttontrimright</object-name>
+        <object-name>gearbutton</object-name>
+        <object-name>ldglightsw</object-name>
+        <object-name>ldglightsw2</object-name>
+        <object-name>navlightsw</object-name>
+        <object-name>beaconsw</object-name>
     </effect>
 
     <effect>
@@ -225,7 +231,7 @@
     <animation>
         <type>rotate</type>
         <object-name>gearbutton</object-name>
-        <property>controls/gear/gear-status</property>
+        <property>controls/pianobuttons/gear</property>
         <factor>-20</factor>
         <offset-deg>0</offset-deg>
         <axis>
@@ -246,13 +252,38 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>property-assign</command>
-                <property>controls/gear/gear-status</property>
+                <property>controls/pianobuttons/gear</property>
+                <value type="string">-1</value>
+            </binding>
+            <mod-up>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/pianobuttons/gear</property>
+                    <value type="string">0</value>
+                </binding>
+            </mod-up>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/gear/gear-down</property>
+                <value type="bool">false</value>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>gearbutton</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/pianobuttons/gear</property>
                 <value type="string">1</value>
             </binding>
             <mod-up>
                 <binding>
                     <command>property-assign</command>
-                    <property>controls/gear/gear-status</property>
+                    <property>controls/pianobuttons/gear</property>
                     <value type="string">0</value>
                 </binding>
             </mod-up>
