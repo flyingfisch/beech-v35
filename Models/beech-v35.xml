@@ -67,6 +67,8 @@
         </axis>
     </animation>
 
+
+
     <animation>
         <type>rotate</type>
         <object-name>rightaileron</object-name>
@@ -86,8 +88,8 @@
     <animation>
         <type>rotate</type>
         <object-name>leftruddervator</object-name>
-        <property>/systems/fcs/vtail-dihedral-deg</property>
-        <factor>-20</factor>
+        <property>/surface-positions/rvator-left-pos-norm</property>
+        <factor>20</factor>
         <axis>
             <x1-m>7.03682</x1-m>
             <y1-m>-1.38305</y1-m>
@@ -95,6 +97,22 @@
 
             <x2-m>7.025</x2-m>
             <y2-m>-.1284157</y2-m>
+            <z2-m>.3738125</z2-m>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>rightruddervator</object-name>
+        <property>/surface-positions/rvator-right-pos-norm</property>
+        <factor>-20</factor>
+        <axis>
+            <x1-m>7.03682</x1-m>
+            <y1-m>1.38305</y1-m>
+            <z1-m>1.10876</z1-m>
+
+            <x2-m>7.025</x2-m>
+            <y2-m>.1284157</y2-m>
             <z2-m>.3738125</z2-m>
         </axis>
     </animation>
