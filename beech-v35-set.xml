@@ -26,12 +26,6 @@
             </config>
         </view>
 
-        <systems>
-            <autopilot>
-                <path>Systems/vtail.xml</path>
-            </autopilot>
-        </systems>
-
         <!--<startup>
         <splash-texture>Aircraft/pa28-236/Splashes/splash.png</splash-texture>
         <splash-title>Beech V35 Bonanza</splash-title>
