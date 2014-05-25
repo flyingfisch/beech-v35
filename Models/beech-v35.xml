@@ -20,6 +20,46 @@
     </emission>
 
     <animation>
+        <type>select</type>
+        <object-name>propeller</object-name>
+        <condition>
+            <less-than>
+                <property>engines/engine[0]/rpm</property>
+                <value>400</value>
+            </less-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>propdisk</object-name>
+        <condition>
+            <greater-than>
+                <property>engines/engine[0]/rpm</property>
+                <value>400</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+
+    <animation>
+        <type>spin</type>
+        <object-name>propeller</object-name>
+        <property>engines/engine/rpm</property>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+
+    <animation>
         <type>rotate</type>
         <object-name>leftflap</object-name>
         <property>surface-positions/flap-pos-norm</property>
@@ -48,6 +88,38 @@
             <x2-m>3.41933</x2-m>
             <y2-m>.5574762</y2-m>
             <z2-m>-.5845845</z2-m>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>leftcowlflap</object-name>
+        <property>surface-positions/flap-pos-norm</property>
+        <factor>30</factor>
+        <axis>
+            <x1-m>1.34799</x1-m>
+            <y1-m>-.3793572</y1-m>
+            <z1-m>-.5466345</z1-m>
+
+            <x2-m>1.34799</x2-m>
+            <y2-m>-.1969489</y2-m>
+            <z2-m>-.6282494</z2-m>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>rightcowlflap</object-name>
+        <property>surface-positions/flap-pos-norm</property>
+        <factor>-30</factor>
+        <axis>
+            <x1-m>1.34799</x1-m>
+            <y1-m>.3793572</y1-m>
+            <z1-m>-.5466345</z1-m>
+
+            <x2-m>1.34799</x2-m>
+            <y2-m>.1969489</y2-m>
+            <z2-m>-.6282494</z2-m>
         </axis>
     </animation>
 
