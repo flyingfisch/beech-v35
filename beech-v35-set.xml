@@ -35,9 +35,10 @@
             <path>Aircraft/beech-v35/Models/beech-v35.xml</path>
         </model>
 
-        <!--<sound>
-        <path>Aircraft/pa28-236/pa28-236-sound.xml</path>
-        </sound>-->
+        <!-- For now, use the Cessna 172 sound configuration (same engine) -->
+        <sound>
+            <path archive="y">Aircraft/pa24-250/pa24-250-sound.xml</path>
+        </sound>
 
         <!--autopilot>
         <path></path>
