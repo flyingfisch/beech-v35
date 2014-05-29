@@ -18,161 +18,160 @@ General Public License for more details.
  
 <!-- Opr Weight 1915 IO-470-N Dry Weight 391 Guess 9lb Oil -->
 <!-- MOTW 3400 - Eng, Fuel, Pssgrs -->
-<airplane mass="1515" version="YASIM_VERSION_32">
+<airplane mass="1855" version="YASIM_VERSION_32">
  
-<!-- Approach configuration -->
-  <approach speed="65" aoa="12" fuel="0.6">
-    <control-setting axis="/controls/engines/engine[0]/throttle"        value="0.4"/>
-    <control-setting axis="/controls/engines/engine[0]/mixture"         value="1.0"/>
-    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
-    <control-setting axis="/controls/flight/flaps"                      value="1.0"/>
-    <solve-weight idx="0" weight="170"/>
-    <solve-weight idx="1" weight="170"/>
-    <solve-weight idx="2" weight="100"/>
-    <solve-weight idx="3" weight="100"/>
-    <solve-weight idx="4" weight="115"/>
-  </approach>
+    <approach speed="78" aoa="8" fuel="0.2">
+        <control-setting axis="/controls/engines/engine[0]/throttle" value="0.4" />
+        <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0" />
+        <control-setting axis="/controls/engines/engine[0]/mixture" value="1.0" />
+        <control-setting axis="/controls/flight/flaps" value="1" />
+        <control-setting axis="/controls/gear/gear-down" value="true" />
+        <solve-weight idx="0" weight="220" />
+        <solve-weight idx="1" weight="220" />
+        <solve-weight idx="2" weight="170" />
+        <solve-weight idx="3" weight="170" />
+        <solve-weight idx="4" weight="60" />
+    </approach>
+
+    <cruise speed="185" alt="8000" fuel="0.8">
+        <control-setting axis="/controls/engines/engine[0]/throttle" value="1.0" />
+        <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0" />
+        <control-setting axis="/controls/engines/engine[0]/mixture" value="0.6" />
+        <control-setting axis="/controls/flight/flaps" value="0" />
+        <control-setting axis="/controls/gear/gear-down" value="true" />
+        <solve-weight idx="0" weight="220" />
+        <solve-weight idx="1" weight="220" />
+        <solve-weight idx="2" weight="170" />
+        <solve-weight idx="3" weight="170" />
+        <solve-weight idx="4" weight="60" />
+    </cruise>
  
-<!-- Cruise configuration -->
-  <cruise speed="138" alt="11500" fuel="0.90">
-    <control-setting axis="/controls/engines/engine[0]/throttle"        value="1.0"/>
-    <control-setting axis="/controls/engines/engine[0]/mixture"         value="0.6"/>
-    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.8"/>
-    <control-setting axis="/controls/flight/flaps"                      value="0.0"/>
-    <solve-weight idx="0" weight="170"/>
-    <solve-weight idx="1" weight="170"/>
-    <solve-weight idx="2" weight="100"/>
-    <solve-weight idx="3" weight="100"/>
-    <solve-weight idx="4" weight="115"/>
-  </cruise>
+    <!-- Pilot's Eye Point -->
+    <cockpit x="-2.97" y="0.25" z="0.47"/>
  
-<!-- Pilot's Eye Point -->
-  <cockpit x="-2.97" y="0.25" z="0.47"/>
+    <!-- A-B Cowl to WShield Bottom Edge -->
+    <fuselage ax="-0.42" ay="0" az="-0.17" bx="-1.75" by="0" bz="-0.29"
+                     width="1.10" taper="0.82" midpoint="1"/>
  
-<!-- A-B Cowl to WShield Bottom Edge -->
-  <fuselage ax="-0.42" ay="0" az="-0.17" bx="-1.75" by="0" bz="-0.29"
-           width="1.10" taper="0.82" midpoint="1"/>
+    <!-- B-C Cabin -->
+    <fuselage ax="-1.75" ay="0" az="-0.29" bx="-2.40" by="0" bz="-0.18"
+                     width="1.44" taper="0.764" midpoint="1.00"/>
  
-<!-- B-C Cabin -->
-  <fuselage ax="-1.75" ay="0" az="-0.29" bx="-2.40" by="0" bz="-0.18"
-           width="1.44" taper="0.764" midpoint="1.00"/>
+    <!-- C-D Cabin -->
+    <fuselage ax="-2.40" ay="0" az="-0.18" bx="-4.00" by="0" bz="-0.18"
+                     width="1.44" taper="0.86" midpoint="0.00"/>
  
-<!-- C-D Cabin -->
-  <fuselage ax="-2.40" ay="0" az="-0.18" bx="-4.00" by="0" bz="-0.18"
-           width="1.44" taper="0.86" midpoint="0.00"/>
+    <!-- D-Tail Cone -->
+    <fuselage ax="-4.00" ay="0" az="-0.18" bx="-8.39" by="0" bz="0.09"
+                     width="1.22" taper="0.148" midpoint="0"/>
+                     
+    <!-- Main Wing xyz Half Chord at Root  Incid pdf 4 - 3 -->
+    <wing x="2.63" y=".64" z="-.45" length="4.2" chord="2.0" taper=".5" sweep="-3.5" dihedral="6" incidence="3.5" twist="-2.5" camber="0.087">
+        <stall aoa="16" width="2.0" peak="1.5"/>
+        <flap0 start="0.00" end="0.54" lift="1.4" drag="1.5"/>
+        <flap1 start="0.54" end="1.00" lift="1.2" drag="1.1"/>
+        <control-input axis="/controls/flight/flaps" control="FLAP0"/>
+        <control-speed control="FLAP0" transition-time="5"/>
+        <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
+        <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
+        <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
+        <control-output control="FLAP1" side="left"
+                        prop="/surface-positions/left-aileron-pos-norm"/>
+        <control-output control="FLAP1" side="right"
+                        prop="/surface-positions/right-aileron-pos-norm"/>
+    </wing>
  
-<!-- D-Tail Cone -->
-  <fuselage ax="-4.00" ay="0" az="-0.18" bx="-8.39" by="0" bz="0.09"
-           width="1.22" taper="0.148" midpoint="0"/>
-           
-<!-- Main Wing xyz Half Chord at Root  Incid pdf 4 - 3 -->
-  <wing x="-2.755" y="0.58" z="-0.53" taper="0.55" incidence="4.00" twist="-3"
-       length="4.40" chord="2.05" sweep="4.30" dihedral="6" camber="0.1" idrag="1.05">
-    <stall aoa="16" width="2.0" peak="1.5"/>
-    <flap0 start="0.00" end="0.54" lift="1.4" drag="1.5"/>
-    <flap1 start="0.54" end="1.00" lift="1.2" drag="1.1"/>
-    <control-input axis="/controls/flight/flaps" control="FLAP0"/>
-    <control-speed control="FLAP0" transition-time="5"/>
-    <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
-    <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
-    <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
-    <control-output control="FLAP1" side="left"
-            prop="/surface-positions/left-aileron-pos-norm"/>
-    <control-output control="FLAP1" side="right"
-            prop="/surface-positions/right-aileron-pos-norm"/>
-  </wing>
+    <!-- V-Tail: Conventional stab, vstab replaced with single 30deg dihedral hstab -->
+    <!--   Elevator is applied similar to conventional                              -->
+    <!--   Rudder is applied as "split" to invert action on either side             -->
+    <!--   Rudder is applied as "inverted" to  get polrity right, trial and error   -->
+    <!--   /surface-positions/rvator-xxx-pos-norm are output for animations         -->
+    <!--   /surface-positions/rudder-pos-norm is requd for pa-24 action-sim.nas     -->
+     
+    <!-- V-Tail HStab Guess Incidence sb less than main wing's -->
+    <hstab x="-7.06" y="0.15" z="0.08" taper="0.72" effectiveness="2.0" incidence="2.00"
+                length="1.62" chord="1.06" sweep="9.64" dihedral="30">
+        <stall aoa="16" width="4" peak="1.5"/>
+        <flap0 start="0" end="1.0" lift="2.0" drag="1.1" effectiveness="2"/>
+        <control-input axis="/controls/flight/elevator-trim"
+                                         control="FLAP0"/>
+        <control-input axis="/controls/flight/elevator"
+                                         control="FLAP0"     />
+        <control-input axis="/controls/flight/rudder"  
+                                         control="FLAP0" split="true" invert="true" />
+        <control-output prop="/surface-positions/elevator-trim"
+                                         control="FLAP0" min="-1" max="1"/>
+        <control-output control="FLAP0" prop="/surface-positions/rvator-left-pos-norm"
+                                         min="-1" max="1" invert="true" side="left"/>
+        <control-output control="FLAP0" prop="/surface-positions/rvator-right-pos-norm"
+                                         min="-1" max="1" invert="true" side="right"/>
+        <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"
+                                         min="-1" max="1"/>
+    </hstab>
  
-<!-- V-Tail: Conventional stab, vstab replaced with single 30deg dihedral hstab -->
-<!--   Elevator is applied similar to conventional                              -->
-<!--   Rudder is applied as "split" to invert action on either side             -->
-<!--   Rudder is applied as "inverted" to  get polrity right, trial and error   -->
-<!--   /surface-positions/rvator-xxx-pos-norm are output for animations         -->
-<!--   /surface-positions/rudder-pos-norm is requd for pa-24 action-sim.nas     -->
+    <!-- IO-470-N  -->
+    <propeller radius="1.18"
+     cruise-speed="138" cruise-rpm="2050"
+     cruise-alt="11500" cruise-power="120"
+     takeoff-power="213" takeoff-rpm="2575"
+     x="-1.00" y="0.0" z="-0.27" mass="400" moment="6"
+     min-rpm="800" max-rpm="2575"
+             fine-stop="1.0" coarse-stop="4.0" >
+        <piston-engine eng-rpm="2575" alt="0" eng-power="213"
+        displacement="471.0" compression="7.0"/>
+        <actionpt x="0.0" y="0.0" z="0.0" />
+        <control-input control="THROTTLE" axis="/controls/engines/engine[0]/throttle" />
+        <control-input control="STARTER" axis="/controls/engines/engine[0]/starter" />
+        <control-input control="MAGNETOS" axis="/controls/engines/engine[0]/magnetos" />
+        <control-input control="MIXTURE" axis="/controls/engines/engine[0]/mixture" />
+        <control-input control="ADVANCE" axis="/controls/engines/engine[0]/propeller-pitch"/>
+    </propeller>
  
-<!-- V-Tail HStab Guess Incidence sb less than main wing's -->
-  <hstab x="-7.06" y="0.15" z="0.08" taper="0.72" effectiveness="2.0" incidence="2.00"
-        length="1.62" chord="1.06" sweep="9.64" dihedral="30">
-    <stall aoa="16" width="4" peak="1.5"/>
-    <flap0 start="0" end="1.0" lift="2.0" drag="1.1" effectiveness="2"/>
-    <control-input axis="/controls/flight/elevator-trim"
-                     control="FLAP0"/>
-    <control-input axis="/controls/flight/elevator"
-                     control="FLAP0"     />
-    <control-input axis="/controls/flight/rudder"  
-                     control="FLAP0" split="true" invert="true" />
-    <control-output prop="/surface-positions/elevator-trim"
-                     control="FLAP0" min="-1" max="1"/>
-    <control-output control="FLAP0" prop="/surface-positions/rvator-left-pos-norm"
-                     min="-1" max="1" invert="true" side="left"/>
-    <control-output control="FLAP0" prop="/surface-positions/rvator-right-pos-norm"
-                     min="-1" max="1" invert="true" side="right"/>
-    <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"
-                     min="-1" max="1"/>
-  </hstab>
- 
-  <!-- IO-470-N  -->
-  <propeller radius="1.18"
-   cruise-speed="138" cruise-rpm="2050"
-   cruise-alt="11500" cruise-power="120"
-   takeoff-power="213" takeoff-rpm="2575"
-   x="-1.00" y="0.0" z="-0.27" mass="400" moment="6"
-   min-rpm="800" max-rpm="2575"
-       fine-stop="1.0" coarse-stop="4.0" >
-    <piston-engine eng-rpm="2575" alt="0" eng-power="213"
-    displacement="471.0" compression="7.0"/>
-    <actionpt x="0.0" y="0.0" z="0.0" />
-    <control-input control="THROTTLE" axis="/controls/engines/engine[0]/throttle" />
-    <control-input control="STARTER" axis="/controls/engines/engine[0]/starter" />
-    <control-input control="MAGNETOS" axis="/controls/engines/engine[0]/magnetos" />
-    <control-input control="MIXTURE" axis="/controls/engines/engine[0]/mixture" />
-    <control-input control="ADVANCE" axis="/controls/engines/engine[0]/propeller-pitch"/>
-  </propeller>
- 
-<!-- Nose Gear -->
-  <gear x="-0.40" y="0" z="-1.40" compression=".15" sfric="0.9" dfric="0.8"
-   spring=".6" retract-time="5"> <!-- nose -->
-    <control-input axis="/controls/flight/rudder" control="STEER"
-                  src0="-1.0" src1="1.0"
-                  dst0="-0.1" dst1="0.1"/>
-    <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
-    <control-speed control="EXTEND" transition-time="5"/>
-    <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
-  </gear>
+    <!-- Nose Gear -->
+    <gear x="-0.40" y="0" z="-1.40" compression=".15" sfric="0.9" dfric="0.8"
+     spring=".6" retract-time="5"> <!-- nose -->
+        <control-input axis="/controls/flight/rudder" control="STEER"
+                                    src0="-1.0" src1="1.0"
+                                    dst0="-0.1" dst1="0.1"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+        <control-speed control="EXTEND" transition-time="5"/>
+        <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
+    </gear>
  
  
-<!-- LH Main Gear -->
-  <gear x="-2.60" y="1.47" z="-1.39" compression=".2" sfric="0.9" dfric="0.8"
-   spring=".6" retract-time="5"> <!--  -1.17 left main -->
-    <control-input axis="/controls/gear/brake-left" control="BRAKE" split="true"/>
-    <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
-    <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
-    <control-speed control="EXTEND" transition-time="4.2"/>
-    <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
-  </gear>
+    <!-- LH Main Gear -->
+    <gear x="-2.60" y="1.47" z="-1.39" compression=".2" sfric="0.9" dfric="0.8"
+     spring=".6" retract-time="5"> <!--  -1.17 left main -->
+        <control-input axis="/controls/gear/brake-left" control="BRAKE" split="true"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+        <control-speed control="EXTEND" transition-time="4.2"/>
+        <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
+    </gear>
  
-<!-- LH Main Gear -->
-  <gear x="-2.60" y="-1.47" z="-1.39" compression=".2" sfric="0.9" dfric="0.8"
-   spring=".6" retract-time="5"> <!--  -1.17 right main -->
-    <control-input axis="/controls/gear/brake-right" control="BRAKE" split="true"/>
-    <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
-    <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
-    <control-speed control="EXTEND" transition-time="4"/>
-    <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
-  </gear>
+    <!-- LH Main Gear -->
+    <gear x="-2.60" y="-1.47" z="-1.39" compression=".2" sfric="0.9" dfric="0.8"
+     spring=".6" retract-time="5"> <!--  -1.17 right main -->
+        <control-input axis="/controls/gear/brake-right" control="BRAKE" split="true"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+        <control-speed control="EXTEND" transition-time="4"/>
+        <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
+    </gear>
  
-<!-- Fuel  Capacity LBS -->
+    <!-- Fuel  Capacity LBS -->
  
-  <tank x="-2.31" y="-1.16" z="-0.479" capacity="150" />
-  <tank x="-2.44" y="-2.32" z="-0.377" capacity="150" />
+    <tank x="-2.31" y="-1.16" z="-0.479" capacity="150" />
+    <tank x="-2.44" y="-2.32" z="-0.377" capacity="150" />
  
-  <ballast x="-7.0" y="0" z=".22" mass="-350"/> <!-- Move CG forward -->
+    <ballast x="-7.0" y="0" z=".22" mass="-350"/> <!-- Move CG forward -->
  
-  <!-- Pilot, copilot, left passenger, right passenger, baggage -->
-  <weight x="-2.17" y="0.33" z="0" mass-prop="/sim/weight[0]/weight-lb"/>
-  <weight x="-2.17" y="-.33" z="0" mass-prop="/sim/weight[1]/weight-lb"/>
-  <weight x="-3.04" y="0.33" z="0" mass-prop="/sim/weight[2]/weight-lb"/>
-  <weight x="-3.04" y="-.33" z="0" mass-prop="/sim/weight[3]/weight-lb"/>
-  <weight x="-3.64" y="0.00" z="0" mass-prop="/sim/weight[4]/weight-lb"/>
+    <!-- Pilot, copilot, left passenger, right passenger, baggage -->
+    <weight x="-2.17" y="0.33" z="0" mass-prop="/sim/weight[0]/weight-lb"/>
+    <weight x="-2.17" y="-.33" z="0" mass-prop="/sim/weight[1]/weight-lb"/>
+    <weight x="-3.04" y="0.33" z="0" mass-prop="/sim/weight[2]/weight-lb"/>
+    <weight x="-3.04" y="-.33" z="0" mass-prop="/sim/weight[3]/weight-lb"/>
+    <weight x="-3.64" y="0.00" z="0" mass-prop="/sim/weight[4]/weight-lb"/>
  
 </airplane>
 
