@@ -33,7 +33,7 @@ General Public License for more details.
 <airplane mass="1900" version="YASIM_VERSION_32">
  
 <!-- Approach configuration BaseLine Vs: 55kn Vapp: 1.3 x Vs AOA = AOAcrit/2 Flap 15 -->
-    <approach speed="71.5" aoa="7.0" fuel="0.6">
+    <approach speed="71" aoa="7.0" fuel="0.6">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="0.4"/>
     <control-setting axis="/controls/engines/engine[0]/mixture" value="1.0"/>
     <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
@@ -46,10 +46,10 @@ General Public License for more details.
   </approach>
  
 <!-- Cruise configuration -->
-  <cruise speed="138" alt="11500" fuel="0.90">
+  <cruise speed="165" alt="11500" fuel="0.90">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="1.0"/>
     <control-setting axis="/controls/engines/engine[0]/mixture" value="0.6"/>
-    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.8"/>
+    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
     <control-setting axis="/controls/flight/flaps" value="0.0"/>
     <solve-weight idx="0" weight="170"/>
     <solve-weight idx="1" weight="170"/>
@@ -82,7 +82,7 @@ General Public License for more details.
 
   <wing x="-2.755" y="0.58" z="-0.53" taper="0.55" incidence="4.00" twist="-3"
     length="4.40" chord="2.05" sweep="4.30" dihedral="6.00"
-                               camber="0.068" idrag="1.00">
+                               camber="0.068" idrag="0.98">
     <stall aoa="12" width="8.0" peak="1.500"/>
     <!--flap0 start="0.00" end="0.54" lift="1.4" drag="1.5"/-->
     <flap0 start="0.00" end="0.54" lift="1.8" drag="1.8"/>
@@ -109,7 +109,7 @@ General Public License for more details.
   <hstab x="-7.06" y="0.15" z="0.08" taper="0.72"
         length="1.62" chord="1.06" sweep="9.64" dihedral="30" >
     <stall aoa="12" width="8.000" peak="1.5"/>
-    <flap0 start="0" end="1.0" lift="2.000" drag="2.0" />
+    <flap0 start="0" end="1.0" lift="1.9" drag="1.6" />
     <control-input axis="/controls/flight/elevator-trim"
                      control="FLAP0"/>
     <control-input axis="/controls/flight/elevator_in"
@@ -126,22 +126,29 @@ General Public License for more details.
                      min="-1" max="1"/>
   </hstab>
  
-  <!-- IO-540 -->
-  <propeller radius="1.18"
-    cruise-speed="138" cruise-rpm="2550"
+  <!-- IO-520 Using FAA Cert p12 285/2700 cont 275/2550 Normal -->
+  <!-- Prop Sec 11(a)McCauley 2A36C23 hub with 84B-0 blades -->
+  <!-- Gov 3lb 1.362kg Spinner 5lb 2.27kg -->
+  <!-- Prop M 62lb 28.148kg Diam 82-84in rad 1.055m -->
+  <!-- Prop Assm mass 31.78 m^2 1009.968 -->
+  <!-- Pitch Low: 13.3dg High 29.2dg -->
+  <!-- Moment Stick: 11.791 Rods: 23.581 Disk: 17.686 RodDisk: 20.635 -->
+  <!-- Using approc stick moment -->
+  <propeller radius="1.055"
+    cruise-speed="180" cruise-rpm="2550"
     cruise-alt="11500" cruise-power="275"
-   takeoff-power="285" takeoff-rpm="2700"
-   x="-1.00" y="0.0" z="-0.27" mass="500" moment="6"
-   min-rpm="800" max-rpm="2700"
-     fine-stop="0.250" coarse-stop="4.0" >
-    <piston-engine eng-rpm="2700" alt="0" eng-power="285"
-    displacement="520.0" compression="7.5"/>
-    <actionpt x="0.0" y="0.0" z="0.0" />
-    <control-input control="THROTTLE" axis="/controls/engines/engine[0]/throttle" />
-    <control-input control="STARTER" axis="/controls/engines/engine[0]/starter" />
-    <control-input control="MAGNETOS" axis="/controls/engines/engine[0]/magnetos" />
-    <control-input control="MIXTURE" axis="/controls/engines/engine[0]/mixture" />
-    <control-input control="ADVANCE" axis="/controls/engines/engine[0]/propeller-pitch"/>
+takeoff-power="285" takeoff-rpm="2700"
+x="-1.00" y="0.0" z="-0.27" mass="540" moment="12"
+min-rpm="800" max-rpm="2700"
+fine-stop="0.8" coarse-stop="1.77" >
+<piston-engine eng-rpm="2700" alt="0" eng-power="285"
+displacement="520.0" compression="8.5"/>
+<actionpt x="0.0" y="0.0" z="0.0" />
+<control-input control="THROTTLE" axis="/controls/engines/engine[0]/throttle" />
+<control-input control="STARTER" axis="/controls/engines/engine[0]/starter" />
+<control-input control="MAGNETOS" axis="/controls/engines/engine[0]/magnetos" />
+<control-input control="MIXTURE" axis="/controls/engines/engine[0]/mixture" />
+<control-input control="ADVANCE" axis="/controls/engines/engine[0]/propeller-pitch"/>
   </propeller>
  
 <!-- Nose Gear -->
@@ -182,7 +189,7 @@ General Public License for more details.
   <tank x="-2.44" y="-2.32" z="-0.377" capacity="150" />
  
 <!-- Safe CG range: 2.375 to 2.433 for all weights 2900 to 3400 -->
-  <ballast x="-7.0" y="0" z=".22" mass="-452"/> <!-- Move CG forward to -2.375 -->
+  <ballast x="-7.0" y="0" z=".22" mass="-417"/> <!-- Move CG forward to -2.375 -->
   <!--ballast x="-7.0" y="0" z=".22" mass="-403"/--> <!-- Move CG forward to -2.433 -->
 
 <!-- Pilot, copilot, left passenger, right passenger, baggage -->
