@@ -101,10 +101,6 @@
                 <name>APConfig</name>
                 <path>Aircraft/beech-v35/Systems/CENTURYIII.xml</path>
             </autopilot>
-            <autopilot>
-                <name>AFDI</name>
-                <path>Aircraft/Instruments/afdi-v35.xml</path>
-            </autopilot>
         </systems>
     </sim>
 
