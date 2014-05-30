@@ -80,8 +80,44 @@
             <max-lb>200</max-lb>
         </weight>
 
+        <systems>
+            <autopilot>
+              <name>autopilot helpers</name>
+              <path>Aircraft/Generic/generic-autopilot-helper.xml</path>
+            </autopilot>
+            <autopilot>
+              <name>FiltersOnly</name>
+              <path>Aircraft/beech-v35/Systems/NAVandGSfilters.xml</path>
+            </autopilot>
+            <autopilot>
+                <name>APMode</name>
+                <path>Aircraft/Instruments-3d/Century-III/AutopilotMode.xml</path>
+            </autopilot>
+            <autopilot>
+                <name>APModePanel</name>
+                <path>Aircraft/Instruments-3d/Century-III/AutopilotModePanel.xml</path>
+            </autopilot>
+            <autopilot>
+                <name>APConfig</name>
+                <path>Aircraft/beech-v35/Systems/CENTURYIII.xml</path>
+            </autopilot>
+            <autopilot>
+                <name>AFDI</name>
+                <path>Aircraft/Instruments/afdi-v35.xml</path>
+            </autopilot>
+        </systems>
     </sim>
 
+    <!-- Incorporate Century-III AP -->
+    <nasal>
+        <v35>
+            <file>Aircraft/beech-v35/Nasal/action-sim.nas</file>
+        </v35>
+        <century3>
+            <file>Aircraft/beech-v35/Nasal/century3.nas</file>
+        </century3>
+    </nasal>
+    
 <!--<instrumentation inlcude="Systems/pa28-236-instrumentation.xml" />-->
 
 <!--<nasal>
