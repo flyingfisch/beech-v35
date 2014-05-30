@@ -16,16 +16,31 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 General Public License for more details.
 -->
  
-<!-- Opr Weight 1915 IO-470-N Dry Weight 391 Guess 9lb Oil -->
-<!-- MOTW 3400 - Eng, Fuel, Pssgrs -->
-<airplane mass="1515" version="YASIM_VERSION_32">
+<!-- Base Data Dwngs: http://forum.flightgear.org/viewtopic.php?f=4&t=22808&hilit=bonanza --> 
+<!-- Base Data:       http://rgl.faa.gov/Regulatory_and_Guidance_Library/rgMakeModel.nsf/ -->
+<!--                  WebSearchDefault?SearchView&Query=3a15&SearchOrder=1&SearchMax=0&   -->
+<!--                  SearchWV=TRUE&SearchFuzzy=FALSE&Start=1&Count=100#                  --> 
+<!-- V35pp12/53: Max Weight: 3400lb Eng IO520B 484lb 10qt oil 285hp@2700rpm 275hp@2550rpm --> 
+<!--             Flap 15deg App 30deg Down  Ailr Up20 Dn20     Elev Up22.5 Dn19   deg     --> 
+<!--                                     LH Rudd Up23 Dn26  RH Rudd Up26   Dn23   deg     --> 
+<!--                                     LH Tail Up44 Dn27  RH Tail Up35   Dn40   deg     --> 
+<!--   Wing Root NACA 23016.5  Tip: 23012  Root Incid 4.0  Tip Incid 1.0                  --> 
+<!--        from NACA 23012 Curve Stall Crit 14.0 Deg C/L Crit: 1.475 CL @ 0 deg:  0.100  --> 
+<!--  --> 
+<!--  --> 
+<!--  --> 
  
-<!-- Approach configuration -->
-  <approach speed="65" aoa="12" fuel="0.6">
+ 
+<!-- Opr Weight: 1915lb   IO-540: Dry Weight 484lb Guess 45lb Oil + 16lb Acces            -->
+<!--        MOTW 3400 - ( 545lb Eng, 300lb Fuel, 655lb Psgrs                              -->
+<airplane mass="1900" version="YASIM_VERSION_32">
+ 
+<!-- Approach configuration BaseLine  Vs: 55kn Vapp: 1.3 x Vs  AOA = AOAcrit/2  Flap 15   -->
+    <approach speed="71.5" aoa="7.0" fuel="0.6">
     <control-setting axis="/controls/engines/engine[0]/throttle"        value="0.4"/>
     <control-setting axis="/controls/engines/engine[0]/mixture"         value="1.0"/>
     <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
-    <control-setting axis="/controls/flight/flaps"                      value="1.0"/>
+    <control-setting axis="/controls/flight/flaps"                      value="0.5"/>
     <solve-weight idx="0" weight="170"/>
     <solve-weight idx="1" weight="170"/>
     <solve-weight idx="2" weight="100"/>
@@ -59,21 +74,25 @@ General Public License for more details.
  
 <!-- C-D Cabin -->
   <fuselage ax="-2.40" ay="0" az="-0.18" bx="-4.00" by="0" bz="-0.18"
-           width="1.44" taper="0.86" midpoint="0.00"/>
+           width="1.44" taper="0.86" midpoint="0.00" cx="1.2" cy="1.2" cz="1.0"/>
  
 <!-- D-Tail Cone -->
   <fuselage ax="-4.00" ay="0" az="-0.18" bx="-8.39" by="0" bz="0.09"
-           width="1.22" taper="0.148" midpoint="0"/>
+           width="1.22" taper="0.148" midpoint="0"   cx="1.2" cy="1.2" cz="1.0"/>
            
-<!-- Main Wing xyz Half Chord at Root  Incid pdf 4 - 3 -->
-  <wing x="-2.755" y="0.58" z="-0.53" taper="0.55" incidence="4.00" twist="-3"
-       length="4.40" chord="2.05" sweep="4.30" dihedral="6" camber="0.1" idrag="1.05">
-    <stall aoa="16" width="2.0" peak="1.5"/>
-    <flap0 start="0.00" end="0.54" lift="1.4" drag="1.5"/>
+<!-- Main Wing xyz Half Chord at Root  Incid Root: 4  Tip:1                               -->
+<!--      BaseLine Cmbr (0.100 / 1.475)  Wstall Try 8  AOA: (AOAcrit - Wstall/4)          -->
+
+  <wing x="-2.755"     y="0.58"    z="-0.53"     taper="0.55" incidence="4.00" twist="-3"
+    length="4.40"  chord="2.05" sweep="4.30"  dihedral="6.00" 
+                               camber="0.068"    idrag="1.00">
+    <stall aoa="12" width="8.0" peak="1.500"/>
+    <!--flap0 start="0.00" end="0.54" lift="1.4" drag="1.5"/-->
+    <flap0 start="0.00" end="0.54" lift="1.8" drag="1.8"/>
     <flap1 start="0.54" end="1.00" lift="1.2" drag="1.1"/>
     <control-input axis="/controls/flight/flaps" control="FLAP0"/>
     <control-speed control="FLAP0" transition-time="5"/>
-    <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
+    <control-input axis="/controls/flight/aileron_in"   control="FLAP1" split="true"/>
     <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
     <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
     <control-output control="FLAP1" side="left"
@@ -82,21 +101,21 @@ General Public License for more details.
             prop="/surface-positions/right-aileron-pos-norm"/>
   </wing>
  
-<!-- V-Tail: Conventional stab, vstab replaced with single 30deg dihedral hstab -->
-<!--   Elevator is applied similar to conventional                              -->
-<!--   Rudder is applied as "split" to invert action on either side             -->
-<!--   Rudder is applied as "inverted" to  get polrity right, trial and error   -->
-<!--   /surface-positions/rvator-xxx-pos-norm are output for animations         -->
-<!--   /surface-positions/rudder-pos-norm is requd for pa-24 action-sim.nas     -->
+<!-- V-Tail: Conventional stab, vstab replaced with single 30deg dihedral hstab           -->
+<!--   Elevator is applied similar to conventional                                        -->
+<!--   Rudder is applied as "split" to invert action on either side                       -->
+<!--   Rudder is applied as "inverted" to  get polrity right, trial and error             -->
+<!--   /surface-positions/rvator-xxx-pos-norm are output for animations                   -->
+<!--   /surface-positions/rudder-pos-norm is requd for pa-24 action-sim.nas               -->
  
-<!-- V-Tail HStab Guess Incidence sb less than main wing's -->
-  <hstab x="-7.06" y="0.15" z="0.08" taper="0.72" effectiveness="2.0" incidence="2.00"
-        length="1.62" chord="1.06" sweep="9.64" dihedral="30">
-    <stall aoa="16" width="4" peak="1.5"/>
-    <flap0 start="0" end="1.0" lift="2.0" drag="1.1" effectiveness="2"/>
+<!-- V-Tail HStab -->
+  <hstab x="-7.06" y="0.15" z="0.08" taper="0.72"  
+        length="1.62" chord="1.06" sweep="9.64" dihedral="30" >
+    <stall aoa="12" width="8.000" peak="1.5"/>
+    <flap0 start="0" end="1.0" lift="2.000" drag="2.0" />
     <control-input axis="/controls/flight/elevator-trim"
                      control="FLAP0"/>
-    <control-input axis="/controls/flight/elevator"
+    <control-input axis="/controls/flight/elevator_in"
                      control="FLAP0"     />
     <control-input axis="/controls/flight/rudder"  
                      control="FLAP0" split="true" invert="true" />
@@ -110,16 +129,16 @@ General Public License for more details.
                      min="-1" max="1"/>
   </hstab>
  
-  <!-- IO-470-N  -->
+  <!-- IO-540  -->
   <propeller radius="1.18"
-   cruise-speed="138" cruise-rpm="2050"
-   cruise-alt="11500" cruise-power="120"
-   takeoff-power="213" takeoff-rpm="2575"
-   x="-1.00" y="0.0" z="-0.27" mass="400" moment="6"
-   min-rpm="800" max-rpm="2575"
-       fine-stop="1.0" coarse-stop="4.0" >
-    <piston-engine eng-rpm="2575" alt="0" eng-power="213"
-    displacement="471.0" compression="7.0"/>
+    cruise-speed="138"  cruise-rpm="2550"
+    cruise-alt="11500" cruise-power="275"
+   takeoff-power="285" takeoff-rpm="2700"
+   x="-1.00" y="0.0" z="-0.27" mass="500" moment="6"
+   min-rpm="800" max-rpm="2700"
+     fine-stop="0.250" coarse-stop="4.0" >
+    <piston-engine eng-rpm="2700" alt="0" eng-power="285"
+    displacement="520.0" compression="7.5"/>
     <actionpt x="0.0" y="0.0" z="0.0" />
     <control-input control="THROTTLE" axis="/controls/engines/engine[0]/throttle" />
     <control-input control="STARTER" axis="/controls/engines/engine[0]/starter" />
@@ -165,9 +184,11 @@ General Public License for more details.
   <tank x="-2.31" y="-1.16" z="-0.479" capacity="150" />
   <tank x="-2.44" y="-2.32" z="-0.377" capacity="150" />
  
-  <ballast x="-7.0" y="0" z=".22" mass="-350"/> <!-- Move CG forward -->
- 
-  <!-- Pilot, copilot, left passenger, right passenger, baggage -->
+<!-- Safe CG range: 2.375 to 2.433  for all weights 2900 to 3400 --> 
+  <ballast x="-7.0" y="0" z=".22" mass="-452"/>      <!-- Move CG forward to -2.375 -->
+  <!--ballast x="-7.0" y="0" z=".22" mass="-403"/--> <!-- Move CG forward to -2.433 -->
+
+<!-- Pilot, copilot, left passenger, right passenger, baggage -->
   <weight x="-2.17" y="0.33" z="0" mass-prop="/sim/weight[0]/weight-lb"/>
   <weight x="-2.17" y="-.33" z="0" mass-prop="/sim/weight[1]/weight-lb"/>
   <weight x="-3.04" y="0.33" z="0" mass-prop="/sim/weight[2]/weight-lb"/>

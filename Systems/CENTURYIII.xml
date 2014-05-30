@@ -1,0 +1,738 @@
+<?xml version="1.0"?>
+<!-- beech-v35 Century-III Autopilot Configuration
+       nee pa24-250 Century-III Autopilot Configuration
+     Written by Dave Perry to match the performance described in
+     CENTURY III AUTOPILOT FLIGHT SYSTEM - PILOT'S OPERATING HANDBOOK
+       With supplemental inputs, outputs for tuning via e.g 
+     keyboard hotkeys --> 
+<!--
+ This file is part of FlightGear, the free flight simulator
+ http://www.flightgear.org/
+
+ Copyright (C) 2010 Dave Perry, skidavem (at) mindspring _dot_ com
+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License as
+ published by the Free Software Foundation; either version 2 of the
+ License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+-->
+<PropertyList>
+
+  <!-- =============================================================== -->
+  <!-- Roll Axis Modes                                                 -->
+  <!-- =============================================================== -->
+
+  <!-- Heading Select (HDG) Mode -->
+
+  <pid-controller>
+    <name>AP L2 HDG-ROL</name>
+    <debug>false</debug>
+    <enable>
+      <condition>
+        <or>
+          <equals>
+            <property>/autopilot/locks/heading</property>
+            <value type="string">dg-heading-hold</value>
+          </equals>
+          <equals>
+            <property>/autopilot/locks/heading</property>
+            <value type="string">nav1-hold</value>
+          </equals>
+          <equals>
+            <property>/autopilot/locks/heading</property>
+            <value type="string">omni-hold</value>
+          </equals>
+          <equals>
+            <property>/autopilot/locks/heading</property>
+            <value type="string">appr-hold</value>
+          </equals>
+          <equals>
+            <property>/autopilot/locks/heading</property>
+            <value type="string">rvrs-heading-hold</value>
+          </equals>
+          <equals>
+            <property>/autopilot/CENTURYIII/locks/hdg-hold</property>
+            <value type="bool">true</value>
+          </equals>
+        </or>
+      </condition>
+    </enable>
+    <reference>
+      <property>/autopilot/CENTURYIII/settings/target-intercept-angle</property>
+    </reference>
+    <!-- Conditional OverRide for Tuning --> 
+    <input>
+      <condition>
+        <property>/systems/tune/open-latr-stg2</property>
+        <value>1</value>
+      </condition>
+      <property>/systems/tune/poke-latr-mark</property>
+    </input>
+    <input>
+      <property>/autopilot/internal/heading-bug-error-deg</property>
+    </input>
+    <output>
+      <property>/autopilot/CENTURYIII/settings/target-roll-deg</property>
+    </output>
+    <!-- Secondary Output for Tuning --> 
+    <output>/systems/tune/AP-latr-stg2</output>
+    <config>
+      <Kp>-1.500</Kp>           <!-- Err (Ref-Inp) Gain -->
+      <Ti>04.00</Ti>            <!-- Err Cuml     Atten -->
+      <Td>00.050</Td>           <!-- Err Rate Damp Gain -->
+      <Ts>00.050</Ts>           <!-- PID Sample Period  -->
+      <alpha>0.100</alpha>      <!-- Damping Fltr  Rate -->
+      <beta>00.25100</beta>       <!-- Ref vs Inp     Sens -->
+      <gamma>0.500</gamma>      <!-- Ref vs Inp  Damping -->
+      <u_min>-30.000</u_min>    <!-- Out Lev Min  Clamp -->
+      <u_max>030.000</u_max>    <!-- Out Lev Max  Clamp -->
+    </config>
+  </pid-controller>
+
+  <!-- NAV hold Filter-->
+
+   <filter>
+    <name>heading-needle-filter</name>
+    <debug>false</debug>
+    <type>double-exponential</type>
+    <input>/instrumentation/nav/heading-needle-deflection</input>
+    <output>/autopilot/internal/filtered-heading-needle-deflection</output>
+    <filter-time>2</filter-time>
+   </filter>
+
+  <predict-simple>
+     <input>/instrumentation/nav/heading-needle-deflection</input>
+     <output>/autopilot/internal/lookahead-hdg-needle-deflection</output>
+     <seconds>12.0</seconds>
+     <filter-gain>1.000</filter-gain>
+  </predict-simple>
+
+  <pid-controller>
+    <name>AP L1 NAV-XPT</name>
+    <debug>false</debug>
+    <enable>
+      <condition>
+        <or>
+          <equals>
+            <property>/autopilot/locks/heading</property>
+            <value type="string">nav1-hold</value>
+          </equals>
+          <equals>
+            <property>/autopilot/CENTURYIII/locks/nav-hold</property>
+            <value type="bool">true</value>
+          </equals>
+        </or>
+      </condition>
+    </enable>
+    <!-- Conditional OverRide for Tuning --> 
+    <reference>
+      <condition>
+        <property>/systems/tune/open-latr-stg1</property>
+        <value>1</value>
+      </condition>
+      <property>/systems/tune/poke-latr-mark</property>
+    </reference>
+    <reference>
+      <value>0.0</value>
+    </reference>
+    <input>
+      <property>/autopilot/internal/filtered-heading-needle-deflection</property>
+    </input>
+    <output>
+      <property>/autopilot/CENTURYIII/settings/target-intercept-angle</property>
+    </output>
+    <!-- Secondary Output for Tuning --> 
+    <output>/systems/tune/AP-latr-stg1</output>
+    <config>
+      <Kp>02.000</Kp>           <!-- Err (Ref-Inp) Gain -->
+      <Ti>60.00</Ti>            <!-- Err Cuml     Atten -->
+      <Td>00.010</Td>           <!-- Err Rate Damp Gain -->
+      <Ts>00.050</Ts>           <!-- PID Sample Period  -->
+      <alpha>0.100</alpha>      <!-- Damping Fltr  Rate -->
+      <beta>00.000</beta>       <!-- Ref vs Inp     Sens -->
+      <gamma>0.000</gamma>      <!-- Ref vs Inp  Damping -->
+      <u_min>-45.000</u_min>    <!-- Out Lev Min  Clamp -->
+      <u_max>045.000</u_max>    <!-- Out Lev Max  Clamp -->
+    </config>
+  </pid-controller>
+
+  <!-- OMNI hold (OMNI) Mode-->
+
+  <pid-controller>
+    <name>AP L1 OMN-XPT</name>
+    <debug>false</debug>
+    <enable>
+      <condition>
+        <or>
+          <equals>
+            <property>/autopilot/locks/heading</property>
+            <value type="string">omni-hold</value>
+          </equals>
+          <equals>
+            <property>/autopilot/CENTURYIII/locks/omni-hold</property>
+            <value type="bool">true</value>
+          </equals>
+        </or>
+      </condition>
+    </enable>
+    <!-- Conditional OverRide for Tuning --> 
+    <reference>
+      <condition>
+        <property>/systems/tune/open-latr-stg1</property>
+        <value>1</value>
+      </condition>
+      <property>/systems/tune/poke-latr-mark</property>
+    </reference>
+    <reference>
+      <value>0.0</value>
+    </reference>
+    <input>
+      <property>/autopilot/internal/filtered-heading-needle-deflection</property>
+    </input>
+    <output>
+      <property>/autopilot/CENTURYIII/settings/target-intercept-angle</property>
+    </output>
+    <!-- Secondary Output for Tuning --> 
+    <output>/systems/tune/AP-latr-stg1</output>
+    <config>
+      <Kp>25.000</Kp>           <!-- Err (Ref-Inp) Gain -->
+      <Ti>60.00</Ti>            <!-- Err Cuml     Atten -->
+      <Td>00.010</Td>           <!-- Err Rate Damp Gain -->
+      <Ts>00.050</Ts>           <!-- PID Sample Period  -->
+      <alpha>0.100</alpha>      <!-- Damping Fltr  Rate -->
+      <beta>00.000</beta>       <!-- Ref vs Inp     Sens -->
+      <gamma>0.000</gamma>      <!-- Ref vs Inp  Damping -->
+      <u_min>-45.000</u_min>    <!-- Out Lev Min  Clamp -->
+      <u_max>045.000</u_max>    <!-- Out Lev Max  Clamp -->
+    </config>
+  </pid-controller>
+
+  <!-- Approach hold (APR) Mode-->
+  <pid-controller>
+    <name>AP L1 APR-XPT</name>
+    <debug>false</debug>
+    <enable>
+      <condition>
+        <or>
+          <equals>
+            <property>/autopilot/locks/heading</property>
+            <value type="string">appr-hold</value>
+          </equals>
+          <equals>
+            <property>/autopilot/CENTURYIII/locks/apr-hold</property>
+            <value type="bool">true</value>
+          </equals>
+        </or>
+      </condition>
+    </enable>
+    <reference>
+      <value>0.0</value>
+    </reference>
+    <!-- Conditional OverRide for Tuning --> 
+    <input>
+      <condition>
+        <property>/systems/tune/open-latr-stg1</property>
+        <value>1</value>
+      </condition>
+      <property>/systems/tune/poke-latr-mark</property>
+    </input>
+    <input>
+      <!--property>/autopilot/internal/filtered-heading-needle-deflection</property-->
+      <property>/autopilot/internal/lookahead-hdg-needle-deflection</property>
+    </input>
+    <output>
+      <property>/autopilot/CENTURYIII/settings/target-intercept-angle</property>
+    </output>
+    <!-- Secondary Output for Tuning --> 
+    <output>/systems/tune/AP-latr-stg1</output>
+    <config>
+      <Kp>02.000</Kp>           <!-- Err (Ref-Inp) Gain -->
+      <Ti>04.000</Ti>           <!-- Err Cuml     Atten -->
+      <Td>02.000</Td>           <!-- Err Rate Damp Gain -->
+      <Ts>00.050</Ts>           <!-- PID Sample Period  -->
+      <alpha>0.100</alpha>      <!-- Damping Fltr  Rate -->
+      <beta>00.000</beta>       <!-- Ref vs Inp     Sens -->
+      <gamma>0.000</gamma>      <!-- Ref vs Inp  Damping -->
+      <u_min>-20.000</u_min>    <!-- Out Lev Min  Clamp -->
+      <u_max>020.000</u_max>    <!-- Out Lev Max  Clamp -->
+    </config>
+  </pid-controller>
+
+  <!-- Backcourse hold (REV) Mode-->
+  <pid-controller>
+    <name>AP L1 REV-XPT</name>
+    <debug>false</debug>
+    <enable>
+      <condition>
+        <or>
+          <equals>
+            <property>/autopilot/locks/heading</property>
+            <value type="string">rvrs-heading-hold</value>
+          </equals>
+          <equals>
+            <property>/autopilot/CENTURYIII/locks/rev-hold</property>
+            <value type="bool">true</value>
+          </equals>
+        </or>
+      </condition>
+    </enable>
+    <!-- Conditional OverRide for Tuning --> 
+    <reference>
+      <condition>
+        <property>/systems/tune/open-latr-stg1</property>
+        <value>1</value>
+      </condition>
+      <property>/systems/tune/poke-latr-mark</property>
+    </reference>
+    <reference>
+      <value>0.0</value>
+    </reference>
+    <input>
+      <!--property>/autopilot/internal/filtered-heading-needle-deflection</property-->
+      <property>/autopilot/internal/lookahead-hdg-needle-deflection</property>
+      <scale>-1.0</scale>
+    </input>
+    <output>
+      <property>/autopilot/CENTURYIII/settings/target-intercept-angle</property>
+    </output>
+    <!-- Secondary Output for Tuning --> 
+    <output>/systems/tune/AP-latr-stg1</output>
+    <config>
+      <Kp>03.000</Kp>           <!-- Err (Ref-Inp) Gain -->
+      <Ti>03.000</Ti>           <!-- Err Cuml     Atten -->
+      <Td>04.000</Td>           <!-- Err Rate Damp Gain -->
+      <Ts>00.050</Ts>           <!-- PID Sample Period  -->
+      <alpha>0.100</alpha>      <!-- Damping Fltr  Rate -->
+      <beta>00.000</beta>       <!-- Ref vs Inp     Sens -->
+      <gamma>0.000</gamma>      <!-- Ref vs Inp  Damping -->
+      <u_min>-20.000</u_min>    <!-- Out Lev Min  Clamp -->
+      <u_max>020.000</u_max>    <!-- Out Lev Max  Clamp -->
+    </config>
+  </pid-controller>
+
+  <!--  Filter target roll -->
+  <filter>
+   <name>target-roll-filter</name>
+   <debug>false</debug>
+   <type>double-exponential</type>
+   <input>/autopilot/CENTURYIII/settings/target-roll-deg</input>
+   <output>/autopilot/internal/filtered-target-roll-deg</output>
+   <filter-time>0.05</filter-time>  <!-- .1 -->
+  </filter>
+
+  <!-- Wing leveler (ROL) Mode --> 
+  <pid-controller>
+    <name>AP L3 ROL-AIL</name>
+    <debug>false</debug>
+    <enable>
+      <condition>
+        <or>
+          <not>
+            <equals>
+              <property>/autopilot/locks/heading</property>
+              <value></value>
+            </equals>
+          </not>
+          <equals>
+            <property>/autopilot/CENTURYIII/locks/roll-axis</property>
+            <value type="bool">true</value>
+          </equals>
+        </or>
+      </condition>
+    </enable>
+    <!-- Conditional OverRide for Tuning --> 
+    <reference>
+      <condition>
+        <property>/systems/tune/open-latr-stg3</property>
+        <value>1</value>
+      </condition>
+      <property>/systems/tune/poke-latr-mark</property>
+    </reference>
+    <reference>
+      <property>/autopilot/internal/filtered-target-roll-deg</property>
+    </reference>
+    <input>
+      <property>/instrumentation/attitude-indicator/indicated-roll-deg</property>
+    </input>
+    <output>
+      <property>/autopilot/internal/raw-aileron</property>
+    </output>
+    <!-- Secondary Output for Tuning --> 
+    <output>/systems/tune/AP-latr-stg3</output>
+    <config>
+      <Kp>0.050100</Kp>             <!-- Err (Ref-Inp) Gain -->
+      <Ti>01.00</Ti>             <!-- Err Cuml     Atten -->
+      <Td>0.100</Td>             <!-- Err Rate Damp Gain -->
+      <Ts>0.025</Ts>             <!-- PID Sample Period  -->
+      <alpha>0.100</alpha>       <!-- Damping Fltr  Rate -->
+      <beta>00.2001000</beta>        <!-- Ref vs Inp     Sens -->
+      <gamma>0.100</gamma>       <!-- Ref vs Inp  Damping -->
+      <u_min>-1.0000500</u_min>  <!-- Out Lev Min  Clamp -->
+      <u_max>01.0000500</u_max>  <!-- Out Lev Max  Clamp -->
+    </config>
+  </pid-controller>
+
+   <filter>
+    <name>aileron filter</name>
+    <debug>false</debug>
+    <enable>
+      <condition>
+        <or>
+          <not>
+            <equals>
+              <property>/autopilot/locks/heading</property>
+              <value></value>
+            </equals>
+          </not>
+          <equals>
+            <property>/autopilot/CENTURYIII/locks/roll-axis</property>
+            <value type="bool">true</value>
+          </equals>
+        </or>
+      </condition>
+    </enable>
+    <type>double-exponential</type>
+    <input>/autopilot/internal/raw-aileron</input>
+    <output>/controls/flight/AP_aileron</output>
+    <!-- Secondary Output for Tuning --> 
+    <output>/systems/tune/AP-ailr-drve</output>
+    <filter-time>.05</filter-time>  <!-- .1 -->
+   </filter>
+
+   <filter>
+    <name>AILR SRCE YK</name>
+    <debug>false</debug>
+    <type>gain</type>
+    <gain>1.00</gain>
+    <enable>
+        <property>/controls/flight/ailr_srce_from</property>
+        <value type="string">yoke</value>
+    </enable>
+    <input>/controls/flight/aileron</input>
+    <output>/controls/flight/aileron_in</output>
+    <!-- Secondary Output for Tuning --> 
+    <output>/systems/tune/AP-latr-stg3</output>
+    <filter-time>.1</filter-time>
+   </filter>
+
+   <filter>
+    <name>AILR SRCE AP</name>
+    <debug>false</debug>
+    <type>gain</type>
+    <gain>1.00</gain>
+    <enable>
+      <property>/controls/flight/ailr_srce_from</property>
+      <value type="string">CIII</value>
+    </enable>
+    <input>/controls/flight/AP_aileron</input>
+    <output>/controls/flight/aileron_in</output>
+   </filter>
+
+  <!-- =============================================================== -->
+  <!-- Pitch Axis Modes                                                -->
+  <!-- =============================================================== -->
+
+  <!-- Altitude Hold (ALT) Mode --> 
+  <pid-controller>
+    <name>AP V1 ALT-PRT</name>
+    <debug>false</debug>
+    <enable>
+      <condition>
+        <or>
+          <equals>
+            <property>/autopilot/locks/altitude</property>
+            <value type="string">altitude-hold</value>
+          </equals>
+          <equals>
+            <property>/autopilot/CENTURYIII/locks/alt-hold</property>
+            <value type="bool">true</value>
+          </equals>
+        </or>
+      </condition>
+      <property>/autopilot/CENTURYIII/locks/alt-hold</property>
+      <value type="bool">true</value>
+    </enable>
+    <!-- Conditional OverRide for Tuning --> 
+    <reference>
+      <condition>
+        <property>/systems/tune/open-vert-stg1</property>
+        <value>1</value>
+      </condition>
+      <expression>
+        <sum>
+          <property>/systems/tune/poke-latr-mark</property>
+          <value>30.000</value>
+        </sum>  
+      </expression>
+    </reference>
+    <reference>
+      <property>/autopilot/CENTURYIII/settings/target-alt-pressure</property>
+    </reference>
+    <input>
+      <property>/systems/static[0]/pressure-inhg[0]</property>
+    </input>
+    <output>
+      <property>/autopilot/CENTURYIII/settings/target-pressure-rate</property>
+    </output>
+    <!-- Secondary Output for Tuning --> 
+    <output>/systems/tune/AP-vert-stg1</output>
+    <config>
+      <Kp>0.125</Kp>       <!-- proportional gain -->
+      <beta>1.0</beta>     <!-- input value weighing factor -->
+      <alpha>0.1</alpha>   <!-- low pass filter weighing factor -->
+      <gamma>0.0</gamma>   <!-- input value weighing factor for -->
+                           <!-- unfiltered derivative error -->
+      <Ti>12.0</Ti>        <!-- integrator time -->
+      <Td>0.0</Td>         <!-- derivator time -->
+      <u_min>-0.07</u_min> <!-- minimum output clamp -->
+      <u_max>0.07</u_max>  <!-- maximum output clamp -->
+    </config>
+   </pid-controller>
+
+   <!-- Glideslope Hold (GS) Mode --> 
+  <pid-controller>
+    <name>AP V1 GSL-PRT</name>
+    <debug>false</debug>
+    <enable>
+      <condition>
+        <or>
+          <equals>
+            <property>/autopilot/locks/altitude</property>
+            <value type="string">gs1-hold</value>
+          </equals>
+          <equals>
+            <property>/autopilot/CENTURYIII/locks/gs-hold</property>
+            <value type="bool">true</value>
+          </equals>
+        </or>
+      </condition>
+    </enable>
+    <!-- Conditional OverRide for Tuning --> 
+    <reference>
+      <condition>
+        <property>/systems/tune/open-vert-stg1</property>
+        <value>1</value>
+      </condition>
+        <property>/systems/tune/poke-latr-mark</property>
+    </reference>
+    <reference>
+      <value>0.0</value>
+    </reference>
+    <input>
+      <property>/instrumentation/nav/gs-needle-deflection-deg</property>
+    </input>
+    <output>
+      <property>/autopilot/CENTURYIII/settings/target-pressure-rate</property>
+    </output>
+    <!-- Secondary Output for Tuning --> 
+    <output>/systems/tune/AP-vert-stg1</output>
+    <config>
+      <Kp>0.07</Kp>         <!-- proportional gain -->
+      <beta>1.0</beta>     <!-- input value weighing factor -->
+      <alpha>0.1</alpha>   <!-- low pass filter weighing factor -->
+      <gamma>0.0</gamma>   <!-- input value weighing factor for -->
+                           <!-- unfiltered derivative error -->
+      <Ti>25.0</Ti>        <!-- integrator time -->
+      <Td>0.001</Td>         <!-- derivator time -->
+      <u_min>-0.02</u_min> <!-- minimum output clamp -->
+      <u_max>0.02</u_max>  <!-- maximum output clamp -->
+    </config>
+   </pid-controller>
+
+   <filter>
+    <name>pressure-rate-filter</name>
+    <debug>false</debug>
+    <type>double-exponential</type>
+    <input>/autopilot/internal/pressure-rate</input>
+    <output>/autopilot/internal/filtered-pressure-rate</output>
+    <filter-time>0.01</filter-time>
+   </filter>
+
+  <!-- Vertical Speed (VS) Mode --> 
+  <pid-controller>
+    <name>AP V2 VSP-PIT</name>
+    <debug>false</debug>
+    <enable>
+      <condition>
+        <or>
+          <equals>
+            <property>/autopilot/locks/altitude</property>
+            <value type="string">vertical-speed-hold</value>
+          </equals>
+          <equals>
+            <property>/autopilot/CENTURYIII/locks/pitch-axis</property>
+            <value type="bool">true</value>
+          </equals>
+        </or>
+      </condition>
+    </enable>
+    <!-- Conditional OverRide for Tuning --> 
+    <reference>
+      <condition>
+        <property>/systems/tune/open-vert-stg2</property>
+        <value>1</value>
+      </condition>
+        <property>/systems/tune/poke-latr-mark</property>
+    </reference>
+    <reference>
+      <property>/autopilot/CENTURYIII/settings/target-pressure-rate</property>
+    </reference>
+    <input>
+      <property>/autopilot/internal/filtered-pressure-rate</property>
+    </input>
+    <output>
+      <property>/autopilot/CENTURYIII/settings/target-pitch-deg</property>
+    </output>
+    <!-- Secondary Output for Tuning --> 
+    <output>/systems/tune/AP-vert-stg2</output>
+    <config>
+      <Kp>-200.0</Kp>     <!-- proportional gain -->
+      <beta>1.0</beta>    <!-- input value weighing factor -->
+      <alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
+      <gamma>0.0</gamma>  <!-- input value weighing factor for -->
+                          <!-- unfiltered derivative error -->
+      <Ti>2.0</Ti>        <!-- integrator time -->
+      <Td>0.0</Td>        <!-- derivator time -->
+      <u_min>-10</u_min>  <!-- minimum output clamp -->
+      <u_max>10</u_max>   <!-- maximum output clamp -->
+    </config>
+   </pid-controller>
+
+  <!-- Angle of Attack (AOA) Mode --> 
+  <pid-controller>
+    <name>AP V3 AOA-ELV</name>
+    <debug>false</debug>
+    <enable>
+      <condition>
+        <or>
+          <not>
+            <equals>
+              <property>/autopilot/locks/altitude</property>
+              <value></value>
+            </equals>
+          </not>
+          <equals>
+            <property>/autopilot/CENTURYIII/locks/pitch-hold</property>
+            <value type="bool">true</value>
+          </equals>
+        </or>
+      </condition>
+    </enable>
+    <!-- Conditional OverRide for Tuning --> 
+    <reference>
+      <condition>
+        <property>/systems/tune/open-vert-stg3</property>
+        <value>1</value>
+      </condition>
+        <property>/systems/tune/poke-latr-mark</property>
+    </reference>
+    <reference>
+      <property>/autopilot/CENTURYIII/settings/target-pitch-deg</property>
+    </reference>
+    <input>
+      <property>/instrumentation/attitude-indicator/indicated-pitch-deg</property>
+    </input>
+    <output>
+      <property>/autopilot/internal/raw-elevator</property>
+    </output>
+    <!-- Secondary Output for Tuning --> 
+    <output>/systems/tune/AP-vert-stg3</output>
+    <config>
+      <Kp>-0.050</Kp>           <!-- Err (Ref-Inp) Gain -->
+      <Ti>01.000</Ti>           <!-- Err Cuml     Atten -->
+      <Td>00.0500001</Td>           <!-- Err Rate Damp Gain -->
+      <Ts>00.050</Ts>           <!-- PID Sample Period  -->
+      <alpha>0.100</alpha>      <!-- Damping Fltr  Rate -->
+      <beta>00.100</beta>       <!-- Ref vs Inp     Sens -->
+      <gamma>0.500</gamma>      <!-- Ref vs Inp  Damping -->
+      <u_min>-1.0000200</u_min>     <!-- minimum output clamp -->
+      <u_max>01.0000200</u_max>     <!-- maximum output clamp -->
+    </config>
+   </pid-controller> 
+
+   <filter>
+    <name>elevator filter</name>
+    <debug>false</debug>
+    <enable>
+      <property>/autopilot/CENTURYIII/locks/pitch-hold</property>
+      <value type="bool">true</value>
+    </enable>
+    <type>double-exponential</type>
+    <input>/autopilot/internal/raw-elevator</input>
+    <output>/controls/flight/AP_elevator</output>
+    <filter-time>.1</filter-time>
+   </filter>
+
+   <filter>
+    <name>elevator trim filter</name>
+    <debug>false</debug>
+    <type>double-exponential</type>
+    <input>/controls/flight/AP_elevator</input>
+    <output>/autopilot/internal/filtered-elevator</output>
+    <filter-time>1.5</filter-time>
+   </filter>
+
+   <!-- Auto elevator trim -->
+   <pid-controller>
+     <name>Required elevator trim</name>
+     <debug>false</debug>
+     <enable>
+       <property>/autopilot/CENTURYIII/settings/auto-pitch-trim</property>
+       <value>1</value>
+     </enable>
+     <input>
+       <property>/autopilot/internal/filtered-elevator</property>
+     </input>
+     <reference>
+       <value>0.0</value>
+     </reference>
+     <output>
+       <property>/controls/flight/elevator-trim</property>
+     </output>
+    <config>
+      <Kp>-0.05</Kp>      <!-- proportional gain -->
+      <beta>1.0</beta>    <!-- input value weighing factor -->
+      <alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
+      <gamma>0.0</gamma>  <!-- input value weighing factor for -->
+                          <!-- unfiltered derivative error -->
+      <Ti>1.0</Ti>        <!-- integrator time -->
+      <Td>0.001</Td>      <!-- derivator time -->
+      <u_min>-0.5</u_min> <!-- minimum output clamp -->
+      <u_max>0.5</u_max>  <!-- maximum output clamp -->
+    </config>
+   </pid-controller> 
+   
+   <filter>
+    <name>ELEV SRCE YOK</name>
+    <debug>false</debug>
+    <type>gain</type>
+    <gain>1.00</gain>
+    <enable>
+      <property>/controls/flight/elev_srce_from</property>
+      <value type="string">yoke</value>
+    </enable>
+    <input>/controls/flight/elevator</input>
+    <output>/controls/flight/elevator_in</output>
+    <!-- Secondary Output for Tuning --> 
+    <output>/systems/tune/AP-vert-stg3</output>
+   </filter>
+
+   <filter>
+    <name>ELEV SRCE A/P</name>
+    <debug>false</debug>
+    <type>gain</type>
+    <gain>1.00</gain>
+    <enable>
+      <property>/controls/flight/elev_srce_from</property>
+      <value type="string">CIII</value>
+    </enable>
+    <input>/controls/flight/AP_elevator</input>
+    <output>/controls/flight/elevator_in</output>
+   </filter>
+
+</PropertyList>
