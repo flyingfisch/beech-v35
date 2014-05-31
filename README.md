@@ -7,12 +7,10 @@ Software Requirements
 [YASim Version 32 or newer](#how-to-install-yasim-32-on-flightgear-300)
 
 
+Appendix
+--------
 
-
-
-
-How to install YASim 32 on Flightgear 3.0.0
--------------------------------------------
+###How to install YASim 32 on Flightgear 3.0.0
 
 1. Download the source for [flightgear](http://mirrors.ibiblio.org/pub/mirrors/flightgear/ftp/Source/) and [simgear](http://mirrors.ibiblio.org/pub/mirrors/simgear/ftp/Source/).
 2. Install the dependency packages for your operating system (OSG, Boost, Glut (FreeGlut), OpenAL, plib)
