@@ -1,10 +1,15 @@
-beech-v35
-=========
-
 Beechcraft V35 Bonanza for flightgear
+=====================================
+###Under Construction, many features may not work.
+
+Software Requirements
+---------------------
+[YASim Version 32 or newer](#how-to-install-yasim-32-on-flightgear-300)
 
 
-###NOTE: Requires YASim Version 32 or newer
+
+
+
 
 How to install YASim 32 on Flightgear 3.0.0
 -------------------------------------------
@@ -43,4 +48,4 @@ How to install YASim 32 on Flightgear 3.0.0
   
 7. Change your flightgear executable in FGRun to the new FG executable. You will see it in the output for `sudo make install` as something like `/usr/local/bin/fgfs`
 
-**Under Construction, many features may not work.**
+
