@@ -65,6 +65,15 @@
             <y-m>-.1612911</y-m>
             <z-m>.3278169</z-m>
         </offsets>
+        <overlay>
+            <animation n="100">
+                <type>scale</type>
+                <property>constants/zero</property>
+                <x-offset>1.191</x-offset>
+                <y-offset>1.191</y-offset>
+                <z-offset>1.191</z-offset>
+            </animation>
+        </overlay>
     </model>
 
     <!-- Left  Ckpt Bot Far Left -->
