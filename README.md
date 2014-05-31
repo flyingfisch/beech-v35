@@ -4,7 +4,7 @@ Beechcraft V35 Bonanza for flightgear
 
 Software Requirements
 ---------------------
-[YASim Version 32 or newer](#how-to-install-yasim-32-on-flightgear-300)
+###[YASim Version 32 or newer](#how-to-install-yasim-32-on-flightgear-300)
 
 
 Appendix
