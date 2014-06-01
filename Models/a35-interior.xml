@@ -332,6 +332,7 @@
         <object-name>cowlcontrol</object-name>
         <property>controls/engines/engine/cowl-flaps-norm</property>
         <factor>45</factor>
+        <drag-direction>vertical</drag-direction>
 
         <axis>
             <x1-m>1.98866</x1-m>
