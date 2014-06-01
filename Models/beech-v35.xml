@@ -94,7 +94,7 @@
     <animation>
         <type>rotate</type>
         <object-name>leftcowlflap</object-name>
-        <property>surface-positions/flap-pos-norm</property>
+        <property>controls/engines/engine/cowl-flaps-norm</property>
         <factor>30</factor>
         <axis>
             <x1-m>1.34799</x1-m>
@@ -110,7 +110,7 @@
     <animation>
         <type>rotate</type>
         <object-name>rightcowlflap</object-name>
-        <property>surface-positions/flap-pos-norm</property>
+        <property>controls/engines/engine/cowl-flaps-norm</property>
         <factor>-30</factor>
         <axis>
             <x1-m>1.34799</x1-m>
