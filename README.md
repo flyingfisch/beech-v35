@@ -12,7 +12,7 @@ Notes on certain files
 
 * **Blender/beecha35int.blend**: Interior
 
-* **Blender/beech35_uvexample.blend**:
+* **Blender/beech35_uvexample.blend**: modification of beech35.blend with i4dnf's UV Map.
 
 * **blankinst.blend**: Blank instrument model
 
