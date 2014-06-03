@@ -2,19 +2,19 @@ Beechcraft V35 Bonanza for flightgear
 =====================================
 ###Under Construction, many features may not work.
 
-Note on certain files
+Notes on certain files
 ---------------------
-* _beech-v35-indev.xml_: flyingfisch's first try at a YASim FDM
+* **beech-v35-indev.xml**: flyingfisch's first try at a YASim FDM
 
-_beech-v35-new.xml_: another attempt by flyingfisch at a YASim FDM
+* **beech-v35-new.xml**: another attempt by flyingfisch at a YASim FDM
 
-_Blender/beech35.blend_: Main blend file
+* **Blender/beech35.blend**: Main blend file
 
-_Blender/beecha35int.blend_: Interior
+* **Blender/beecha35int.blend**: Interior
 
-<i>Blender/beech35_uvexample.blend</i>:
+* **Blender/beech35_uvexample.blend**:
 
-_blankinst.blend_: Blank instrument model
+* **blankinst.blend**: Blank instrument model
 
 Software Requirements
 ---------------------
