@@ -2,6 +2,20 @@ Beechcraft V35 Bonanza for flightgear
 =====================================
 ###Under Construction, many features may not work.
 
+Notes on certain files
+---------------------
+* **beech-v35-indev.xml**: flyingfisch's first try at a YASim FDM
+
+* **beech-v35-new.xml**: another attempt by flyingfisch at a YASim FDM
+
+* **Blender/beech35.blend**: Main blend file
+
+* **Blender/beecha35int.blend**: Interior
+
+* **Blender/beech35_uvexample.blend**: modification of beech35.blend with i4dnf's UV Map.
+
+* **blankinst.blend**: Blank instrument model
+
 Software Requirements
 ---------------------
 ###[YASim Version 32 or newer](#how-to-install-yasim-32-on-flightgear-300)
