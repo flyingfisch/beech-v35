@@ -106,12 +106,37 @@
                 <path>Aircraft/Instruments/afdi-v35.xml</path>
             </autopilot>
         </systems>
+
+        <!-- Menu -->
+        <menubar>
+            <default>
+                <menu n="100">
+                    <label>Beech 35</label>
+                    <enabled type="bool">true</enabled>
+                    <item>
+                        <label>Select Livery</label>
+                        <binding>
+                            <command>nasal</command>
+                            <script>aircraft.livery.dialog.open()</script>
+                        </binding>
+                    </item>
+                </menu>
+            </default>
+        </menubar>
     </sim>
+
+    <model>
+        <path>Aircraft/beech-v35/Models/beech-v35.xml</path>
+        <livery>
+            <file type="string"/>
+        </livery>
+    </model>
 
     <!-- Incorporate Century-III AP -->
     <nasal>
         <v35>
             <file>Aircraft/beech-v35/Nasal/action-sim.nas</file>
+            <file>Aircraft/beech-v35/Nasal/livery.nas</file>
         </v35>
         <century3>
             <file>Aircraft/beech-v35/Nasal/century3.nas</file>

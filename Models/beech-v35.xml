@@ -1,5 +1,50 @@
 <?xml version="1.0"?>
 <PropertyList>
+    <!-- Livery -->
+    <nasal>
+        <load>
+            var livery_update = aircraft.livery_update.new("Aircraft/beech-v35/Models/Liveries");
+        </load>
+
+        <unload>
+            livery_update.stop();
+        </unload>
+    </nasal>
+
+    <animation>
+        <type>material</type>
+        <texture-prop>texture</texture-prop>
+        <texture>Models/Liveries/redstripe.png</texture>
+        <property-base>sim/model/livery</property-base>
+
+        <object-name>fuselage</object-name>
+        <object-name>wing</object-name>
+        <object-name>rightaileron</object-name>
+        <object-name>rightflap</object-name>
+        <object-name>leftaileron</object-name>
+        <object-name>leftflap</object-name>
+        <object-name>tail</object-name>
+        <object-name>leftruddervator</object-name>
+        <object-name>rightruddervator</object-name>
+        <object-name>nosecone</object-name>
+        <object-name>noseprojection</object-name>
+        <object-name>LGearDoor2</object-name>
+        <object-name>LGearDoor1</object-name>
+        <object-name>RGearDoor2</object-name>
+        <object-name>RGearDoor1</object-name>
+        <object-name>LGChassisLeft</object-name>
+        <object-name>LGLeft</object-name>
+        <object-name>LGChassisRight</object-name>
+        <object-name>LGRight</object-name>
+        <object-name>NGChassis</object-name>
+        <object-name>NoseGear</object-name>
+        <object-name>leftcowlflap</object-name>
+        <object-name>rightcowlflap</object-name>
+        <object-name>cowlflapint</object-name>
+        <object-name>NGDoorLeft</object-name>
+        <object-name>NGDoorRight</object-name>
+    </animation>
+
     <path>beech35.ac</path>
 
     <model>
