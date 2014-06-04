@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 <PropertyList>
+    <path>beech35.ac</path>
+    
     <!-- Livery -->
     <nasal>
         <load>
@@ -44,8 +46,6 @@
         <object-name>NGDoorLeft</object-name>
         <object-name>NGDoorRight</object-name>
     </animation>
-
-    <path>beech35.ac</path>
 
     <model>
         <usage>interior</usage>
