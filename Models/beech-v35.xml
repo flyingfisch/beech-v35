@@ -1,7 +1,24 @@
 <?xml version="1.0"?>
 <PropertyList>
     <path>beech35.ac</path>
-    
+
+    <model>
+        <usage>interior</usage>
+        <path>Models/a35-interior.xml</path>
+    </model>
+
+    <specular>
+        <red-prop>specular/red</red-prop>
+        <green-prop>specular/green</green-prop>
+        <blue-prop>specular/blue</blue-prop>
+    </specular>
+
+    <emission>
+        <red-prop>emission/red</red-prop>
+        <green-prop>emission/green</green-prop>
+        <blue-prop>emission/blue</blue-prop>
+    </emission>
+
     <!-- Livery -->
     <nasal>
         <load>
@@ -47,22 +64,32 @@
         <object-name>NGDoorRight</object-name>
     </animation>
 
-    <model>
-        <usage>interior</usage>
-        <path>Models/a35-interior.xml</path>
-    </model>
-
-    <specular>
-        <red-prop>specular/red</red-prop>
-        <green-prop>specular/green</green-prop>
-        <blue-prop>specular/blue</blue-prop>
-    </specular>
-
-    <emission>
-        <red-prop>emission/red</red-prop>
-        <green-prop>emission/green</green-prop>
-        <blue-prop>emission/blue</blue-prop>
-    </emission>
+    <effect>
+        <inherits-from>Models/Effects/bonanza-reflect-ext</inherits-from>
+        <object-name>fuselage</object-name>
+        <object-name>wing</object-name>
+        <object-name>rightaileron</object-name>
+        <object-name>rightflap</object-name>
+        <object-name>leftaileron</object-name>
+        <object-name>leftflap</object-name>
+        <object-name>tail</object-name>
+        <object-name>leftruddervator</object-name>
+        <object-name>rightruddervator</object-name>
+        <object-name>nosecone</object-name>
+        <object-name>noseprojection</object-name>
+        <object-name>LGearDoor2</object-name>
+        <object-name>LGearDoor1</object-name>
+        <object-name>RGearDoor2</object-name>
+        <object-name>RGearDoor1</object-name>
+        <object-name>LGChassisLeft</object-name>
+        <object-name>LGChassisRight</object-name>
+        <object-name>NGChassis</object-name>
+        <object-name>leftcowlflap</object-name>
+        <object-name>rightcowlflap</object-name>
+        <object-name>cowlflapint</object-name>
+        <object-name>NGDoorLeft</object-name>
+        <object-name>NGDoorRight</object-name>
+    </effect>
 
     <animation>
         <type>select</type>
