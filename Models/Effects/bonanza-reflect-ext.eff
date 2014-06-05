@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PropertyList>
+    <name>bonanza-reflect-ext</name>
+    <inherits-from>Effects/model-combined-deferred</inherits-from>
+    <parameters>
+     <reflection-enabled type="int"> 1 </reflection-enabled>
+     <reflection-correction type="float"> 0.0 </reflection-correction>
+     <reflection-dynamic type="int">1</reflection-dynamic>
+    </parameters>
+</PropertyList>
