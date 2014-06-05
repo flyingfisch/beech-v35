@@ -92,6 +92,15 @@
     </effect>
 
     <animation>
+        <type>shader</type>
+        <shader>chrome</shader>
+        <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+        <object-name>rearwindow</object-name>
+        <object-name>frontwindow</object-name>
+        <object-name>windshield</object-name>
+    </animation>
+
+    <animation>
         <type>select</type>
         <object-name>propeller</object-name>
         <condition>
@@ -462,6 +471,57 @@
             <entry><ind>.2</ind><dep>100</dep></entry>
             <entry><ind>1</ind><dep>0</dep></entry>
         </interpolation>
+    </animation>
+
+    <animation>
+        <type>spin</type>
+        <object-name>NoseGear</object-name>
+        <property>gear/gear[0]/rollspeed-ms</property>
+        <factor>30</factor>
+
+        <axis>
+            <x1-m>.5241962</x1-m>
+            <y1-m>.0492601</y1-m>
+            <z1-m>-1.24366</z1-m>
+
+            <x2-m>.5241962</x2-m>
+            <y2-m>-.0327751</y2-m>
+            <z2-m>-1.24366</z2-m>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>spin</type>
+        <object-name>LGLeft</object-name>
+        <property>gear/gear[1]/rollspeed-ms</property>
+        <factor>30</factor>
+
+        <axis>
+            <x1-m>2.76632</x1-m>
+            <y1-m>-1.38748</y1-m>
+            <z1-m>-.9539787</z1-m>
+
+            <x2-m>2.76632</x2-m>
+            <y2-m>-1.49815</y2-m>
+            <z2-m>-.9539787</z2-m>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>spin</type>
+        <object-name>LGRight</object-name>
+        <property>gear/gear[1]/rollspeed-ms</property>
+        <factor>-30</factor>
+
+        <axis>
+            <x1-m>2.76632</x1-m>
+            <y1-m>1.38748</y1-m>
+            <z1-m>-.9539787</z1-m>
+
+            <x2-m>2.76632</x2-m>
+            <y2-m>1.49815</y2-m>
+            <z2-m>-.9539787</z2-m>
+        </axis>
     </animation>
 
 </PropertyList>
