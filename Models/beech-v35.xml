@@ -89,6 +89,7 @@
         <object-name>cowlflapint</object-name>
         <object-name>NGDoorLeft</object-name>
         <object-name>NGDoorRight</object-name>
+        <object-name>frontdoor</object-name>
     </effect>
 
     <animation>
