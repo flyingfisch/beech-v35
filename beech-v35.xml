@@ -96,7 +96,7 @@ General Public License for more details.
 <!--  Max deflection of 44deg is scaled to 1.0 ctrl input: elevator, rudder summed        -->
 <!--  Elv-, Up 22.5/44 = 0.511 Elv+, Dn 0.432 Rdr-, Lf 26/44 = 0.591  Rdr+ Rt  0.523      -->
 <!--                                                                                      -->
-<!--  Elv Max-- and Rddr Max Right demands 22.5 + 26 = 48.5 RH Down                       -->
+<!--  Elv Max Up and Rddr Max Right demands 22.5 + 26 = 48.5 RH Down                       -->
 <!--  Rudder demand is limited in AP xml so max demand, above, is scaled to <=35 deg      -->
 <!--                                                                                      -->
  
@@ -104,7 +104,7 @@ General Public License for more details.
   <hstab x="-7.0" y="0.0" z="0.31" taper="0.72"
         length="1.72" chord="1.06" sweep="0" dihedral="30" >
     <stall aoa="24.0" width="4.0" peak="1.5"/>
-    <flap0 start="0.05" end="1.0" lift="1.750" drag="1.000"      />
+    <flap0 start="0.05" end="1.0" lift="1.800" drag="1.000"      />
     <control-input axis="/controls/flight/elevator-trim"
                      control="FLAP0"/>
     <control-input axis="/controls/flight/elevator_in"
