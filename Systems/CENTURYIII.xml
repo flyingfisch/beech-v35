@@ -653,86 +653,118 @@
       <u_min>-1.0000200</u_min>     <!-- minimum output clamp -->
       <u_max>01.0000200</u_max>     <!-- maximum output clamp -->
     </config>
-   </pid-controller> 
+  </pid-controller> 
 
-   <filter>
-    <name>elevator filter</name>
+  <filter>
+   <name>elevator filter</name>
+   <debug>false</debug>
+   <enable>
+     <property>/autopilot/CENTURYIII/locks/pitch-hold</property>
+     <value type="bool">true</value>
+   </enable>
+   <type>double-exponential</type>
+   <input>/autopilot/internal/raw-elevator</input>
+   <output>/controls/flight/AP_elevator</output>
+   <filter-time>.1</filter-time>
+  </filter>
+
+  <filter>
+   <name>elevator trim filter</name>
+   <debug>false</debug>
+   <type>double-exponential</type>
+   <input>/controls/flight/AP_elevator</input>
+   <output>/autopilot/internal/filtered-elevator</output>
+   <filter-time>1.5</filter-time>
+  </filter>
+
+  <!-- Auto elevator trim -->
+  <pid-controller>
+    <name>Required elevator trim</name>
     <debug>false</debug>
     <enable>
-      <property>/autopilot/CENTURYIII/locks/pitch-hold</property>
-      <value type="bool">true</value>
+      <property>/autopilot/CENTURYIII/settings/auto-pitch-trim</property>
+      <value>1</value>
     </enable>
-    <type>double-exponential</type>
-    <input>/autopilot/internal/raw-elevator</input>
-    <output>/controls/flight/AP_elevator</output>
-    <filter-time>.1</filter-time>
-   </filter>
+    <input>
+      <property>/autopilot/internal/filtered-elevator</property>
+    </input>
+    <reference>
+      <value>0.0</value>
+    </reference>
+    <output>
+      <property>/controls/flight/elevator-trim</property>
+    </output>
+   <config>
+     <Kp>-0.05</Kp>      <!-- proportional gain -->
+     <beta>1.0</beta>    <!-- input value weighing factor -->
+     <alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
+     <gamma>0.0</gamma>  <!-- input value weighing factor for -->
+                         <!-- unfiltered derivative error -->
+     <Ti>1.0</Ti>        <!-- integrator time -->
+     <Td>0.001</Td>      <!-- derivator time -->
+     <u_min>-0.5</u_min> <!-- minimum output clamp -->
+     <u_max>0.5</u_max>  <!-- maximum output clamp -->
+   </config>
+  </pid-controller> 
 
-   <filter>
-    <name>elevator trim filter</name>
-    <debug>false</debug>
-    <type>double-exponential</type>
-    <input>/controls/flight/AP_elevator</input>
-    <output>/autopilot/internal/filtered-elevator</output>
-    <filter-time>1.5</filter-time>
-   </filter>
+  <filter>
+   <name>ELEV SRCE YOK</name>
+   <debug>false</debug>
+   <type>gain</type>
+   <gain>1.00</gain>
+   <enable>
+     <property>/controls/flight/elev_srce_from</property>
+     <value type="string">yoke</value>
+   </enable>
+   <input>/controls/flight/elevator</input>
+   <output>/controls/flight/elevator_in</output>
+   <!-- Secondary Output for Tuning --> 
+   <output>/systems/tune/AP-vert-stg3</output>
+  </filter>
 
-   <!-- Auto elevator trim -->
-   <pid-controller>
-     <name>Required elevator trim</name>
-     <debug>false</debug>
-     <enable>
-       <property>/autopilot/CENTURYIII/settings/auto-pitch-trim</property>
-       <value>1</value>
-     </enable>
-     <input>
-       <property>/autopilot/internal/filtered-elevator</property>
-     </input>
-     <reference>
-       <value>0.0</value>
-     </reference>
-     <output>
-       <property>/controls/flight/elevator-trim</property>
-     </output>
-    <config>
-      <Kp>-0.05</Kp>      <!-- proportional gain -->
-      <beta>1.0</beta>    <!-- input value weighing factor -->
-      <alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
-      <gamma>0.0</gamma>  <!-- input value weighing factor for -->
-                          <!-- unfiltered derivative error -->
-      <Ti>1.0</Ti>        <!-- integrator time -->
-      <Td>0.001</Td>      <!-- derivator time -->
-      <u_min>-0.5</u_min> <!-- minimum output clamp -->
-      <u_max>0.5</u_max>  <!-- maximum output clamp -->
-    </config>
-   </pid-controller> 
-   
-   <filter>
-    <name>ELEV SRCE YOK</name>
-    <debug>false</debug>
-    <type>gain</type>
-    <gain>1.00</gain>
-    <enable>
-      <property>/controls/flight/elev_srce_from</property>
-      <value type="string">yoke</value>
-    </enable>
-    <input>/controls/flight/elevator</input>
-    <output>/controls/flight/elevator_in</output>
-    <!-- Secondary Output for Tuning --> 
-    <output>/systems/tune/AP-vert-stg3</output>
-   </filter>
+  <filter>
+   <name>ELEV SRCE A/P</name>
+   <debug>false</debug>
+   <type>gain</type>
+   <gain>1.00</gain>
+   <enable>
+     <property>/controls/flight/elev_srce_from</property>
+     <value type="string">CIII</value>
+   </enable>
+   <input>/controls/flight/AP_elevator</input>
+   <output>/controls/flight/elevator_in</output>
+  </filter>
 
-   <filter>
-    <name>ELEV SRCE A/P</name>
-    <debug>false</debug>
-    <type>gain</type>
-    <gain>1.00</gain>
-    <enable>
-      <property>/controls/flight/elev_srce_from</property>
-      <value type="string">CIII</value>
-    </enable>
-    <input>/controls/flight/AP_elevator</input>
-    <output>/controls/flight/elevator_in</output>
-   </filter>
+<!-- Rudder / Elevator Limits and Combination Limits                                      -->
+<!--   From 3A1_Rev_95.pdf                                                                -->
+<!--     Elev Limits     Up:22.5deg Dn: 26deg                        Avg: 24.25deg        -->
+<!--     Rddr Limits  LH Up:23  deg Dn: 26deg  RH Up:26deg Dn:23deg  Avg: 24.50deg        -->
+<!--  Combined Limits LH up:44  deg Dn: 37deg  RH Up:35deg Dn:40deg                       -->
+<!--  Yasim uses symmetrical LHS, RHS controls so output 40deg max up, down both sides    -->
+<!--                                                                                      -->
+<!--  For elevator 0 , want rudder_in = full range 0-1                                    -->
+<!--  For elevator 1 , want rudder_in =      range = (Comb Max - Elevator)                -->
+<!--                   gain = 1 - (40 - 24.25) / 40                                                                   -->
+
+  <filter>
+   <name>RDDR LIM</name>
+   <debug>false</debug>
+   <type>gain</type>
+   <gain>
+     <expression>
+       <difference>
+         <value>1.00</value>
+         <product>
+           <abs>
+             <property>/controls/flight/elevator_in</property>
+           </abs>  
+           <value type="float">0.39375</value>
+         </product>
+       </difference>
+     </expression>
+   </gain>  
+   <input>/controls/flight/rudder</input>
+   <output>/controls/flight/rudder_in</output>
+  </filter>
 
 </PropertyList>
