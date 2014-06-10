@@ -36,11 +36,11 @@ General Public License for more details.
 <airplane mass="2295.5" version="YASIM_VERSION_32">
  
 <!-- Approach configuration BaseLine  Vs: 55kn Vapp: 1.3 x Vs  AOA = AOAcrit/2  Flap 15   -->
-    <approach speed="55" aoa="7.0" fuel="0.6">
+    <approach speed="70" aoa="12.0" fuel="0.6">
     <control-setting axis="/controls/engines/engine[0]/throttle"        value="0.4"/>
     <control-setting axis="/controls/engines/engine[0]/mixture"         value="1.0"/>
     <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
-    <control-setting axis="/controls/flight/flaps"                      value="1.0"/>
+    <control-setting axis="/controls/flight/flaps"                      value="0.500"/>
     <solve-weight idx="0" weight="170"/>
     <solve-weight idx="1" weight="170"/>
     <solve-weight idx="2" weight="100"/>
@@ -50,9 +50,9 @@ General Public License for more details.
  
 <!-- Cruise configuration -->
   <cruise speed="165" alt="11500" fuel="0.90">
-    <control-setting axis="/controls/engines/engine[0]/throttle"        value="1.0"/>
-    <control-setting axis="/controls/engines/engine[0]/mixture"         value="0.6"/>
-    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
+    <control-setting axis="/controls/engines/engine[0]/throttle"        value="0.6"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture"         value="0.5"/>
+    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.9"/>
     <control-setting axis="/controls/flight/flaps"                      value="0.0"/>
     <solve-weight idx="0" weight="170"/>
     <solve-weight idx="1" weight="170"/>
@@ -67,9 +67,8 @@ General Public License for more details.
   <wing x="-2.755"     y="0.5"    z="-0.53"     taper="0.48" incidence="4.00" twist="-3"
     length="4.3"  chord="2.25" sweep="-2.0"  dihedral="6.00"
                                camber="0.068"    idrag="0.95">
-    <stall aoa="14" width="4.0" peak="1.500"/>
-    <!--flap0 start="0.00" end="0.54" lift="1.8" drag="1.7"/-->
-    <flap0 start="0.00" end="0.54" lift="1.5" drag="1.7"/>
+    <stall aoa="15" width="18.0" peak="1.5"/>
+    <flap0 start="0.00" end="0.54" lift="1.1" drag="1.7"/>
     <flap1 start="0.54" end="1.00" lift="1.3" drag="1.2"/>
     <control-input axis="/controls/flight/flaps" control="FLAP0"/>
     <control-speed control="FLAP0" transition-time="5"/>
@@ -88,24 +87,36 @@ General Public License for more details.
 <!--   Rudder is applied as "inverted" to  get polrity right, trial and error             -->
 <!--   /surface-positions/rvator-xxx-pos-norm are output for animations                   -->
 <!--   /surface-positions/rudder-pos-norm is requd for pa-24 action-sim.nas               -->
+<!--                                                                                      -->
+<!--   From 3A1_Rev_95.pdf                                                                -->
+<!--     Elev Limits     Up:22.5deg Dn: 26deg                        Avg: 24.25deg        -->
+<!--     Rddr Limits  LH Up:23  deg Dn: 26deg  RH Up:26deg Dn:23deg  Avg: 24.50deg        -->
+<!--  Combined Limits LH up:44  deg Dn: 37deg  RH Up:35deg Dn:40deg                       -->
+<!--                                                                                      -->
+<!--  Yasim uses symmetrical LHS, RHS controls so using Avg 40deg max up, dn both sides   -->
+<!--  Elv Avg 24.25/40deg = 6.0625, Rddr 24.5/40deg = 0.6125; for Rddr limit see AP xml   -->
  
 <!-- V-Tail HStab -->
   <hstab x="-7.0" y="0.0" z="0.31" taper="0.72"
         length="1.72" chord="1.06" sweep="0" dihedral="30" >
-    <stall aoa="8.0" width="4.0" peak="1.5"/>
-    <flap0 start="0.05" end="1.0" lift="2.25" drag="1.7" />
+    <stall aoa="24.0" width="4.0" peak="1.5"/>
+    <flap0 start="0.05" end="1.0" lift="1.750" drag="1.000"      />
     <control-input axis="/controls/flight/elevator-trim"
                      control="FLAP0"/>
     <control-input axis="/controls/flight/elevator_in"
-                     control="FLAP0"     />
-    <control-input axis="/controls/flight/rudder"  
-                     control="FLAP0" split="true" invert="true" />
+                     control="FLAP0"    
+                     src0="-1.0"      src1="1" 
+                     dst0="-0.60625"  dst1="0.60625"    />
+    <control-input axis="/controls/flight/rudder_in"  
+                     control="FLAP0" split="true" invert="true" 
+                     src0="-1.0"      src1="1" 
+                     dst0="-0.6125"  dst1="0.6125"      />
     <control-output prop="/surface-positions/elevator-trim"
-                     control="FLAP0" min="-1" max="1"/>
+                     control="FLAP0" min="-1" max="1"            />
     <control-output control="FLAP0" prop="/surface-positions/rvator-left-pos-norm"
-                     min="-1" max="1" invert="true" side="left"/>
+                     min="-1" max="1" invert="true" side="left"  />
     <control-output control="FLAP0" prop="/surface-positions/rvator-right-pos-norm"
-                     min="-1" max="1" invert="true" side="right"/>
+                     min="-1" max="1" invert="true" side="right" />
     <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"
                      min="-1" max="1"/>
   </hstab>
@@ -134,8 +145,8 @@ General Public License for more details.
   <tank x="-2.185" y="-1.05" z="-0.45" capacity="240" />
  
 <!-- Safe CG range: 2.375 to 2.433  for all weights 2900 to 3400 --> 
-  <ballast x="-7.0" y="0" z=".22" mass="-359"/>      <!-- Move CG forward to -2.418 -->
-  <!--ballast x="-7.0" y="0" z=".22" mass="-403"/--> <!-- Move CG forward to -2.433 -->
+  <!--ballast x="-7.0" y="0" z=".22" mass="-359"/-->      <!-- Move CG 359: -2.418 -->
+  <ballast x="-7.0" y="0" z=".22" mass="-390"/> <!-- Move CG -315: -2.375 -->
 
 <!-- Pilot, copilot, left passenger, right passenger, baggage -->
   <weight x="-2.17" y="0.33" z="0" mass-prop="/sim/weight[0]/weight-lb"/>
