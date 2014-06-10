@@ -89,12 +89,16 @@ General Public License for more details.
 <!--   /surface-positions/rudder-pos-norm is requd for pa-24 action-sim.nas               -->
 <!--                                                                                      -->
 <!--   From 3A1_Rev_95.pdf                                                                -->
-<!--     Elev Limits     Up:22.5deg Dn: 26deg                        Avg: 24.25deg        -->
-<!--     Rddr Limits  LH Up:23  deg Dn: 26deg  RH Up:26deg Dn:23deg  Avg: 24.50deg        -->
+<!--     Elev Limits     Up:22.5deg Dn: 19deg                                             -->
+<!--     Rddr Limits  LH Up:23  deg Dn: 26deg  RH Up:26deg Dn:23deg                       -->
 <!--  Combined Limits LH up:44  deg Dn: 37deg  RH Up:35deg Dn:40deg                       -->
 <!--                                                                                      -->
-<!--  Yasim uses symmetrical LHS, RHS controls so using Avg 40deg max up, dn both sides   -->
-<!--  Elv Avg 24.25/40deg = 6.0625, Rddr 24.5/40deg = 0.6125; for Rddr limit see AP xml   -->
+<!--  Max deflection of 44deg is scaled to 1.0 ctrl input: elevator, rudder summed        -->
+<!--  Elv-, Up 22.5/44 = 0.511 Elv+, Dn 0.432 Rdr-, Lf 26/44 = 0.591  Rdr+ Rt  0.523      -->
+<!--                                                                                      -->
+<!--  Elv Max-- and Rddr Max Right demands 22.5 + 26 = 48.5 RH Down                       -->
+<!--  Rudder demand is limited in AP xml so max demand, above, is scaled to <=35 deg      -->
+<!--                                                                                      -->
  
 <!-- V-Tail HStab -->
   <hstab x="-7.0" y="0.0" z="0.31" taper="0.72"
@@ -105,12 +109,12 @@ General Public License for more details.
                      control="FLAP0"/>
     <control-input axis="/controls/flight/elevator_in"
                      control="FLAP0"    
-                     src0="-1.0"      src1="1" 
-                     dst0="-0.60625"  dst1="0.60625"    />
+                     src0="-1.0"      src1="0"  src2="1" 
+                     dst0="-0.511"    dst1="0"  dst2="0.432"    />
     <control-input axis="/controls/flight/rudder_in"  
                      control="FLAP0" split="true" invert="true" 
-                     src0="-1.0"      src1="1" 
-                     dst0="-0.6125"  dst1="0.6125"      />
+                     src0="-1.0"     src1="0"  src2="1" 
+                     dst0="-0.591"   dst1="0"  dst2="0.523"     />
     <control-output prop="/surface-positions/elevator-trim"
                      control="FLAP0" min="-1" max="1"            />
     <control-output control="FLAP0" prop="/surface-positions/rvator-left-pos-norm"
