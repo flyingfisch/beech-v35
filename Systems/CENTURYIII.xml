@@ -744,7 +744,7 @@
 <!--                                                                                      -->
 <!--  For elevator 0 , want rudder_in = full range 0-1                                    -->
 <!--  For elevator 1 , want rudder_in =      range = (Comb Max - Elevator)                -->
-<!--                   gain = 1 - (40 - 24.25) / 40                                                                   -->
+<!--                   gain = 1 - (35 - 22.5) / 35                                                                   -->
 
   <filter>
    <name>RDDR LIM</name>
@@ -758,7 +758,7 @@
            <abs>
              <property>/controls/flight/elevator_in</property>
            </abs>  
-           <value type="float">0.39375</value>
+           <value type="float">0.35714</value>
          </product>
        </difference>
      </expression>
