@@ -525,4 +525,33 @@
         </axis>
     </animation>
 
+
+    <!-- doors -->
+    <animation>
+        <type>knob</type>
+        <object-name>frontdoor</object-name>
+        <property>model/door[0]/position</property>
+        <factor>-30</factor>
+
+        <axis>
+            <x1-m>1.90631</x1-m>
+            <y1-m>.5415388</y1-m>
+            <z1-m>.1800391</z1-m>
+
+            <x2-m>1.90631</x2-m>
+            <y2-m>.5634201</y2-m>
+            <z2-m>-.00711347</z2-m>
+        </axis>
+
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>model/door[0]/position</property>
+                <min>0</min>
+                <max>1</max>
+            </binding>
+        </action>
+
+    </animation>
+
 </PropertyList>
