@@ -530,7 +530,8 @@
     <animation>
         <type>knob</type>
         <object-name>frontdoor</object-name>
-        <property>model/door[0]/position</property>
+        <object-name>frontwindowright</object-name>
+        <property>model/doors/position[0]</property>
         <factor>-30</factor>
 
         <axis>
@@ -546,7 +547,7 @@
         <action>
             <binding>
                 <command>property-adjust</command>
-                <property>model/door[0]/position</property>
+                <property>model/doors/position[0]</property>
                 <min>0</min>
                 <max>1</max>
             </binding>
