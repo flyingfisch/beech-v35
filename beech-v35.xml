@@ -1,9 +1,7 @@
-<!-- Beech v35 Bonanza -->
+<!-- Beech v35 Bonanza Yasim FDM Configuration -->
 <!--
 This file is part of FlightGear, the free flight simulator
 http://www.flightgear.org/
- 
-Copyright (C) 2010 Dave Perry, skidavem (at) mindspring _dot_ com
  
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -17,26 +15,22 @@ General Public License for more details.
 -->
  
 <!-- Base Data Dwngs: http://forum.flightgear.org/viewtopic.php?f=4&t=22808&hilit=bonanza --> 
-<!-- Base Data:       http://rgl.faa.gov/Regulatory_and_Guidance_Library/rgMakeModel.nsf/ -->
-<!--                  WebSearchDefault?SearchView&Query=3a15&SearchOrder=1&SearchMax=0&   -->
-<!--                  SearchWV=TRUE&SearchFuzzy=FALSE&Start=1&Count=100#                  --> 
+<!-- Base Data: http://rgl.faa.gov/Regulatory_and_Guidance_Library/rgMakeModel.nsf/       -->
+<!--                                                                                      --> 
 <!-- V35pp12/53: Max Weight: 3400lb Eng IO520B 484lb 10qt oil 285hp@2700rpm 275hp@2550rpm --> 
 <!--             Flap 15deg App 30deg Down  Ailr Up20 Dn20     Elev Up22.5 Dn19   deg     --> 
 <!--                                     LH Rudd Up23 Dn26  RH Rudd Up26   Dn23   deg     --> 
 <!--                                     LH Tail Up44 Dn27  RH Tail Up35   Dn40   deg     --> 
 <!--   Wing Root NACA 23016.5  Tip: 23012  Root Incid 4.0  Tip Incid 1.0                  --> 
 <!--        from NACA 23012 Curve Stall Crit 14.0 Deg C/L Crit: 1.475 CL @ 0 deg:  0.100  --> 
-<!--  --> 
-<!--  --> 
-<!--  --> 
- 
+<!--                                                                                      --> 
  
 <!-- Opr Weight: 1915lb   IO-540: Dry Weight 484lb Guess 45lb Oil + 16lb Acces            -->
 <!--        MOTW 3400 - ( 545lb Eng, 300lb Fuel, 655lb Psgrs                              -->
 <airplane mass="2295.5" version="YASIM_VERSION_32">
  
 <!-- Approach configuration BaseLine  Vs: 55kn Vapp: 1.3 x Vs  AOA = AOAcrit/2  Flap 15   -->
-    <approach speed="70" aoa="12.0" fuel="0.6">
+    <approach speed="65" aoa="12.0" fuel="0.6">
     <control-setting axis="/controls/engines/engine[0]/throttle"        value="0.4"/>
     <control-setting axis="/controls/engines/engine[0]/mixture"         value="1.0"/>
     <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
@@ -88,7 +82,9 @@ General Public License for more details.
 <!--   /surface-positions/rvator-xxx-pos-norm are output for animations                   -->
 <!--   /surface-positions/rudder-pos-norm is requd for pa-24 action-sim.nas               -->
 <!--                                                                                      -->
-<!--   From 3A1_Rev_95.pdf                                                                -->
+<!--   From FAA 3A1_Rev_95.pdf                                                            -->
+<!--     Ailr Limits     Up:20  deg Dn: 20deg                                             -->
+<!--     Elev Tab Limit  Up: 5.5deg Dn: 23deg                                             -->
 <!--     Elev Limits     Up:22.5deg Dn: 19deg                                             -->
 <!--     Rddr Limits  LH Up:23  deg Dn: 26deg  RH Up:26deg Dn:23deg                       -->
 <!--  Combined Limits LH up:44  deg Dn: 37deg  RH Up:35deg Dn:40deg                       -->
@@ -96,25 +92,27 @@ General Public License for more details.
 <!--  Max deflection of 44deg is scaled to 1.0 ctrl input: elevator, rudder summed        -->
 <!--  Elv-, Up 22.5/44 = 0.511 Elv+, Dn 0.432 Rdr-, Lf 26/44 = 0.591  Rdr+ Rt  0.523      -->
 <!--                                                                                      -->
-<!--  Elv Max Up and Rddr Max Right demands 22.5 + 26 = 48.5 RH Down                       -->
+<!--  Elv Max Up and Rddr Max Right demands 22.5 + 26 = 48.5 RH Down                      -->
 <!--  Rudder demand is limited in AP xml so max demand, above, is scaled to <=35 deg      -->
+<!--                                                                                      -->
+<!--  Zero for elev axis is offset = -0.0395 Zero offset for rudder axis = -0.034         -->
 <!--                                                                                      -->
  
 <!-- V-Tail HStab -->
   <hstab x="-7.0" y="0.0" z="0.31" taper="0.72"
         length="1.72" chord="1.06" sweep="0" dihedral="30" >
-    <stall aoa="24.0" width="4.0" peak="1.5"/>
-    <flap0 start="0.05" end="1.0" lift="1.800" drag="1.000"      />
+    <stall aoa="12.0" width="4.0" peak="1.5"/>
+    <flap0 start="0.05" end="1.0" lift="3.200" drag="1.000"      />
     <control-input axis="/controls/flight/elevator-trim"
                      control="FLAP0"/>
-    <control-input axis="/controls/flight/elevator_in"
+    <control-input axis="/controls/flight/elevator_fdm"
                      control="FLAP0"    
-                     src0="-1.0"      src1="0"  src2="1" 
-                     dst0="-0.511"    dst1="0"  dst2="0.432"    />
-    <control-input axis="/controls/flight/rudder_in"  
+                     src0="-1.0"      src1="1" 
+                     dst0="-0.511"    dst1="0.432"    />
+    <control-input axis="/controls/flight/rudder_fdm"  
                      control="FLAP0" split="true" invert="true" 
-                     src0="-1.0"     src1="0"  src2="1" 
-                     dst0="-0.591"   dst1="0"  dst2="0.523"     />
+                     src0="-1.0"     src1="1" 
+                     dst0="-0.523"   dst1="0.523"     />
     <control-output prop="/surface-positions/elevator-trim"
                      control="FLAP0" min="-1" max="1"            />
     <control-output control="FLAP0" prop="/surface-positions/rvator-left-pos-norm"

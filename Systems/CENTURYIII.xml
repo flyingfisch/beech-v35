@@ -717,7 +717,7 @@
      <value type="string">yoke</value>
    </enable>
    <input>/controls/flight/elevator</input>
-   <output>/controls/flight/elevator_in</output>
+   <output>/controls/flight/elevator_srce</output>
    <!-- Secondary Output for Tuning --> 
    <output>/systems/tune/AP-vert-stg3</output>
   </filter>
@@ -732,19 +732,47 @@
      <value type="string">CIII</value>
    </enable>
    <input>/controls/flight/AP_elevator</input>
-   <output>/controls/flight/elevator_in</output>
+   <output>/controls/flight/elevator_srce</output>
   </filter>
 
 <!-- Rudder / Elevator Limits and Combination Limits                                      -->
 <!--   From 3A1_Rev_95.pdf                                                                -->
-<!--     Elev Limits     Up:22.5deg Dn: 26deg                        Avg: 24.25deg        -->
-<!--     Rddr Limits  LH Up:23  deg Dn: 26deg  RH Up:26deg Dn:23deg  Avg: 24.50deg        -->
+<!--     Ailr Limits     Up:20  deg Dn: 20deg                                             -->
+<!--     Elev Tab Limit  Up: 5.5deg Dn: 23deg                                             -->
+<!--     Elev Limits     Up:22.5deg Dn: 19deg                                             -->
+<!--     Rddr Limits  LH Up:23  deg Dn: 26deg  RH Up:26deg Dn:23deg                       -->
 <!--  Combined Limits LH up:44  deg Dn: 37deg  RH Up:35deg Dn:40deg                       -->
-<!--  Yasim uses symmetrical LHS, RHS controls so output 40deg max up, down both sides    -->
+<!--                                                                                      -->
+<!--  Max deflection of 44deg is scaled to 1.0 ctrl input: elevator, rudder summed        -->
+<!--  Elv-, Up 22.5/44 = 0.511 Elv+, Dn 0.432 Rdr-, Lf 26/44 = 0.591  Rdr+ Rt  0.523      -->
+<!--                                                                                      -->
+<!--  Elv Max Up and Rddr Max Right demands 22.5 + 26 = 48.5 RH Down                      -->
+<!--  Rudder demand is limited in AP xml so max demand, above, is scaled to <=35 deg      -->
 <!--                                                                                      -->
 <!--  For elevator 0 , want rudder_in = full range 0-1                                    -->
 <!--  For elevator 1 , want rudder_in =      range = (Comb Max - Elevator)                -->
-<!--                   gain = 1 - (35 - 22.5) / 35                                                                   -->
+<!--                   gain = 1 - (35 - 22.5) / 35                                        -->
+<!--                                                                                      -->
+<!--  Zero for elev axis is offset = -0.0395 Zero offset for rudder axis = -0.034         -->
+<!--    Offset filters are not working proerly when combined in yasim V-Tail section      -->
+<!--      so rudder offset is set to zero as a bodge                                      -->
+
+  <filter>
+   <name>ELEV OFFS</name>
+   <debug>false</debug>
+   <type>gain</type>
+   <gain>1.00</gain>  
+   <input>
+     <expression>
+       <sum>
+         <property>/controls/flight/elevator_srce</property>
+         <value>-0.0395</value>
+         <!--value>-0.0</value-->
+       </sum>
+     </expression>
+   </input>
+   <output>/controls/flight/elevator_fdm</output>
+  </filter>
 
   <filter>
    <name>RDDR LIM</name>
@@ -756,7 +784,7 @@
          <value>1.00</value>
          <product>
            <abs>
-             <property>/controls/flight/elevator_in</property>
+             <property>/controls/flight/elevator_srce</property>
            </abs>  
            <value type="float">0.35714</value>
          </product>
@@ -764,7 +792,24 @@
      </expression>
    </gain>  
    <input>/controls/flight/rudder</input>
-   <output>/controls/flight/rudder_in</output>
+   <output>/controls/flight/rudder_lmtd</output>
+  </filter>
+
+  <filter>
+   <name>RDDR OFFS</name>
+   <debug>false</debug>
+   <type>gain</type>
+   <gain>1.00</gain>  
+   <input>
+     <expression>
+       <sum>
+         <property>/controls/flight/rudder_lmtd</property>
+         <!--value>-0.034</value-->
+         <value>-0.0</value>
+       </sum>
+     </expression>
+   </input>
+   <output>/controls/flight/rudder_fdm</output>
   </filter>
 
 </PropertyList>
