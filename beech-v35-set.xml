@@ -33,6 +33,7 @@
 
         <model>
             <path>Aircraft/beech-v35/Models/beech-v35.xml</path>
+            <yokes-alpha type="double">1</yokes-alpha>
         </model>
 
         <!-- For now, use the Cessna 172 sound configuration (same engine) -->

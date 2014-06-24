@@ -90,6 +90,7 @@
         <object-name>NGDoorLeft</object-name>
         <object-name>NGDoorRight</object-name>
         <object-name>frontdoor</object-name>
+        <object-name>baggagedoor</object-name>
     </effect>
 
     <animation>
@@ -98,6 +99,7 @@
         <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
         <object-name>rearwindow</object-name>
         <object-name>frontwindow</object-name>
+        <object-name>frontwindowright</object-name>
         <object-name>windshield</object-name>
     </animation>
 
@@ -128,6 +130,7 @@
         <type>spin</type>
         <object-name>propeller</object-name>
         <property>engines/engine/rpm</property>
+        <factor>-1</factor>
         <center>
             <x-m>0</x-m>
             <y-m>0</y-m>
@@ -530,6 +533,7 @@
     <animation>
         <type>knob</type>
         <object-name>frontdoor</object-name>
+        <object-name>frontdoorinner</object-name>
         <object-name>frontwindowright</object-name>
         <property>model/doors/position[0]</property>
         <factor>-30</factor>

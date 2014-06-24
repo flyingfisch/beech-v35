@@ -6,6 +6,7 @@
         <inherits-from>Models/Effects/bonanza-reflect</inherits-from>
         <object-name>chromecenter</object-name>
         <object-name>yokeport</object-name>
+        <object-name>emblem</object-name>
         <object-name>centerpiece</object-name>
         <object-name>pbuttontrimleft</object-name>
         <object-name>pbuttontrimright</object-name>
@@ -14,6 +15,13 @@
         <object-name>ldglightsw2</object-name>
         <object-name>navlightsw</object-name>
         <object-name>beaconsw</object-name>
+        <object-name>flapbutton</object-name>
+        <object-name>pbutton2</object-name>
+        <object-name>pbutton1</object-name>
+        <object-name>fuelgaugebutton2</object-name>
+        <object-name>fuelgaugebutton1</object-name>
+        <object-name>navlightsw.001</object-name>
+        <object-name>yokerod</object-name>
     </effect>
 
     <effect>
@@ -356,4 +364,102 @@
         </action>
     </animation>
     
+    <!-- Yoke transparency -->
+    <animation>
+        <type>select</type>
+        <object-name>yoke</object-name>
+        <object-name>yokearm</object-name>
+        <object-name>yokeholder</object-name>
+        <object-name>yokerod</object-name>
+        <object-name>yokerodlabel</object-name>
+        <object-name>yokesleeve</object-name>
+        <condition>
+            <greater-than>
+                <property>sim/model/yokes-alpha</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>yokeport</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/model/yokes-alpha</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- Yoke -->
+    <animation>
+        <type>rotate</type>
+        <object-name>yoke</object-name>
+        <property>controls/flight/aileron</property>
+        <factor>40</factor>
+        <axis>
+            <x1-m>2.17145</x1-m>
+            <y1-m>-.3022322</y1-m>
+            <z1-m>.0920886</z1-m>
+
+            <x2-m>2.1586</x2-m>
+            <y2-m>-.3022322</y2-m>
+            <z2-m>.0924252</z2-m>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>yoke</object-name>
+        <object-name>yokearm</object-name>
+        <object-name>yokeholder</object-name>
+        <object-name>yokerod</object-name>
+        <object-name>yokerodlabel</object-name>
+        <object-name>yokesleeve</object-name>
+        <property>controls/flight/elevator</property>
+        <factor>-0.05</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>throttle</object-name>
+        <property>controls/engines/engine[0]/throttle</property>
+        <factor>-0.04</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>mixturecontrol</object-name>
+        <property>controls/engines/engine[0]/mixture</property>
+        <factor>-0.04</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>propcontrol</object-name>
+        <property>controls/engines/engine[0]/propeller-pitch</property>
+        <factor>-0.04</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
 </PropertyList>
