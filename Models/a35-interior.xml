@@ -322,6 +322,76 @@
         </action>
     </animation>
 
+    <animation>
+        <type>rotate</type>
+        <object-name>flapbutton</object-name>
+        <property>controls/pianobuttons/flap</property>
+        <factor>-20</factor>
+        <offset-deg>0</offset-deg>
+        <axis>
+            <x1-m>2.01918</x1-m>
+            <y1-m>.1557578</y1-m>
+            <z1-m>.0887328</z1-m>
+
+            <x2-m>2.01918</x2-m>
+            <y2-m>.1286031</y2-m>
+            <z2-m>.0887328</z2-m>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>flapbutton</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/pianobuttons/flap</property>
+                <value type="string">-1</value>
+            </binding>
+            <mod-up>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/pianobuttons/flap</property>
+                    <value type="string">0</value>
+                </binding>
+            </mod-up>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/flight/flaps</property>
+                <step>-0.1</step>
+                <min>0</min>
+                <max>1</max>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>flapbutton</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/pianobuttons/flap</property>
+                <value type="string">1</value>
+            </binding>
+            <mod-up>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/pianobuttons/flap</property>
+                    <value type="string">0</value>
+                </binding>
+            </mod-up>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/flight/flaps</property>
+                <step>0.1</step>
+                <min>0</min>
+                <max>1</max>
+            </binding>
+        </action>
+    </animation>
 
     <!-- other buttons, ignition -->
     <model>
