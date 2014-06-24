@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--DR400-dauphin External glass effect.
+    Reflection dynamic is on
+    Switches automaticaly to an effect similar to model-transparent when Rembrandt is enabled.
+    -->
+<PropertyList>
+    <name>effects-glasses</name>
+        <inherits-from>Effects/model-combined-transparent</inherits-from>
+        <parameters>
+            <normalmap-enabled type="int">0</normalmap-enabled>
+            <lightmap-enabled type="int">0</lightmap-enabled>
+            <reflection-enabled type="int">1</reflection-enabled>
+            <reflection-correction type="float">0.4</reflection-correction>
+            <reflect-map-enabled type="int">0</reflect-map-enabled>
+            <reflection-fresnel type="float">0.0</reflection-fresnel>
+            <reflection-rainbow type="float">0.3</reflection-rainbow>
+            <reflection-noise type="float">0.0</reflection-noise>
+            <reflection-dynamic type="int">1</reflection-dynamic>
+            <ambient-correction type="float">0.2</ambient-correction>
+            <rendering-hint>transparent</rendering-hint>
+            <transparent>true</transparent>
+            <render-bin>
+                <bin-number>111</bin-number>
+                <bin-name>DepthSortedBin</bin-name>
+            </render-bin>
+        </parameters>
+</PropertyList>
