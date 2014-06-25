@@ -428,7 +428,7 @@
         </axis>
         <interpolation>
             <entry><ind>0</ind><dep>0</dep></entry>
-            <entry><ind>1</ind><dep>-.1</dep></entry>
+            <entry><ind>1</ind><dep>.1</dep></entry>
         </interpolation>
     </animation>
     <animation>
@@ -447,7 +447,7 @@
         </axis>
         <interpolation>
             <entry><ind>0</ind><dep>0</dep></entry>
-            <entry><ind>1</ind><dep>-.1</dep></entry>
+            <entry><ind>1</ind><dep>.1</dep></entry>
         </interpolation>
     </animation>
     <animation>
