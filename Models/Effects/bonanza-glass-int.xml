@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    IAR 80 Internal glass effect.
+    Reflection dynamic is off
+    Uses a 6 image cubemap of the cockpit
+    Switches automaticaly to an effect similar to model-transparent when Rembrandt is enabled.
+-->
+<PropertyList>
+    <name>effects-glass-int</name>
+        <inherits-from>Aircraft/beech-v35/Models/Effects/bonanza-glass</inherits-from>
+        <parameters>
+            <normalmap-enabled type="int">0</normalmap-enabled>
+            <lightmap-enabled type="int">0</lightmap-enabled>
+            <!--<texture n="5">
+                <type>cubemap</type>
+                <images>
+                    <positive-x>Aircraft/DR400-dauphin/Models/Effects/Textures/Cubemap/Interior/back.png</positive-x>
+                    <negative-x>Aircraft/DR400-dauphin/Models/Effects/Textures/Cubemap/Interior/front.png</negative-x>
+                    <positive-y>Aircraft/DR400-dauphin/Models/Effects/Textures/Cubemap/Interior/right.png</positive-y>
+                    <negative-y>Aircraft/DR400-dauphin/Models/Effects/Textures/Cubemap/Interior/left.png</negative-y>
+                    <positive-z>Aircraft/DR400-dauphin/Models/Effects/Textures/Cubemap/Interior/up.png</positive-z>
+                    <negative-z>Aircraft/DR400-dauphin/Models/Effects/Textures/Cubemap/Interior/down.png</negative-z>
+                </images>
+            </texture>-->
+            <reflection-fresnel type="float">0.0</reflection-fresnel>
+            <reflection-rainbow type="float">0.3</reflection-rainbow>
+            <reflection-correction type="float">0.25</reflection-correction>
+            <reflection-dynamic type="int">0</reflection-dynamic>
+            <ambient-correction type="float">0.1</ambient-correction>
+        </parameters>
+</PropertyList>
