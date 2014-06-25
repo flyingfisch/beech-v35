@@ -102,7 +102,7 @@
         <object-name>frontwindowright</object-name>
         <object-name>windshield</object-name>
     </animation>-->
-    
+
     <effect>
         <inherits-from>Aircraft/beech-v35/Models/Effects/bonanza-glass</inherits-from>
         <object-name>rearwindow</object-name>
@@ -413,6 +413,64 @@
     </animation>
 
     <animation>
+        <type>translate</type>
+        <object-name>LGLeft</object-name>
+        <object-name>LGChassisLeft</object-name>
+        <property>gear/gear[0]/compression-norm</property>
+        <axis>
+            <x1-m>2.76055</x1-m>
+            <y1-m>-1.58882</y1-m>
+            <z1-m>-.6982116</z1-m>
+
+            <x2-m>2.75978</x2-m>
+            <y2-m>-1.59274</y2-m>
+            <z2-m>-.6514093</z2-m>
+        </axis>
+        <interpolation>
+            <entry><ind>0</ind><dep>0</dep></entry>
+            <entry><ind>1</ind><dep>-.1</dep></entry>
+        </interpolation>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>LGRight</object-name>
+        <object-name>LGChassisRight</object-name>
+        <property>gear/gear[1]/compression-norm</property>
+        <axis>
+            <x1-m>2.76055</x1-m>
+            <y1-m>1.58882</y1-m>
+            <z1-m>-.6982116</z1-m>
+
+            <x2-m>2.75978</x2-m>
+            <y2-m>1.59274</y2-m>
+            <z2-m>-.6514093</z2-m>
+        </axis>
+        <interpolation>
+            <entry><ind>0</ind><dep>0</dep></entry>
+            <entry><ind>1</ind><dep>-.1</dep></entry>
+        </interpolation>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>NoseGear</object-name>
+        <object-name>NGChassis</object-name>
+        <property>gear/gear[2]/compression-norm</property>
+        <axis>
+            <x1-m>.5890513</x1-m>
+            <y1-m>.00311665</y1-m>
+            <z1-m>-.9135096</z1-m>
+
+            <x2-m>.5758244</x2-m>
+            <y2-m>.00311665</y2-m>
+            <z2-m>-1.00834</z2-m>
+        </axis>
+        <interpolation>
+            <entry><ind>0</ind><dep>0</dep></entry>
+            <entry><ind>1</ind><dep>-.15</dep></entry>
+        </interpolation>
+    </animation>
+
+    <animation>
         <type>rotate</type>
         <object-name>NGDoorRight</object-name>
         <property>gear/gear[0]/position-norm</property>
@@ -527,12 +585,13 @@
 
     <!-- doors -->
     <animation>
-        <type>knob</type>
+        <type>rotate</type>
         <object-name>frontdoor</object-name>
         <object-name>frontdoorinner</object-name>
         <object-name>frontwindowright</object-name>
+        <object-name>frontwindowrightint</object-name>
         <property>model/doors/position[0]</property>
-        <factor>-30</factor>
+        <factor>-80</factor>
 
         <axis>
             <x1-m>1.90631</x1-m>
@@ -543,13 +602,21 @@
             <y2-m>.5634201</y2-m>
             <z2-m>-.00711347</z2-m>
         </axis>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>frontdoor</object-name>
+        <object-name>frontdoorinner</object-name>
+        <object-name>frontwindowright</object-name>
+        <object-name>frontwindowrightint</object-name>
 
         <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
             <binding>
-                <command>property-adjust</command>
+                <command>property-toggle</command>
                 <property>model/doors/position[0]</property>
-                <min>0</min>
-                <max>1</max>
             </binding>
         </action>
 
