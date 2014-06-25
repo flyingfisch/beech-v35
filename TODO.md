@@ -5,13 +5,14 @@ Interior
 --------
 
 * Add radio stack
-* Make ledges for the windows
-* Add throttle
-* Add mixture control
-
+* _Make ledges for the windows_
+* _Add throttle_
+* _Add mixture control_
+* Add dome light
 
 Exterior
 --------
 
-* Add cargo door
+* _Add cargo door_
 * Add wires for the ruddervons
+* Add lights
