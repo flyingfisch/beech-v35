@@ -102,7 +102,8 @@
         <object-name>frontwindowright</object-name>
         <object-name>windshield</object-name>
     </animation>-->
-    <!--<effect>
+    
+    <effect>
         <inherits-from>Aircraft/beech-v35/Models/Effects/bonanza-glass</inherits-from>
         <object-name>rearwindow</object-name>
         <object-name>frontwindow</object-name>
@@ -116,7 +117,7 @@
         <object-name>frontwindowint</object-name>
         <object-name>frontwindowrightint</object-name>
         <object-name>windshieldint</object-name>
-    </effect>-->
+    </effect>
 
     <animation>
         <type>select</type>
