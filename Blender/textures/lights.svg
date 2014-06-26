@@ -38,22 +38,6 @@
          x="0"
          style="fill:white;stroke:none" />
     </pattern>
-    <pattern
-       inkscape:stockid="Stripes 2:1"
-       id="Strips2_1"
-       patternTransform="translate(0,0) scale(10,10)"
-       height="1"
-       width="1.5"
-       patternUnits="userSpaceOnUse"
-       inkscape:collect="always">
-      <rect
-         id="rect4978"
-         height="2"
-         width="1"
-         y="-0.5"
-         x="0"
-         style="fill:black;stroke:none" />
-    </pattern>
     <linearGradient
        id="linearGradient4180">
       <stop
@@ -80,17 +64,17 @@
     <linearGradient
        id="linearGradient4164">
       <stop
-         style="stop-color:#2e3436;stop-opacity:1;"
+         style="stop-color:#adadad;stop-opacity:1;"
          offset="0"
          id="stop4166" />
       <stop
          id="stop4176"
          offset="0.125"
-         style="stop-color:#aeaeae;stop-opacity:1;" />
+         style="stop-color:#ffffff;stop-opacity:1;" />
       <stop
          id="stop4174"
          offset="0.25"
-         style="stop-color:#828282;stop-opacity:1;" />
+         style="stop-color:#e2e2e2;stop-opacity:1;" />
       <stop
          id="stop4172"
          offset="0.5"
@@ -105,9 +89,9 @@
        xlink:href="#linearGradient4164"
        id="linearGradient4170"
        x1="-3.5453268e-06"
-       y1="687.36221"
+       y1="687.36218"
        x2="512.14288"
-       y2="687.36221"
+       y2="687.36218"
        gradientUnits="userSpaceOnUse" />
     <radialGradient
        inkscape:collect="always"
@@ -140,7 +124,7 @@
      inkscape:cx="234.76541"
      inkscape:cy="338.60055"
      inkscape:document-units="px"
-     inkscape:current-layer="layer3"
+     inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1366"
      inkscape:window-height="744"
@@ -168,7 +152,7 @@
        id="layer1-1"
        inkscape:label="Layer 1" />
     <rect
-       style="opacity:1;fill:url(#linearGradient4170);fill-opacity:1;fill-rule:nonzero;stroke:none"
+       style="opacity:1;fill:url(#linearGradient4170);fill-opacity:1.0;fill-rule:nonzero;stroke:none"
        id="rect3394"
        width="512.14288"
        height="294.28571"
