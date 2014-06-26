@@ -64,6 +64,7 @@
         <object-name>NGDoorRight</object-name>
         <object-name>frontdoor</object-name>
         <object-name>baggagedoor</object-name>
+        <object-name>windowframe</object-name>
     </animation>
 
     <effect>
