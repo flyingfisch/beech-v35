@@ -19,6 +19,17 @@
         <blue-prop>emission/blue</blue-prop>
     </emission>
 
+    <animation>
+        <type>material</type>
+        <object-name>lndlightL</object-name>
+        <object-name>lndlightR</object-name>
+        <emission>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+        </emission>
+    </animation>
+
     <!-- Livery -->
     <nasal>
         <load>
@@ -94,6 +105,8 @@
         <object-name>NGDoorRight</object-name>
         <object-name>frontdoor</object-name>
         <object-name>baggagedoor</object-name>
+        <object-name>lndlightL</object-name>
+        <object-name>lndlightR</object-name>
     </effect>
 
     <!--<animation>
@@ -112,6 +125,8 @@
         <object-name>frontwindow</object-name>
         <object-name>frontwindowright</object-name>
         <object-name>windshield</object-name>
+        <object-name>lndlightglassL</object-name>
+        <object-name>lndlightglassR</object-name>
     </effect>
 
     <effect>
@@ -121,6 +136,22 @@
         <object-name>frontwindowrightint</object-name>
         <object-name>windshieldint</object-name>
     </effect>
+
+    <animation>
+        <type>noshadow</type>
+        <object-name>rearwindow</object-name>
+        <object-name>frontwindow</object-name>
+        <object-name>frontwindowright</object-name>
+        <object-name>windshield</object-name>
+        <object-name>rearwindowint</object-name>
+        <object-name>frontwindowint</object-name>
+        <object-name>frontwindowrightint</object-name>
+        <object-name>windshieldint</object-name>
+        <object-name>lndlightglassL</object-name>
+        <object-name>lndlightglassR</object-name>
+        <object-name>lndlightL</object-name>
+        <object-name>lndlightR</object-name>
+    </animation>
 
     <animation>
         <type>select</type>
