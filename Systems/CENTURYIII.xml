@@ -812,4 +812,25 @@
    <output>/controls/flight/rudder_fdm</output>
   </filter>
 
+  <filter>
+   <name>NOSE STEER</name>
+   <debug>false</debug>
+   <type>gain</type>
+   <gain>
+     <expression>
+       <difference>
+         <value>1.00</value>
+         <product>
+           <property>/velocities/airspeed-kts</property>
+           <value>0.012</value>
+         </product>
+       </difference>
+     </expression>
+   </gain>  
+   <input>
+     <property>/controls/flight/rudder</property>
+   </input>
+   <output>/controls/flight/nose-steer</output>
+  </filter>
+
 </PropertyList>
