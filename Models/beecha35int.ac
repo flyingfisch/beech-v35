@@ -6,7 +6,7 @@ MATERIAL "decal" rgb 1.0000 1.0000 1.0000  amb 1.0000 1.0000 1.0000  emis 0.0000
 MATERIAL "plaque" rgb 0.8000 0.8000 0.8000  amb 1.0000 1.0000 1.0000  emis 0.0000 0.0000 0.0000  spec 0.5000 0.5000 0.5000  shi 50 trans 0.0000
 OBJECT world
 name "Blender_export__beecha35int.ac"
-kids 53
+kids 59
 OBJECT poly
 name "back"
 loc 2.5059414 0.0008173 -0.0053672
@@ -134686,6 +134686,44 @@ refs 4
 26 0 0
 kids 0
 OBJECT poly
+name "leftfuelmeter"
+loc 2.0337045 0.2651258 0.0527197
+texture "int.png"
+texrep 1 1
+numvert 4
+-0.0000000 0.0053895 0.0056644
+-0.0000044 -0.0058906 -0.0051633
+-0.0000000 0.0056644 0.0053895
+-0.0000039 -0.0051633 -0.0058906
+numsurf 1
+SURF 0X0
+mat 1
+refs 4
+0 0 0
+1 0 0
+3 0 0
+2 0 0
+kids 0
+OBJECT poly
+name "ampmeter"
+loc 2.0337045 0.2082222 0.0527197
+texture "int.png"
+texrep 1 1
+numvert 4
+-0.0000000 0.0053895 0.0056644
+-0.0000044 -0.0058906 -0.0051633
+-0.0000000 0.0056644 0.0053895
+-0.0000039 -0.0051633 -0.0058906
+numsurf 1
+SURF 0X0
+mat 1
+refs 4
+0 0 0
+1 0 0
+3 0 0
+2 0 0
+kids 0
+OBJECT poly
 name "LFseatback"
 loc 2.5565753 0.1105292 0.2537046
 texture "int.png"
@@ -146456,6 +146494,63 @@ refs 4
 28 0 0
 32 0 0
 26 0 0
+kids 0
+OBJECT poly
+name "oilheadmeter"
+loc 2.0337045 0.2082222 0.0057289
+texture "int.png"
+texrep 1 1
+numvert 4
+-0.0000000 0.0053895 0.0056644
+-0.0000042 -0.0058905 -0.0051633
+-0.0000000 0.0056644 0.0053895
+0.0000000 -0.0051633 -0.0058906
+numsurf 1
+SURF 0X0
+mat 1
+refs 4
+0 0 0
+1 0 0
+3 0 0
+2 0 0
+kids 0
+OBJECT poly
+name "oilpressmeter"
+loc 2.0337045 0.2082222 -0.0410240
+texture "int.png"
+texrep 1 1
+numvert 4
+-0.0000000 0.0053895 0.0056644
+-0.0000045 -0.0058904 -0.0051633
+-0.0000000 0.0056644 0.0053895
+0.0000000 -0.0051633 -0.0058906
+numsurf 1
+SURF 0X0
+mat 1
+refs 4
+0 0 0
+1 0 0
+3 0 0
+2 0 0
+kids 0
+OBJECT poly
+name "oiltempmeter"
+loc 2.0337045 0.2651258 -0.0410240
+texture "int.png"
+texrep 1 1
+numvert 4
+-0.0000000 0.0053895 0.0056644
+-0.0000044 -0.0058904 -0.0051633
+-0.0000000 0.0056644 0.0053895
+0.0000000 -0.0051633 -0.0058906
+numsurf 1
+SURF 0X0
+mat 1
+refs 4
+0 0 0
+1 0 0
+3 0 0
+2 0 0
 kids 0
 OBJECT poly
 name "panel"
@@ -185375,6 +185470,25 @@ refs 4
 396 0.937454 0.203374
 598 0.937454 0.193923
 548 0.950813 0.193923
+kids 0
+OBJECT poly
+name "rightfuelmeter"
+loc 2.0337045 0.2651258 0.0057289
+texture "int.png"
+texrep 1 1
+numvert 4
+-0.0000000 0.0053895 0.0056644
+-0.0000042 -0.0058905 -0.0051633
+-0.0000000 0.0056644 0.0053895
+0.0000000 -0.0051633 -0.0058906
+numsurf 1
+SURF 0X0
+mat 1
+refs 4
+0 0 0
+1 0 0
+3 0 0
+2 0 0
 kids 0
 OBJECT poly
 name "throttle"

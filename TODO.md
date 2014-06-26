@@ -9,6 +9,7 @@ Interior
 * _Add throttle_
 * _Add mixture control_
 * Add dome light
+* Find prop for ampmeter in center gauge cluster
 
 Exterior
 --------

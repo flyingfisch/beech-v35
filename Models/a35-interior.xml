@@ -532,4 +532,147 @@
             <z>0.0</z>
         </axis>
     </animation>
+
+    <!-- Center gauge cluster -->
+    <animation>
+        <type>rotate</type>
+        <object-name>leftfuelmeter</object-name>
+        <property>/consumables/fuel/tank[0]/level-gal_us</property>
+        <axis>
+            <x1-m>2.0337</x1-m>
+            <y1-m>-.0468291</y1-m>
+            <z1-m>.2599625</z1-m>
+
+            <x2-m>-2.0337</x2-m>
+            <y2-m>-.0468291</y2-m>
+            <z2-m>.2599625</z2-m>
+        </axis>
+        <interpolation>
+            <entry>
+                <ind>0</ind><dep>0</dep>
+            </entry>
+            <entry>
+                <ind>40</ind><dep>90</dep>
+            </entry>
+        </interpolation>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>rightfuelmeter</object-name>
+        <property>/consumables/fuel/tank[1]/level-gal_us</property>
+        <axis>
+            <x1-m>2.0337</x1-m>
+            <y1-m>-.000056556</y1-m>
+            <z1-m>.2599625</z1-m>
+
+            <x2-m>-2.0337</x2-m>
+            <y2-m>-.000056556</y2-m>
+            <z2-m>.2599625</z2-m>
+        </axis>
+        <interpolation>
+            <entry>
+                <ind>0</ind><dep>0</dep>
+            </entry>
+            <entry>
+                <ind>40</ind><dep>90</dep>
+            </entry>
+        </interpolation>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>oiltempmeter</object-name>
+        <property>/engines/engine[0]/oil-temperature-degf</property>
+        <axis>
+            <x1-m>2.0337</x1-m>
+            <y1-m>.0461874</y1-m>
+            <z1-m>.2599625</z1-m>
+
+            <x2-m>-2.0337</x2-m>
+            <y2-m>.0461874</y2-m>
+            <z2-m>.2599625</z2-m>
+        </axis>
+        <interpolation>
+            <entry>
+                <ind>0</ind><dep>0</dep>
+            </entry>
+            <entry>
+                <ind>60</ind><dep>0</dep>
+            </entry>
+            <entry>
+                <ind>260</ind><dep>90</dep>
+            </entry>
+        </interpolation>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>ampmeter</object-name>
+        <!-- FIXME: Get a prop for this -->
+        <property>/consumables/fuel/tank[0]/level-gal_us</property>
+        <axis>
+            <x1-m>2.0337</x1-m>
+            <y1-m>-.0468291</y1-m>
+            <z1-m>.2023318</z1-m>
+
+            <x2-m>-2.0337</x2-m>
+            <y2-m>-.0468291</y2-m>
+            <z2-m>.2023318</z2-m>
+        </axis>
+        <interpolation>
+            <entry>
+                <ind>0</ind><dep>0</dep>
+            </entry>
+            <entry>
+                <ind>40</ind><dep>90</dep>
+            </entry>
+        </interpolation>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>oilheadmeter</object-name>
+        <!-- fake this prop for now -->
+        <property>/engines/engine[0]/oil-temperature-degf</property>
+        <axis>
+            <x1-m>2.0337</x1-m>
+            <y1-m>-.000056556</y1-m>
+            <z1-m>.2023318</z1-m>
+
+            <x2-m>-2.0337</x2-m>
+            <y2-m>-.000056556</y2-m>
+            <z2-m>.2023318</z2-m>
+        </axis>
+        <interpolation>
+            <entry>
+                <ind>0</ind><dep>0</dep>
+            </entry>
+            <entry>
+                <ind>60</ind><dep>0</dep>
+            </entry>
+            <entry>
+                <ind>260</ind><dep>90</dep>
+            </entry>
+        </interpolation>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>oilpressmeter</object-name>
+        <property>/engines/engine[0]/oil-pressure-psi</property>
+        <axis>
+            <x1-m>2.0337</x1-m>
+            <y1-m>.0461874</y1-m>
+            <z1-m>.2023318</z1-m>
+
+            <x2-m>-2.0337</x2-m>
+            <y2-m>.0461874</y2-m>
+            <z2-m>.2023318</z2-m>
+        </axis>
+        <interpolation>
+            <entry>
+                <ind>0</ind><dep>0</dep>
+            </entry>
+            <entry>
+                <ind>100</ind><dep>90</dep>
+            </entry>
+        </interpolation>
+    </animation>
 </PropertyList>
