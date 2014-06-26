@@ -15,10 +15,10 @@
     <object-name>h_1</object-name>
     <object-name>h_01</object-name>
     <emission>
-      <red>1.0</red>
-      <green>0.6</green>
-      <blue>0.3</blue>
-      <factor-prop>sim/model//material/instruments/factor</factor-prop>
+     <red>1.0</red>
+     <green>0.2</green>
+     <blue>0.0</blue>
+     <factor-prop>/sim/model/material/instruments/factor</factor-prop>
     </emission>
   </animation>
 
