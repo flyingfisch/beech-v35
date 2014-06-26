@@ -393,6 +393,64 @@
         </action>
     </animation>
 
+    <animation>
+        <type>rotate</type>
+        <object-name>ldglightsw</object-name>
+        <property>controls/lighting/landing-light[0]</property>
+        <factor>20</factor>
+        <offset-deg>0</offset-deg>
+        <axis>
+            <x1-m>2.01918</x1-m>
+            <y1-m>.1557578</y1-m>
+            <z1-m>.0887328</z1-m>
+
+            <x2-m>2.01918</x2-m>
+            <y2-m>.1286031</y2-m>
+            <z2-m>.0887328</z2-m>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>ldglightsw</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/landing-light[0]</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>ldglightsw2</object-name>
+        <property>controls/lighting/landing-light[1]</property>
+        <factor>20</factor>
+        <offset-deg>0</offset-deg>
+        <axis>
+            <x1-m>2.01918</x1-m>
+            <y1-m>.1557578</y1-m>
+            <z1-m>.0887328</z1-m>
+
+            <x2-m>2.01918</x2-m>
+            <y2-m>.1286031</y2-m>
+            <z2-m>.0887328</z2-m>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>ldglightsw2</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/landing-light[1]</property>
+            </binding>
+        </action>
+    </animation>
+
     <!-- other buttons, ignition -->
     <model>
         <name>extraleftbottom1</name>
@@ -433,6 +491,44 @@
             </binding>
         </action>
     </animation>
+
+    <!-- light knob -->
+    <animation>
+        <type>knob</type>
+        <object-name>intlightknob</object-name>
+        <property>/controls/lighting/panel-norm</property>
+        <factor>90</factor>
+
+        <axis>
+            <x1-m>2.05615</x1-m>
+            <y1-m>.064269</y1-m>
+            <z1-m>.0484951</z1-m>
+
+            <x2-m>-2.05615</x2-m>
+            <y2-m>.064269</y2-m>
+            <z2-m>.0484951</z2-m>
+        </axis>
+
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/engines/engine/panel-norm</property>
+                <factor>.1</factor>
+                <min>0</min>
+                <max>1</max>
+                <wrap>false</wrap>
+            </binding>
+            <binding>
+                <command>property-adjust</command>
+                <property>sim/model//material/instruments/factor</property>
+                <factor>.1</factor>
+                <min>0</min>
+                <max>1</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
     
     <!-- Yoke transparency -->
     <animation>

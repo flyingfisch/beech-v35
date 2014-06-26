@@ -122,7 +122,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
      inkscape:cx="234.76541"
-     inkscape:cy="338.60055"
+     inkscape:cy="351.03229"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -158,6 +158,14 @@
        height="294.28571"
        x="-3.5453268e-06"
        y="540.21936" />
+    <rect
+       y="0.35716102"
+       x="-835.57654"
+       height="511.42856"
+       width="296.42859"
+       id="rect7960"
+       style="opacity:0.33333333;fill:url(#Strips2_1white);fill-opacity:1;fill-rule:nonzero;stroke:none"
+       transform="matrix(0,-1,1,0,0,0)" />
     <path
        sodipodi:type="arc"
        style="fill:url(#radialGradient4186);fill-opacity:1;fill-rule:nonzero;stroke:none"
@@ -168,6 +176,13 @@
        sodipodi:ry="55.357143"
        d="m 252.85714,143.07143 a 55.357143,55.357143 0 1 1 -110.71428,0 55.357143,55.357143 0 1 1 110.71428,0 z"
        transform="matrix(2.1225807,0,0,2.1225807,-173.13824,386.89583)" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;opacity:0.28806584"
+       id="rect7976"
+       width="242.85715"
+       height="301.65668"
+       x="124.99999"
+       y="536.53387" />
   </g>
   <g
      inkscape:groupmode="layer"

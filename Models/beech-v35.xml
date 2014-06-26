@@ -19,17 +19,6 @@
         <blue-prop>emission/blue</blue-prop>
     </emission>
 
-    <animation>
-        <type>material</type>
-        <object-name>lndlightL</object-name>
-        <object-name>lndlightR</object-name>
-        <emission>
-            <red>1</red>
-            <green>1</green>
-            <blue>1</blue>
-        </emission>
-    </animation>
-
     <!-- Livery -->
     <nasal>
         <load>
@@ -653,7 +642,39 @@
                 <property>model/doors/position[0]</property>
             </binding>
         </action>
+    </animation>
 
+
+    <!-- Lights -->
+    <animation>
+        <type>material</type>
+        <object-name>lndlightL</object-name>
+        <condition>
+            <equals>
+                <property>controls/lighting/landing-light[0]</property>
+                <value>true</value>
+            </equals>
+        </condition>
+        <emission>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+        </emission>
+    </animation>
+    <animation>
+        <type>material</type>
+        <object-name>lndlightR</object-name>
+        <condition>
+            <equals>
+                <property>controls/lighting/landing-light[1]</property>
+                <value>true</value>
+            </equals>
+        </condition>
+        <emission>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+        </emission>
     </animation>
 
 </PropertyList>
