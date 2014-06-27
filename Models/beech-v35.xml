@@ -96,6 +96,7 @@
         <object-name>baggagedoor</object-name>
         <object-name>lndlightL</object-name>
         <object-name>lndlightR</object-name>
+        <object-name>windowframe</object-name>
     </effect>
 
     <!--<animation>
@@ -653,6 +654,7 @@
             <factor><use>systems/electrical/outputs/dome-light</use></factor>
         </parameters>
         <object-name>frontdoorinner</object-name>
+        <object-name>baggagedoorint</object-name>
     </effect>
 
     <animation>

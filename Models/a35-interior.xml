@@ -25,7 +25,7 @@
     </effect>
 
     <animation>
-        <type>material</type>
+        <type>material</type>        
         <object-name>chromecenter</object-name>
         <object-name>yokeport</object-name>
         <object-name>emblem</object-name>
@@ -44,18 +44,17 @@
         <object-name>fuelgaugebutton1</object-name>
         <object-name>navlightsw.001</object-name>
         <object-name>yokerod</object-name>
-        <condition>
-            <equals>
-                <property>systems/electrical/outputs/dome-light</property>
-                <value>1</value>
-            </equals>
-        </condition>
+        <object-name>pianodecal</object-name>
+        <object-name>pianodecal2</object-name>
+        <object-name>plaque</object-name>
         <emission>
-            <red>1</red>
-            <green>1</green>
+            <red>.5</red>
+            <green>.5</green>
             <blue>0</blue>
+            <factor-prop>/sim/model/material/instruments/factor</factor-prop>
         </emission>
     </animation>
+
 
 
     <effect>
@@ -100,6 +99,7 @@
     <effect>
         <inherits-from>Models/Effects/bonanza-reflect-decal</inherits-from>
         <object-name>pianodecal</object-name>
+        <object-name>pianodecal2</object-name>
     </effect>
 
     <effect>
@@ -119,7 +119,7 @@
         <emission>
             <red>1</red>
             <green>1</green>
-            <blue>.7</blue>
+            <blue>.5</blue>
         </emission>
     </animation>
     <animation>
@@ -141,12 +141,10 @@
         <type>material</type>
         <object-name>intlightdecal</object-name>
         <object-name>intlightknob</object-name>
-        <object-name>plaque</object-name>
         <emission>
-            <red>1</red>
-            <green>0.2</green>
-            <blue>0.2</blue>
-            <factor-prop>/sim/model/material/instruments/factor</factor-prop>
+            <red>0.3</red>
+            <green>0.3</green>
+            <blue>0.0</blue>
         </emission>
     </animation>
 
