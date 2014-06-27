@@ -117,6 +117,9 @@
         <object-name>windshield</object-name>
         <object-name>lndlightglassL</object-name>
         <object-name>lndlightglassR</object-name>
+        <object-name>navlightglassL</object-name>
+        <object-name>navlightglassR</object-name>
+        <object-name>beacon</object-name>
     </effect>
 
     <effect>
@@ -479,6 +482,7 @@
         <object-name>NoseGear</object-name>
         <object-name>NGChassis</object-name>
         <property>gear/gear[2]/compression-norm</property>
+        <factor>-.25</factor>
         <axis>
             <x1-m>.5890513</x1-m>
             <y1-m>.00311665</y1-m>
@@ -488,10 +492,6 @@
             <y2-m>.00311665</y2-m>
             <z2-m>-1.00834</z2-m>
         </axis>
-        <interpolation>
-            <entry><ind>0</ind><dep>0</dep></entry>
-            <entry><ind>1</ind><dep>-.25</dep></entry>
-        </interpolation>
     </animation>
 
     <animation>
@@ -711,6 +711,7 @@
     <animation>
         <type>material</type>
         <object-name>lndlightL</object-name>
+        <object-name>lndlightglassL</object-name>
         <condition>
             <equals>
                 <property>controls/lighting/landing-light[0]</property>
@@ -726,6 +727,7 @@
     <animation>
         <type>material</type>
         <object-name>lndlightR</object-name>
+        <object-name>lndlightglassR</object-name>
         <condition>
             <equals>
                 <property>controls/lighting/landing-light[1]</property>
@@ -737,5 +739,82 @@
             <green>1</green>
             <blue>1</blue>
         </emission>
+    </animation>
+    <animation>
+        <type>material</type>
+        <object-name>navlightbulbL</object-name>
+        <object-name>navlightglassL</object-name>
+        <condition>
+            <equals>
+                <property>controls/lighting/nav-lights</property>
+                <value>true</value>
+            </equals>
+        </condition>
+        <emission>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+        </emission>
+    </animation>
+    <animation>
+        <type>material</type>
+        <object-name>navlightbulbR</object-name>
+        <object-name>navlightglassR</object-name>
+        <condition>
+            <equals>
+                <property>controls/lighting/nav-lights</property>
+                <value>true</value>
+            </equals>
+        </condition>
+        <emission>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+        </emission>
+    </animation>
+    <animation>
+        <type>material</type>
+        <object-name>beacon</object-name>
+        <condition>
+            <equals>
+                <property>controls/lighting/strobe</property>
+                <value>true</value>
+            </equals>
+        </condition>
+        <emission>
+            <red>.5</red>
+            <green>0</green>
+            <blue>0</blue>
+        </emission>
+    </animation>
+    <animation>
+        <type>material</type>
+        <object-name>beaconinner</object-name>
+        <condition>
+            <equals>
+                <property>controls/lighting/strobe</property>
+                <value>true</value>
+            </equals>
+        </condition>
+        <emission>
+            <red>1</red>
+            <green>0</green>
+            <blue>0</blue>
+        </emission>
+    </animation>
+    <animation>
+        <type>spin</type>
+        <object-name>beaconinner</object-name>
+        <property>controls/lighting/strobe</property>
+        <factor>40</factor>
+        <axis>
+            <x1-m>4.03641</x1-m>
+            <y1-m>0</y1-m>
+            <z1-m>.7434931</z1-m>
+
+            <x2-m>4.03641</x2-m>
+            <y2-m>0</y2-m>
+            <z2-m>0</z2-m>
+        </axis>
     </animation>
 </PropertyList>

@@ -50,7 +50,7 @@
             </config>
         </view>
 
-        <view n="100">
+        <view n="103">
             <name>Co-Pilot View</name>
             <type>lookfrom</type>
             <internal type="bool">true</internal>
@@ -73,6 +73,58 @@
                 <z-offset-m archive="y">2.4566</z-offset-m>   
                 <pitch-offset-deg>-10</pitch-offset-deg>
                 <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+            </config>
+        </view>
+
+        <view n="100">
+            <name>Back Seat (right)</name>
+            <type>lookfrom</type>
+            <internal type="bool">true</internal>
+            <config>
+                <from-model type="bool">true</from-model>
+                <from-model-idx type="int">0</from-model-idx>
+                <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+                <default-pitch-deg type="double">0</default-pitch-deg>
+                <default-heading-deg type="double">0</default-heading-deg>
+                <front-direction-deg type="double">0</front-direction-deg>
+                <front-left-direction-deg type="double">45</front-left-direction-deg>
+                <left-direction-deg type="double">90</left-direction-deg>
+                <back-left-direction-deg type="double">135</back-left-direction-deg>
+                <back-direction-deg type="double">180</back-direction-deg>
+                <back-right-direction-deg type="double">225</back-right-direction-deg>
+                <right-direction-deg type="double">270</right-direction-deg>
+                <front-right-direction-deg type="double">315</front-right-direction-deg>
+                <x-offset-m archive="y">.279348</x-offset-m> 
+                <y-offset-m archive="y">.495983</y-offset-m>   
+                <z-offset-m archive="y">3.31</z-offset-m>   
+                <pitch-offset-deg>-10</pitch-offset-deg>
+                <default-field-of-view-deg type="double">60.0</default-field-of-view-deg>
+            </config>
+        </view>
+
+        <view n="102">
+            <name>Back Seat (left)</name>
+            <type>lookfrom</type>
+            <internal type="bool">true</internal>
+            <config>
+                <from-model type="bool">true</from-model>
+                <from-model-idx type="int">0</from-model-idx>
+                <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+                <default-pitch-deg type="double">0</default-pitch-deg>
+                <default-heading-deg type="double">0</default-heading-deg>
+                <front-direction-deg type="double">0</front-direction-deg>
+                <front-left-direction-deg type="double">45</front-left-direction-deg>
+                <left-direction-deg type="double">90</left-direction-deg>
+                <back-left-direction-deg type="double">135</back-left-direction-deg>
+                <back-direction-deg type="double">180</back-direction-deg>
+                <back-right-direction-deg type="double">225</back-right-direction-deg>
+                <right-direction-deg type="double">270</right-direction-deg>
+                <front-right-direction-deg type="double">315</front-right-direction-deg>
+                <x-offset-m archive="y">-.279348</x-offset-m> 
+                <y-offset-m archive="y">.495983</y-offset-m>   
+                <z-offset-m archive="y">3.31</z-offset-m>   
+                <pitch-offset-deg>-10</pitch-offset-deg>
+                <default-field-of-view-deg type="double">60.0</default-field-of-view-deg>
             </config>
         </view>
 
@@ -127,8 +179,8 @@
         </weight>
         <weight n="4">
             <name>Baggage</name>
-            <weight-lb>200</weight-lb>
-            <max-lb>200</max-lb>
+            <weight-lb type="int">100</weight-lb>
+            <max-lb>300</max-lb>
         </weight>
 
         <systems>

@@ -586,6 +586,64 @@
         </action>
     </animation>
 
+    <animation>
+        <type>rotate</type>
+        <object-name>navlightsw</object-name>
+        <property>controls/lighting/nav-lights</property>
+        <factor>20</factor>
+        <offset-deg>0</offset-deg>
+        <axis>
+            <x1-m>2.01918</x1-m>
+            <y1-m>.1557578</y1-m>
+            <z1-m>.0887328</z1-m>
+
+            <x2-m>2.01918</x2-m>
+            <y2-m>.1286031</y2-m>
+            <z2-m>.0887328</z2-m>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>navlightsw</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/nav-lights</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>beaconsw</object-name>
+        <property>controls/lighting/strobe</property>
+        <factor>20</factor>
+        <offset-deg>0</offset-deg>
+        <axis>
+            <x1-m>2.01918</x1-m>
+            <y1-m>.1557578</y1-m>
+            <z1-m>.0887328</z1-m>
+
+            <x2-m>2.01918</x2-m>
+            <y2-m>.1286031</y2-m>
+            <z2-m>.0887328</z2-m>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>beaconsw</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/strobe</property>
+            </binding>
+        </action>
+    </animation>
+
     <!-- other buttons, ignition -->
     <model>
         <name>extraleftbottom1</name>
@@ -1019,5 +1077,47 @@
                 <property>bonanza/seats/seat[3]/position-rec</property>
             </binding>
         </action>
+    </animation>
+
+    <!-- baggage -->
+    <animation>
+        <type>select</type>
+        <object-name>cardboardbox</object-name>
+        <condition>
+            <greater-than>
+                <property>/sim/weight[4]/weight-lb</property>
+                <value>0</value>
+            </greater-than>
+        </condition>
+    </animation>
+    <animation>
+        <type>select</type>
+        <object-name>suitcase1</object-name>
+        <condition>
+            <greater-than>
+                <property>/sim/weight[4]/weight-lb</property>
+                <value>50</value>
+            </greater-than>
+        </condition>
+    </animation>
+    <animation>
+        <type>select</type>
+        <object-name>suitcase2</object-name>
+        <condition>
+            <greater-than>
+                <property>/sim/weight[4]/weight-lb</property>
+                <value>100</value>
+            </greater-than>
+        </condition>
+    </animation>
+    <animation>
+        <type>select</type>
+        <object-name>suitcase3</object-name>
+        <condition>
+            <greater-than>
+                <property>/sim/weight[4]/weight-lb</property>
+                <value>150</value>
+            </greater-than>
+        </condition>
     </animation>
 </PropertyList>
