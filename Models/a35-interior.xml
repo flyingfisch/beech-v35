@@ -1120,4 +1120,17 @@
             </greater-than>
         </condition>
     </animation>
+
+    <!-- Pilot -->
+    <model>
+        <path>Aircraft/beech-v35/Models/Pilot/pilot.xml</path>
+        <offsets>
+            <x-m> 2.2 </x-m>
+            <y-m> -.22 </y-m>
+            <z-m>  0.05 </z-m>
+            <roll-deg>    0.0 </roll-deg>
+            <pitch-deg>   0.0 </pitch-deg>
+            <heading-deg> 0.0 </heading-deg>
+        </offsets>
+    </model>
 </PropertyList>

@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ########################################
+
+ # DR400-dauphin by PAF team
+ # April 2012 : Modified by PAF team
+ # http://equipe-flightgear.forumactif.com
+
+##########################################-->
+
+<!-- Centres de rotation
+Gauche
+	Epaule  0.4114  -0.10914  0.3536
+	Coude   0.2271  -0.259    0.1412
+	Poignet 0.196   -0.1621   0.1961
+	
+	Genoux	-0.0413 -0.1076  -0.0271
+	Pieds   -0.2769 -0.1210  -0.3484
+	Bassin  0.2476  -0.0662   0.3740
+
+Droite
+	Epaule  0.4127  0.1275   0.3540
+	Coude   0.291   0.2859   0.1418
+	Poignet 0.0415  0.1973   0.1961
+
+	Genoux	-0.0413  0.1076  -0.0271
+	Pieds   -0.2769  0.1210  -0.3484
+	Bassin  0.2476   0.0662   0.3740
+	
+	tete	0.3791  0         0.3887
+-->
+
+
+<PropertyList>
+
+  <path>general_pilot.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>mainG</object-name>
+    <object-name>mainD</object-name>
+    <object-name>tete</object-name>
+    <object-name>corps</object-name>
+    <object-name>brasG</object-name>
+    <object-name>brasD</object-name>
+    <object-name>avbrasG</object-name>
+    <object-name>avbrasD</object-name>
+    <object-name>avantbrasG</object-name>
+    <object-name>avantbrasD</object-name>
+    <object-name>cuisseG</object-name>
+    <object-name>cuisseD</object-name>
+    <object-name>jambeG</object-name>
+    <object-name>jambeD</object-name>
+    <object-name>piedG</object-name>
+    <object-name>piedD</object-name>
+
+    <!-- Objets transparents -->
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>mainG</object-name>
+    <object-name>mainD</object-name>
+    <object-name>tete</object-name>
+    <object-name>corps</object-name>
+    <object-name>brasG</object-name>
+    <object-name>brasD</object-name>
+    <object-name>avbrasG</object-name>
+    <object-name>avbrasD</object-name>
+    <object-name>avantbrasG</object-name>
+    <object-name>avantbrasD</object-name>
+    <object-name>cuisseG</object-name>
+    <object-name>cuisseD</object-name>
+    <object-name>jambeG</object-name>
+    <object-name>jambeD</object-name>
+    <object-name>piedG</object-name>
+    <object-name>piedD</object-name>
+    <condition>
+      <not><property>sim/rendering/rembrandt/enabled</property></not>
+    </condition>
+    <emission>
+      <red>   0.002 </red>
+      <green> 0.002 </green>
+      <blue>  0.002 </blue>
+      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>tete</object-name>
+    <object-name>corps</object-name>
+    <object-name>brasG</object-name>
+    <object-name>brasD</object-name>
+    <object-name>avbrasG</object-name>
+    <object-name>avbrasD</object-name>
+    <object-name>avantbrasG</object-name>
+    <object-name>avantbrasD</object-name>
+    <object-name>manche</object-name>
+    <object-name>cuisseG</object-name>
+    <object-name>cuisseD</object-name>
+    <object-name>jambeG</object-name>
+    <object-name>jambeD</object-name>
+    <object-name>piedG</object-name>
+    <object-name>piedD</object-name>
+	<object-name>mainG</object-name>
+    <object-name>mainD</object-name>
+    <condition>
+      <or>
+	<and>
+	  <not-equals>
+	    <property>sim/current-view/view-number</property>
+	    <value>0</value>
+	  </not-equals>
+	  <not-equals>
+	    <property>sim/current-view/view-number</property>
+	    <value>12</value>
+	  </not-equals>
+	</and>
+        <property>sim/model/config/show-pilot</property>
+      </or>
+    </condition>
+  </animation>
+
+<!-- always hide the pilot's head when you're the pilote -->
+  <animation>
+    <type>select</type>
+    <object-name>tete</object-name>
+    <condition>
+      <and>
+	<not-equals>
+	  <property>sim/current-view/view-number</property>
+	  <value>0</value>
+	</not-equals>
+	<not-equals>
+	  <property>sim/current-view/view-number</property>
+	  <value>12</value>
+	</not-equals>
+      </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>mainG</object-name>
+    <object-name>mainD</object-name>
+    <object-name>tete</object-name>
+    <object-name>corps</object-name>
+    <object-name>brasG</object-name>
+    <object-name>brasD</object-name>
+    <object-name>avbrasG</object-name>
+    <object-name>avbrasD</object-name>
+    <object-name>avantbrasG</object-name>
+    <object-name>avantbrasD</object-name>
+    <property>controls/flight/elevator</property>
+    <interpolation>
+	  <entry><ind>  -1 </ind><dep> -10  </dep></entry>
+      <entry><ind>  0 </ind><dep>  0  </dep></entry>
+      <entry><ind>  1  </ind><dep> 10  </dep></entry>
+    </interpolation> 
+    <center>
+	  <x-m>  0.323 </x-m>
+      <y-m>  0 </y-m>
+      <z-m> -0.059 </z-m>
+    </center>
+	<axis>
+      <x> 0 </x>
+      <y> -1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation> 
+
+    <animation>
+    <type>rotate</type>
+    <object-name>mainG</object-name>
+    <object-name>tete</object-name>
+    <object-name>corps</object-name>
+    <object-name>brasG</object-name>
+    <object-name>avbrasG</object-name>
+    <object-name>avantbrasG</object-name>
+    <property>controls/engines/engine[0]/throttle-hand</property>
+    <interpolation>
+      <entry><ind>  0 </ind><dep>  0  </dep></entry>
+      <entry><ind>  1  </ind><dep> 15  </dep></entry>
+    </interpolation> 
+    <center>.
+	  <x-m>  0.323 </x-m>
+      <y-m>  0 </y-m>
+      <z-m> -0.059 </z-m>
+    </center>
+	<axis>
+      <x> 0 </x>
+      <y> -1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation> 
+  
+  <!-- tete invisible depuis le cockpit -->
+
+  <animation>
+    <type>rotate</type>
+    <object-name>tete</object-name>
+    <property>controls/flight/elevator</property>
+    <factor> 5 </factor> 
+    <center>
+      <x-m> 0.3791 </x-m>
+      <y-m> 0      </y-m>
+      <z-m> 0.3887 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>tete</object-name>
+    <property>controls/flight/rudder</property>
+    <factor>-5</factor>
+    <center>
+      <x-m> 0.3791 </x-m>
+      <y-m> 0      </y-m>
+      <z-m> 0.3887 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>tete</object-name>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <factor> -7</factor>
+    <center>
+      <x-m> 0.3791 </x-m>
+      <y-m> 0      </y-m>
+      <z-m> 0.3887 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation> 
+
+   
+<!-- Tirer sur le manche-->
+  
+<!--épaule yy-->
+  <animation>
+    <type>rotate</type>
+    <object-name>brasD</object-name>
+    <object-name>avbrasD</object-name>
+	<object-name>mainD</object-name>
+    <property>controls/flight/elevator</property>
+    <interpolation>
+	    <entry><ind>  -1 </ind><dep>  -19  </dep></entry>
+        <entry><ind>  0  </ind><dep>  0    </dep></entry> <!--Position initiale-->
+        <entry><ind>  1  </ind><dep>  16  </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 0.4127 </x-m>
+      <y-m> 0.1275 </y-m>
+      <z-m> 0.3540 </z-m>
+    </center>
+	<axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+
+     <!-- Coude -->
+  <animation>
+    <type>rotate</type>
+    <object-name>avbrasD</object-name>
+	<object-name>mainD</object-name>
+    <property>controls/flight/elevator</property>
+    <interpolation>
+	  <entry><ind>  -1 </ind><dep> -28  </dep></entry>
+      <entry><ind>  0 </ind><dep>  0  </dep></entry>
+      <entry><ind>  1  </ind><dep> 20  </dep></entry>
+    </interpolation> 
+    <center>.
+	  <x-m> 0.1564 </x-m>
+      <y-m> 0.117 </y-m>
+      <z-m> 0.1736 </z-m>
+    </center>
+	<axis>
+      <x> 0 </x>
+      <y> -1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation> 
+
+<!-- ailerons-->
+  
+<!--épaule -->
+  <animation>
+    <type>rotate</type>
+    <object-name>brasD</object-name>
+    <object-name>avbrasD</object-name>
+	<object-name>mainD</object-name>
+    <property>controls/flight/aileron</property>
+    <interpolation>
+	    <entry><ind>  -1 </ind><dep>  -10  </dep></entry>
+        <entry><ind>  0  </ind><dep>  0    </dep></entry> <!--Position initiale-->
+        <entry><ind>  1  </ind><dep>  20  </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 0.4127 </x-m>
+      <y-m> 0.1275 </y-m>
+      <z-m> 0.3540 </z-m>
+    </center>
+	<axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> -1 </z>
+    </axis>
+  </animation>
+  
+
+     <!-- Coude -->
+  <animation>
+    <type>rotate</type>
+    <object-name>avbrasD</object-name>
+	<object-name>mainD</object-name>
+    <property>controls/flight/aileron</property>
+    <interpolation>
+	  <entry><ind>  -1 </ind><dep> -10  </dep></entry>
+      <entry><ind>  0 </ind><dep>  0  </dep></entry>
+      <entry><ind>  1  </ind><dep> 22  </dep></entry>
+    </interpolation> 
+    <center>
+
+	  <x-m> 0.1564 </x-m>
+      <y-m> 0.117 </y-m>
+      <z-m> 0.1736 </z-m>
+    </center>
+	<axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+  
+  
+
+<!-- gaz-->
+<!--Epaule-->
+  <animation>
+    <type>rotate</type>
+    <object-name>brasG</object-name>
+    <object-name>avbrasG</object-name>
+	<object-name>mainG</object-name>
+    <property>controls/engines/engine[0]/throttle-hand</property>
+    <interpolation>
+      <entry><ind>  0  </ind><dep>  -20  </dep></entry>
+      <entry><ind>  0.3</ind><dep>   12  </dep></entry>
+      <entry><ind>  1   </ind><dep>  35  </dep></entry>
+    </interpolation> 
+    <center>
+	  <x-m> 0.4053 </x-m>
+      <y-m> 0.114 </y-m>
+      <z-m> 0.3485 </z-m>
+    </center>
+	<axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+ 
+  	 <!--Coude-->
+  <animation>
+    <type>rotate</type>
+    <object-name>avbrasG</object-name>
+	<object-name>mainG</object-name>
+    <property>controls/engines/engine[0]/throttle-hand</property>
+    <interpolation>
+      <entry><ind>  0 </ind><dep>  0  </dep></entry>
+      <entry><ind>  0.1 </ind><dep> 7  </dep></entry>
+      <entry><ind>  1  </ind><dep> -33  </dep></entry>
+    </interpolation> 
+    <center>
+	  <x-m> 0.224 </x-m>
+      <y-m> 0.255 </y-m>
+      <z-m> 0.143 </z-m>
+    </center>
+	<axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+    	 <!--main-->
+  <animation>
+    <type>rotate</type>
+	<object-name>mainG</object-name>
+    <property>controls/engines/engine[0]/throttle-hand</property>
+    <interpolation>
+      <entry><ind>  0 </ind><dep>  0  </dep></entry>
+      <entry><ind>  0.1  </ind><dep> 30  </dep></entry>
+      <entry><ind>  1  </ind><dep> -70  </dep></entry>
+    </interpolation> 
+    <center>
+	  <x-m> 0.020 </x-m>
+      <y-m> -0.2186 </y-m>
+      <z-m> 0.199 </z-m>
+    </center>
+	<axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- leg -->
+  <animation>
+    <type>translate</type>
+    <object-name>jambeD</object-name>
+    <property>controls/flight/rudder</property>
+    <factor> -0.015 </factor>
+    <axis>
+     <x1-m> -0.4394 </x1-m>
+     <y1-m> -0.1208 </y1-m>
+     <z1-m> -0.2226 </z1-m>
+     <x2-m> -0.000104 </x2-m>
+     <y2-m> -0.1067 </y2-m>
+     <z2-m> -0.04361 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>jambeG</object-name>
+    <property>controls/flight/rudder</property>
+    <factor> 0.015 </factor>
+    <axis>
+     <x1-m> -0.4394 </x1-m>
+     <y1-m> -0.1208 </y1-m>
+     <z1-m> -0.2226 </z1-m>
+     <x2-m> -0.000104 </x2-m>
+     <y2-m> -0.1067 </y2-m>
+     <z2-m> -0.04361 </z2-m>
+    </axis>
+  </animation>
+
+  <!-- foot -->
+  <animation>
+    <type>rotate</type>
+    <object-name>piedG</object-name>
+    <property>controls/flight/rudder</property>
+    <factor>16</factor>
+    <center>
+      <x-m> -0.431 </x-m>
+      <y-m>  0.0000 </y-m>
+      <z-m> -0.2655 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>piedD</object-name>
+    <property>controls/flight/rudder</property>
+    <factor>-16</factor>
+    <center>
+      <x-m> -0.431 </x-m>
+      <y-m>  0.0000 </y-m>
+      <z-m> -0.2655 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+ </PropertyList>
+
