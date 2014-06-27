@@ -645,6 +645,39 @@
         </action>
     </animation>
 
+    <animation>
+        <type>rotate</type>
+        <object-name>baggagedoor</object-name>
+        <object-name>baggagedoorint</object-name>
+        <property>model/doors/position[1]</property>
+        <factor>-80</factor>
+
+        <axis>
+            <x1-m>3.66013</x1-m>
+            <y1-m>.5560072</y1-m>
+            <z1-m>.0131998</z1-m>
+
+            <x2-m>3.66013</x2-m>
+            <y2-m>.5550566</y2-m>
+            <z2-m>-.1784444</z2-m>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>baggagedoor</object-name>
+        <object-name>baggagedoorint</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>model/doors/position[1]</property>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- Lightmap stuff -->
     <effect>
         <inherits-from>Effects/lightmap</inherits-from>
         <parameters>
@@ -705,5 +738,4 @@
             <blue>1</blue>
         </emission>
     </animation>
-
 </PropertyList>

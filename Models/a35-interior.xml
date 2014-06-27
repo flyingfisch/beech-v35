@@ -129,7 +129,7 @@
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
-                <command>property-cycle</command>
+                <command>property-toggle</command>
                 <property>systems/electrical/outputs/dome-light</property>
                 <value type="double">0</value>
                 <value type="double">1</value>
