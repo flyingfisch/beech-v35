@@ -644,6 +644,33 @@
         </action>
     </animation>
 
+    <effect>
+        <inherits-from>Effects/lightmap</inherits-from>
+        <parameters>
+            <texture n="1">
+                <image>Aircraft/beech-v35/Models/Effects/Textures/lightmapint.png</image>
+            </texture>
+            <factor><use>systems/electrical/outputs/dome-light</use></factor>
+        </parameters>
+        <object-name>frontdoorinner</object-name>
+    </effect>
+
+    <animation>
+        <type>material</type>
+        <object-name>windowframe</object-name>
+        <condition>
+            <equals>
+                <property>systems/electrical/outputs/dome-light</property>
+                <value>1</value>
+            </equals>
+        </condition>
+        <emission>
+            <red>.3</red>
+            <green>.2</green>
+            <blue>0</blue>
+        </emission>
+    </animation>
+
 
     <!-- Lights -->
     <animation>

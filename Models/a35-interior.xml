@@ -24,10 +24,147 @@
         <object-name>yokerod</object-name>
     </effect>
 
+    <animation>
+        <type>material</type>
+        <object-name>chromecenter</object-name>
+        <object-name>yokeport</object-name>
+        <object-name>emblem</object-name>
+        <object-name>centerpiece</object-name>
+        <object-name>pbuttontrimleft</object-name>
+        <object-name>pbuttontrimright</object-name>
+        <object-name>gearbutton</object-name>
+        <object-name>ldglightsw</object-name>
+        <object-name>ldglightsw2</object-name>
+        <object-name>navlightsw</object-name>
+        <object-name>beaconsw</object-name>
+        <object-name>flapbutton</object-name>
+        <object-name>pbutton2</object-name>
+        <object-name>pbutton1</object-name>
+        <object-name>fuelgaugebutton2</object-name>
+        <object-name>fuelgaugebutton1</object-name>
+        <object-name>navlightsw.001</object-name>
+        <object-name>yokerod</object-name>
+        <condition>
+            <equals>
+                <property>systems/electrical/outputs/dome-light</property>
+                <value>1</value>
+            </equals>
+        </condition>
+        <emission>
+            <red>1</red>
+            <green>1</green>
+            <blue>0</blue>
+        </emission>
+    </animation>
+
+
+    <effect>
+        <inherits-from>Effects/lightmap</inherits-from>
+        <parameters>
+            <texture n="1">
+                <image>Aircraft/beech-v35/Models/Effects/Textures/lightmapint.png</image>
+            </texture>
+            <factor><use>systems/electrical/outputs/dome-light</use></factor>
+        </parameters>
+        <object-name>LBseatback</object-name>
+        <object-name>LBseatlower</object-name>
+        <object-name>RBseatback</object-name>
+        <object-name>RBseatlower</object-name>
+        <object-name>LFseatback</object-name>
+        <object-name>LFseatlower</object-name>
+        <object-name>RFseatback</object-name>
+        <object-name>RFseatlower</object-name>
+        <object-name>back</object-name>
+        <object-name>cabinheat</object-name>
+        <object-name>controlports</object-name>
+        <object-name>cowlcontrol</object-name>
+        <object-name>dash</object-name>
+        <object-name>floor</object-name>
+        <object-name>glareshield</object-name>
+        <object-name>glovecompartment</object-name>
+        <object-name>interior</object-name>
+        <object-name>intlightdecal</object-name>
+        <object-name>intlightknob</object-name>
+        <object-name>panel</object-name>
+        <object-name>panellower</object-name>
+        <object-name>parkingbrake</object-name>
+        <object-name>propcontrol</object-name>
+        <object-name>throttle</object-name>
+        <object-name>yoke</object-name>
+        <object-name>yokearm</object-name>
+        <object-name>yokeholder</object-name>
+        <object-name>yokerodlabel</object-name>
+        <object-name>yokesleeve</object-name>
+    </effect>
+
     <effect>
         <inherits-from>Models/Effects/bonanza-reflect-decal</inherits-from>
         <object-name>pianodecal</object-name>
     </effect>
+
+    <effect>
+        <inherits-from>Aircraft/beech-v35/Models/Effects/bonanza-glass-int</inherits-from>
+        <object-name>domelightglass</object-name>
+    </effect>
+    <animation>
+        <type>material</type>
+        <object-name>domelightint</object-name>
+        <object-name>domelightglass</object-name>
+        <condition>
+            <equals>
+                <property>systems/electrical/outputs/dome-light</property>
+                <value>1</value>
+            </equals>
+        </condition>
+        <emission>
+            <red>1</red>
+            <green>1</green>
+            <blue>.7</blue>
+        </emission>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>domelightglass</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-cycle</command>
+                <property>systems/electrical/outputs/dome-light</property>
+                <value type="double">0</value>
+                <value type="double">1</value>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>intlightdecal</object-name>
+        <object-name>intlightknob</object-name>
+        <object-name>plaque</object-name>
+        <emission>
+            <red>0.01</red>
+            <green>0.0</green>
+            <blue>0.0</blue>
+            <factor-prop>systems/electrical/outputs/cabin-lights</factor-prop>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>leftfuelmeter</object-name>
+        <object-name>rightfuelmeter</object-name>
+        <object-name>oiltempmeter</object-name>
+        <object-name>ampmeter</object-name>
+        <object-name>oilheadmeter</object-name>
+        <object-name>oilpressmeter</object-name>
+        <emission>
+            <red>0.1</red>
+            <green>0.01</green>
+            <blue>0.01</blue>
+            <factor-prop>systems/electrical/outputs/cabin-lights</factor-prop>
+        </emission>
+    </animation>
 
     <!-- gauges -->
         <!--name>extralefttop</name-->
