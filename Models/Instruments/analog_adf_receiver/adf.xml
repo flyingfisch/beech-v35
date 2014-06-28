@@ -1,0 +1,371 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <path>adf.ac</path>
+
+  <animation>
+    <type>material</type>
+    <object-name>plug</object-name>
+    <object-name>adf_1000</object-name>
+    <object-name>adf_100</object-name>
+    <object-name>adf_10</object-name>
+    <object-name>adf_1</object-name>
+    <emission>
+      <red>0.6</red>
+      <green>0.6</green>
+      <blue>0.7</blue>
+      <factor-prop>sim/model//material/instruments/factor</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>case</object-name>
+    <object-name>adf_knob</object-name>
+    <object-name>adf_knob_b</object-name>
+    <object-name>adf_vol</object-name>
+    <emission>
+      <red>0.03</red>
+      <green>0.03</green>
+      <blue>0.02</blue>
+      <factor-prop>systems/electrical/outputs/cabin-lights</factor-prop>
+    </emission>
+  </animation>
+
+
+
+  <animation>
+    <type>select</type>
+    <object-name>plug</object-name>
+    <condition>
+      <less-than>
+        <property>instrumentation/adf/frequencies/selected-khz</property>
+        <value>1000</value>
+      </less-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>adf_1000</object-name>
+    <condition>
+      <greater-than-equals>
+        <property>instrumentation/adf/frequencies/selected-khz</property>
+        <value>1000</value>
+      </greater-than-equals>
+    </condition>
+  </animation>
+
+
+
+  <animation>
+    <type>pick</type>
+    <object-name>adf_knob</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.1</interval-sec>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/adf/frequencies/selected-khz</property>
+        <step>1</step>
+        <min>100</min>
+        <max>1800</max>
+        <wrap>true</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>adf_knob</object-name>
+    <visible>true</visible>
+    <action>
+      <button>1</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.1</interval-sec>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/adf/frequencies/selected-khz</property>
+        <step>-1</step>
+        <min>100</min>
+        <max>1800</max>
+        <wrap>true</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>adf_knob</object-name>
+    <visible>true</visible>
+    <action>
+      <button>3</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/adf/frequencies/selected-khz</property>
+        <step>1</step>
+        <min>100</min>
+        <max>1800</max>
+        <wrap>true</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>adf_knob</object-name>
+    <visible>true</visible>
+    <action>
+      <button>4</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/adf/frequencies/selected-khz</property>
+        <step>-1</step>
+        <min>100</min>
+        <max>1800</max>
+        <wrap>true</wrap>
+      </binding>
+    </action>
+  </animation>
+
+
+
+  <animation>
+    <type>pick</type>
+    <object-name>adf_knob_b</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.1</interval-sec>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/adf/frequencies/selected-khz</property>
+        <step>100</step>
+        <min>100</min>
+        <max>1800</max>
+        <wrap>true</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>adf_knob_b</object-name>
+    <visible>true</visible>
+    <action>
+      <button>1</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.1</interval-sec>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/adf/frequencies/selected-khz</property>
+        <step>-100</step>
+        <min>100</min>
+        <max>1800</max>
+        <wrap>true</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>adf_knob_b</object-name>
+    <visible>true</visible>
+    <action>
+      <button>3</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/adf/frequencies/selected-khz</property>
+        <step>100</step>
+        <min>100</min>
+        <max>1800</max>
+        <wrap>true</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>adf_knob_b</object-name>
+    <visible>true</visible>
+    <action>
+      <button>4</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/adf/frequencies/selected-khz</property>
+        <step>-100</step>
+        <min>100</min>
+        <max>1800</max>
+        <wrap>true</wrap>
+      </binding>
+    </action>
+  </animation>
+
+
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>adf_1000</object-name>
+    <property>instrumentation/adf/frequencies/selected-khz</property>
+    <factor>0.0001</factor>
+    <step>1000</step>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>adf_100</object-name>
+    <property>instrumentation/adf/frequencies/selected-khz</property>
+    <factor>0.001</factor>
+    <step>100</step>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>adf_10</object-name>
+    <property>instrumentation/adf/frequencies/selected-khz</property>
+    <factor>0.01</factor>
+    <step>10</step>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>adf_1</object-name>
+    <property>instrumentation/adf/frequencies/selected-khz</property>
+    <factor>0.1</factor>
+    <step>1</step>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+<!-- volume -->
+
+  <animation>
+    <type>pick</type>
+    <object-name>adf_vol</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.2</interval-sec>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/adf/volume-norm</property>
+        <step>0.1</step>
+        <min>0.0</min>
+        <max>1.0</max>
+        <wrap>false</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>adf_vol</object-name>
+    <visible>true</visible>
+    <action>
+      <button>1</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.2</interval-sec>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/adf/volume-norm</property>
+        <step>-0.1</step>
+        <min>0.0</min>
+        <max>1.0</max>
+        <wrap>false</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>adf_vol</object-name>
+    <visible>true</visible>
+    <action>
+      <button>3</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/adf/volume-norm</property>
+        <step>0.1</step>
+        <min>0.0</min>
+        <max>1.0</max>
+        <wrap>false</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>adf_vol</object-name>
+    <visible>true</visible>
+    <action>
+      <button>4</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/adf/volume-norm</property>
+        <step>-0.1</step>
+        <min>0.0</min>
+        <max>1.0</max>
+        <wrap>false</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>adf_vol</object-name>
+    <property>instrumentation/adf/volume-norm</property>
+    <factor>260</factor>
+    <center>
+      <x-m>0.0</x-m>
+      <y-m>0.016</y-m>
+      <z-m>-0.009</z-m>
+    </center>
+    <axis>
+      <x>-1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+
+<!-- *** LoD *** -->
+  <animation> 
+    <type>range</type>
+    <min-m>0</min-m>
+    <max-m>30</max-m>
+  </animation>
+
+</PropertyList>

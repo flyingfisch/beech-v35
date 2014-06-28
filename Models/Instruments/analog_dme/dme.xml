@@ -1,0 +1,279 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <path>dme.ac</path>
+
+  <animation>
+    <type>material</type>
+    <object-name>m100</object-name>
+    <object-name>m10</object-name>
+    <object-name>m1</object-name>
+    <object-name>k100</object-name>
+    <object-name>k10</object-name>
+    <object-name>k1</object-name>
+    <object-name>k100.001</object-name>
+    <object-name>k10.001</object-name>
+    <object-name>k1.001</object-name>
+    <emission>
+      <red>0.6</red>
+      <green>0.6</green>
+      <blue>0.7</blue>
+      <factor-prop>sim/model//material/instruments/factor</factor-prop>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>case</object-name>
+    <object-name>switch</object-name>
+    <object-name>switch_l</object-name>
+    <object-name>switch_r</object-name>
+    <emission>
+      <red>0.03</red>
+      <green>0.03</green>
+      <blue>0.02</blue>
+      <factor-prop>systems/electrical/outputs/cabin-lights</factor-prop>
+    </emission>
+  </animation>
+
+
+
+  <animation>
+    <type>select</type>
+    <object-name>k100</object-name>
+    <object-name>k10</object-name>
+    <object-name>k1</object-name>
+    <condition>
+      <property>instrumentation/dme/switch-position</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>k100.001</object-name>
+    <object-name>k10.001</object-name>
+    <object-name>k1.001</object-name>
+    <condition>
+      <not>
+        <property>instrumentation/dme/switch-position</property>
+      </not>
+    </condition>
+  </animation>
+
+
+
+  <animation>
+    <type>pick</type>
+    <object-name>switch_l</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>instrumentation/dme/switch-position</property>
+        <value>0</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>switch_r</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>instrumentation/dme/switch-position</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>switch_l</object-name>
+    <object-name>switch_r</object-name>
+    <visible>true</visible>
+    <action>
+      <button>3</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>instrumentation/dme/switch-position</property>
+        <value>1</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>switch_l</object-name>
+    <object-name>switch_r</object-name>
+    <visible>true</visible>
+    <action>
+      <button>4</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>instrumentation/dme/switch-position</property>
+        <value>0</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>switch</object-name>
+    <property>instrumentation/dme/switch-position</property>
+    <factor>0.01</factor>    
+    <axis>
+      <x>0.0</x>
+      <y>1.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>m100</object-name>
+    <property>instrumentation/dme/indicated-distance-nm</property>
+    <factor>0.001</factor>
+    <step>100</step>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>m10</object-name>
+    <property>instrumentation/dme/indicated-distance-nm</property>
+    <factor>0.01</factor>
+    <step>10</step>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>m1</object-name>
+    <property>instrumentation/dme/indicated-distance-nm</property>
+    <factor>0.1</factor>
+    <step>1</step>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>k100</object-name>
+    <property>instrumentation/dme/indicated-ground-speed-kt</property>
+    <factor>0.001</factor>
+    <step>100</step>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>k10</object-name>
+    <property>instrumentation/dme/indicated-ground-speed-kt</property>
+    <factor>0.01</factor>
+    <step>10</step>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>k1</object-name>
+    <property>instrumentation/dme/indicated-ground-speed-kt</property>
+    <factor>0.1</factor>
+    <step>1</step>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>k100.001</object-name>
+    <property>instrumentation/dme/indicated-time-min</property>
+    <factor>0.001</factor>
+    <step>100</step>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>k10.001</object-name>
+    <property>instrumentation/dme/indicated-time-min</property>
+    <factor>0.01</factor>
+    <step>10</step>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>k1.001</object-name>
+    <property>instrumentation/dme/indicated-time-min</property>
+    <factor>0.1</factor>
+    <step>1</step>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+<!-- *** LoD *** -->
+  <animation> 
+    <type>range</type>
+    <min-m>0</min-m>
+    <max-m>30</max-m>
+  </animation>
+
+</PropertyList>

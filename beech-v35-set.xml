@@ -6,6 +6,11 @@
             <inplace type="bool">true</inplace>
         </rbf>
     </bonanza>
+    <controls>
+        <gear>
+            <brake-parking type="bool">true</brake-parking>
+        </gear>
+    </controls>
     <sim>
         <description>Beech V35 Bonanza</description>
         <aircraft-version>0.0.1</aircraft-version>
@@ -227,6 +232,22 @@
                         <binding>
                             <command>nasal</command>
                             <script>aircraft.livery.dialog.open()</script>
+                        </binding>
+                    </item>
+                    <item>
+                        <label>Put RBF flags back on</label>
+                        <binding>
+                            <command>property-assign</command>
+                            <property>bonanza/rbf[0]/inplace</property>
+                            <value>true</value>
+                        </binding>
+                    </item>
+                    <item>
+                        <label>Remove all RBF flags</label>
+                        <binding>
+                            <command>property-assign</command>
+                            <property>bonanza/rbf[0]/inplace</property>
+                            <value>false</value>
                         </binding>
                     </item>
                 </menu>

@@ -173,6 +173,35 @@
         </emission>
     </animation>
 
+    <!-- Radio stack -->
+    <model>
+        <name>adf-receiver</name>
+        <path>Models/Instruments/kx170b/kx170b.xml</path>
+        <offsets>
+            <x-m>2.0304</x-m>
+            <y-m>.399414</y-m>
+            <z-m>.179762</z-m>
+        </offsets>
+    </model>
+    <model>
+        <name>adf-receiver</name>
+        <path>Models/Instruments/analog_adf_receiver/adf.xml</path>
+        <offsets>
+            <x-m>2.0304</x-m>
+            <y-m>.399414</y-m>
+            <z-m>.129762</z-m>
+        </offsets>
+    </model>
+    <model>
+        <name>dme</name>
+        <path>Models/Instruments/analog_dme/dme.xml</path>
+        <offsets>
+            <x-m>2.0304</x-m>
+            <y-m>.399414</y-m>
+            <z-m>.229762</z-m>
+        </offsets>
+    </model>
+
     <!-- gauges -->
         <!--name>extralefttop</name-->
         <!--path>Models/Instruments/blank/blank.xml</path-->
