@@ -823,4 +823,38 @@
             <z2-m>0</z2-m>
         </axis>
     </animation>
+
+
+    <!-- remove before takeoff flag -->
+    <model>
+        <name>rbf-pitot</name>
+        <path>rbf.xml</path>
+        <offsets>
+            <x-m>1.9769</x-m>
+            <y-m>-3.1567</y-m>
+            <z-m>-.267079</z-m>
+        </offsets>
+    </model>
+    <animation>
+        <type>pick</type>
+        <object-name>rbf-pitot</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>bonanza/rbf[0]/inplace</property>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>select</type>
+        <object-name>rbf-pitot</object-name>
+        <condition>
+            <equals>
+                <property>bonanza/rbf[0]/inplace</property>
+                <value>true</value>
+            </equals>
+        </condition>
+    </animation>
 </PropertyList>

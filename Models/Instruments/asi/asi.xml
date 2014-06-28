@@ -40,6 +40,12 @@
    <y>0</y>
    <z>0</z>
   </axis>
+  <condition>
+            <equals>
+                <property>bonanza/rbf[0]/inplace</property>
+                <value>false</value>
+            </equals>
+        </condition>
  </animation>
 
 </PropertyList>

@@ -1,5 +1,11 @@
 <?xml version="1.0"?>
 <PropertyList>
+    <!-- init vars -->
+    <bonanza>
+        <rbf n="0">
+            <inplace type="bool">true</inplace>
+        </rbf>
+    </bonanza>
     <sim>
         <description>Beech V35 Bonanza</description>
         <aircraft-version>0.0.1</aircraft-version>
