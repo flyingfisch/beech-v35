@@ -3,15 +3,15 @@ Beechcraft V35 Bonanza for flightgear
 ###Under Construction, many features may not work.
 
 For Users
-=========
-##[Aircraft Help](http://forum.flightgear.org/viewtopic.php?f=4&t=22808&start=75)
+---------
+###[Aircraft Help](http://forum.flightgear.org/viewtopic.php?f=4&t=22808&start=75)
 
 Software Requirements
 ---------------------
 ###[YASim Version 32 or newer](#how-to-install-yasim-32-on-flightgear-300)
 
 For Developers
-==============
+---------------
 
 Notes on certain files
 ---------------------
