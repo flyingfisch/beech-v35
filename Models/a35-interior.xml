@@ -403,10 +403,11 @@
     <animation>
         <type>material</type>
         <object-name>gearlight</object-name>
+        <object-name>gearglass</object-name>
         <condition>
             <equals>
-                <property>gear/gear[0]/position-norm</property>
-                <value>0</value>
+                <property>controls/gear/gear-down</property>
+                <value>true</value>
             </equals>
         </condition>
         <emission>
@@ -456,7 +457,41 @@
             <binding>
                 <command>set-tooltip</command>
                 <label>Cowl flaps</label>
-                <tooltip-id>gearindicator</tooltip-id>
+                <tooltip-id>cowl-flaps</tooltip-id>
+            </binding>
+        </hovered>
+    </animation>
+
+    <!-- parking brake -->
+    <animation>
+        <type>translate</type>
+        <object-name>parkingbrake</object-name>
+        <property>controls/gear/brake-parking</property>
+        <factor>.01</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>parkingbrake</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/gear/brake-parking</property>
+                <value type="int">1</value>
+                <value type="int">0</value>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <label>Parking brake</label>
+                <tooltip-id>parking-brake</tooltip-id>
             </binding>
         </hovered>
     </animation>
@@ -690,7 +725,7 @@
     <animation>
         <type>rotate</type>
         <object-name>beaconsw</object-name>
-        <property>controls/lighting/strobe</property>
+        <property>controls/lighting/beacon</property>
         <factor>20</factor>
         <offset-deg>0</offset-deg>
         <axis>
@@ -711,7 +746,7 @@
             <repeatable>true</repeatable>
             <binding>
                 <command>property-toggle</command>
-                <property>controls/lighting/strobe</property>
+                <property>controls/lighting/beacon</property>
             </binding>
         </action>
     </animation>

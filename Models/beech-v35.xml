@@ -777,7 +777,7 @@
         <object-name>beacon</object-name>
         <condition>
             <equals>
-                <property>controls/lighting/strobe</property>
+                <property>controls/lighting/beacon</property>
                 <value>true</value>
             </equals>
         </condition>
@@ -792,20 +792,20 @@
         <object-name>beaconinner</object-name>
         <condition>
             <equals>
-                <property>controls/lighting/strobe</property>
+                <property>controls/lighting/beacon</property>
                 <value>true</value>
             </equals>
         </condition>
         <emission>
             <red>1</red>
-            <green>0</green>
-            <blue>0</blue>
+            <green>1</green>
+            <blue>1</blue>
         </emission>
     </animation>
     <animation>
         <type>spin</type>
         <object-name>beaconinner</object-name>
-        <property>controls/lighting/strobe</property>
+        <property>controls/lighting/beacon</property>
         <factor>40</factor>
         <axis>
             <x1-m>4.03641</x1-m>
