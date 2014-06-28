@@ -68,6 +68,11 @@
     </animation>
 
     <effect>
+        <inherits-from>Models/Effects/bonanza-reflect</inherits-from>
+        <object-name>pitottube</object-name>
+    </effect>
+
+    <effect>
         <inherits-from>Models/Effects/bonanza-reflect-ext</inherits-from>
         <object-name>fuselage</object-name>
         <object-name>wing</object-name>
@@ -97,6 +102,7 @@
         <object-name>lndlightL</object-name>
         <object-name>lndlightR</object-name>
         <object-name>windowframe</object-name>
+        <object-name>pitottube</object-name>
     </effect>
 
     <!--<animation>
