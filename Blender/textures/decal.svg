@@ -28,9 +28,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.70000001"
-     inkscape:cx="469.21151"
-     inkscape:cy="603.51118"
+     inkscape:zoom="1.4"
+     inkscape:cx="616.01855"
+     inkscape:cy="532.66506"
      inkscape:document-units="px"
      inkscape:current-layer="layer2"
      showgrid="false"
@@ -326,6 +326,54 @@
          y="547.22729"
          x="109.83078"
          sodipodi:role="line">OFF</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3216"
+       y="422.96649"
+       x="705.83081"
+       style="font-size:24.60287666px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#eeeeec;fill-opacity:1;stroke:#eeeeec;font-family:Arial;-inkscape-font-specification:Arial Bold"
+       xml:space="preserve"><tspan
+         id="tspan3224"
+         y="422.96649"
+         x="705.83081"
+         sodipodi:role="line">FUEL PUMP</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24.60287666px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#eeeeec;fill-opacity:1;stroke:#eeeeec;font-family:Arial;-inkscape-font-specification:Arial Bold"
+       x="705.83081"
+       y="552.96649"
+       id="text3235"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="705.83081"
+         y="552.96649"
+         id="tspan3237">WARNING</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24.60287666px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#eeeeec;fill-opacity:1;stroke:#eeeeec;font-family:Arial;-inkscape-font-specification:Arial Bold"
+       x="511.83081"
+       y="390.96649"
+       id="text3051"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="511.83081"
+         y="390.96649"
+         id="tspan3053">MASTER</tspan><tspan
+         sodipodi:role="line"
+         x="511.83081"
+         y="421.72009"
+         id="tspan3055">AVIONICS</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text3057"
+       y="552.96649"
+       x="511.83081"
+       style="font-size:24.60287666px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#eeeeec;fill-opacity:1;stroke:#eeeeec;font-family:Arial;-inkscape-font-specification:Arial Bold"
+       xml:space="preserve"><tspan
+         id="tspan3059"
+         y="552.96649"
+         x="511.83081"
+         sodipodi:role="line">GENERATOR</tspan></text>
   </g>
   <g
      inkscape:label="uv"

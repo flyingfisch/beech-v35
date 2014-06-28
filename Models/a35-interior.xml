@@ -3,6 +3,14 @@
     <path>beecha35int.ac</path>
 
     <effect>
+        <inherits-from>Aircraft/beech-v35/Models/Effects/bonanza-glass-int</inherits-from>
+        <object-name>domelightglass</object-name>
+        <object-name>fuelpumpglass</object-name>
+        <object-name>gearglass</object-name>
+        <object-name>generatorglass</object-name>
+    </effect>
+
+    <effect>
         <inherits-from>Models/Effects/bonanza-reflect</inherits-from>
         <object-name>chromecenter</object-name>
         <object-name>yokeport</object-name>
@@ -17,11 +25,20 @@
         <object-name>beaconsw</object-name>
         <object-name>flapbutton</object-name>
         <object-name>pbutton2</object-name>
-        <object-name>pbutton1</object-name>
+        <object-name>generatorbutton</object-name>
+        <object-name>generatorlightring</object-name>
         <object-name>fuelgaugebutton2</object-name>
         <object-name>fuelgaugebutton1</object-name>
-        <object-name>navlightsw.001</object-name>
+        <object-name>fuelpumpsw</object-name>
+        <object-name>fuelpumplightring</object-name>
         <object-name>yokerod</object-name>
+        <object-name>gearlightring</object-name>
+    </effect>
+
+    <effect>
+        <inherits-from>Models/Effects/bonanza-reflect-decal</inherits-from>
+        <object-name>pianodecal</object-name>
+        <object-name>pianodecal2</object-name>
     </effect>
 
     <animation>
@@ -39,14 +56,16 @@
         <object-name>beaconsw</object-name>
         <object-name>flapbutton</object-name>
         <object-name>pbutton2</object-name>
-        <object-name>pbutton1</object-name>
+        <object-name>generatorbutton</object-name>
+        <object-name>generatorlightring</object-name>
         <object-name>fuelgaugebutton2</object-name>
         <object-name>fuelgaugebutton1</object-name>
-        <object-name>navlightsw.001</object-name>
+        <object-name>fuelpumpsw</object-name>
+        <object-name>fuelpumplightring</object-name>
         <object-name>yokerod</object-name>
+        <object-name>gearlightring</object-name>
         <object-name>pianodecal</object-name>
         <object-name>pianodecal2</object-name>
-        <object-name>plaque</object-name>
         <emission>
             <red>.5</red>
             <green>.5</green>
@@ -54,8 +73,6 @@
             <factor-prop>/sim/model/material/instruments/factor</factor-prop>
         </emission>
     </animation>
-
-
 
     <effect>
         <inherits-from>Effects/lightmap</inherits-from>
@@ -76,7 +93,7 @@
         <object-name>back</object-name>
         <object-name>cabinheat</object-name>
         <object-name>controlports</object-name>
-        <object-name>cowlcontrol</object-name>
+        <object-name>elevatorcontrol</object-name>
         <object-name>dash</object-name>
         <object-name>floor</object-name>
         <object-name>glareshield</object-name>
@@ -94,18 +111,10 @@
         <object-name>yokeholder</object-name>
         <object-name>yokerodlabel</object-name>
         <object-name>yokesleeve</object-name>
+        <object-name>cowlflaps</object-name>
+        <object-name>cowlflaps.002</object-name>
     </effect>
 
-    <effect>
-        <inherits-from>Models/Effects/bonanza-reflect-decal</inherits-from>
-        <object-name>pianodecal</object-name>
-        <object-name>pianodecal2</object-name>
-    </effect>
-
-    <effect>
-        <inherits-from>Aircraft/beech-v35/Models/Effects/bonanza-glass-int</inherits-from>
-        <object-name>domelightglass</object-name>
-    </effect>
     <animation>
         <type>material</type>
         <object-name>domelightint</object-name>
@@ -389,6 +398,69 @@
         </offsets>
     </model>
 
+
+    <!-- gear indicator -->
+    <animation>
+        <type>material</type>
+        <object-name>gearlight</object-name>
+        <condition>
+            <equals>
+                <property>gear/gear[0]/position-norm</property>
+                <value>0</value>
+            </equals>
+        </condition>
+        <emission>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+        </emission>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>gearlight</object-name>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <label>Gear down indicator</label>
+                <tooltip-id>gearindicator</tooltip-id>
+            </binding>
+        </hovered>
+    </animation>
+
+    <!-- cowl flaps -->
+    <animation>
+        <type>translate</type>
+        <object-name>cowlflaps</object-name>
+        <property>controls/engines/engine/cowl-flaps-norm</property>
+        <factor>.01</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>cowlflaps</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/engines/engine/cowl-flaps-norm</property>
+                <value type="int">1</value>
+                <value type="int">0</value>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <label>Cowl flaps</label>
+                <tooltip-id>gearindicator</tooltip-id>
+            </binding>
+        </hovered>
+    </animation>
+
     <!-- piano buttons -->
     <animation>
         <type>rotate</type>
@@ -644,6 +716,63 @@
         </action>
     </animation>
 
+    <animation>
+        <type>rotate</type>
+        <object-name>fuelpumpsw</object-name>
+        <property>controls/engines/engine/fuel-pump</property>
+        <factor>20</factor>
+        <offset-deg>0</offset-deg>
+        <axis>
+            <x1-m>2.01918</x1-m>
+            <y1-m>.1557578</y1-m>
+            <z1-m>.0887328</z1-m>
+
+            <x2-m>2.01918</x2-m>
+            <y2-m>.1286031</y2-m>
+            <z2-m>.0887328</z2-m>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>fuelpumpsw</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/engines/engine/fuel-pump</property>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>generatorbutton</object-name>
+        <property>controls/electric/battery-switch</property>
+        <factor>20</factor>
+        <offset-deg>0</offset-deg>
+        <axis>
+            <x1-m>2.01918</x1-m>
+            <y1-m>.1557578</y1-m>
+            <z1-m>.0887328</z1-m>
+
+            <x2-m>2.01918</x2-m>
+            <y2-m>.1286031</y2-m>
+            <z2-m>.0887328</z2-m>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>generatorbutton</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/electric/battery-switch</property>
+            </binding>
+        </action>
+    </animation>
+
     <!-- other buttons, ignition -->
     <model>
         <name>extraleftbottom1</name>
@@ -655,11 +784,11 @@
         </offsets>
     </model>
 
-    <!-- cowl flap control -->
+    <!-- elevator trim control -->
     <animation>
         <type>knob</type>
-        <object-name>cowlcontrol</object-name>
-        <property>controls/engines/engine/cowl-flaps-norm</property>
+        <object-name>elevatorcontrol</object-name>
+        <property>controls/flight/elevator-trim</property>
         <factor>45</factor>
         <drag-direction>vertical</drag-direction>
 
@@ -676,13 +805,23 @@
         <action>
             <binding>
                 <command>property-adjust</command>
-                <property>controls/engines/engine/cowl-flaps-norm</property>
+                <property>controls/flight/elevator-trim</property>
                 <factor>.1</factor>
                 <min>0</min>
                 <max>1</max>
                 <wrap>false</wrap>
             </binding>
         </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <label>Elevator trim: %3d%%</label>
+                <measure-text>Elevator trim: 100%</measure-text>
+                <tooltip-id>elevator-trim</tooltip-id>
+                <mapping>percent</mapping>
+                <property>controls/flight/elevator-trim</property>
+            </binding>
+        </hovered>
     </animation>
 
     <!-- light knob -->
@@ -896,8 +1035,7 @@
     <animation>
         <type>rotate</type>
         <object-name>ampmeter</object-name>
-        <!-- FIXME: Get a prop for this -->
-        <property>/consumables/fuel/tank[0]/level-gal_us</property>
+        <property>/systems/electrical/amps</property>
         <axis>
             <x1-m>2.0337</x1-m>
             <y1-m>-.0468291</y1-m>
@@ -909,10 +1047,13 @@
         </axis>
         <interpolation>
             <entry>
-                <ind>0</ind><dep>0</dep>
+                <ind>-30</ind><dep>0</dep>
             </entry>
             <entry>
-                <ind>40</ind><dep>90</dep>
+                <ind>0</ind><dep>45</dep>
+            </entry>
+            <entry>
+                <ind>30</ind><dep>90</dep>
             </entry>
         </interpolation>
     </animation>
