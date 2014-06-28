@@ -7,6 +7,18 @@
         </rbf>
     </bonanza>
     <controls>
+        <electric>
+            <battery-switch type="bool">false</battery-switch>
+        </electric>
+        <lighting>
+            <nav-lights type="bool">false</nav-lights>
+            <beacon type="bool">false</beacon>
+        </lighting>
+        <engines>
+            <engine n="0">
+                <fuel-pump type="bool">false</fuel-pump>
+            </engine>
+        </engines>
         <gear>
             <brake-parking type="bool">true</brake-parking>
         </gear>

@@ -819,7 +819,7 @@
         <object-name>fuelpumpsw</object-name>
         <action>
             <button>0</button>
-            <repeatable>true</repeatable>
+            <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
                 <property>controls/engines/engine/fuel-pump</property>
