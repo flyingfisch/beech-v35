@@ -10,24 +10,20 @@
         <electric>
             <battery-switch type="bool">false</battery-switch>
         </electric>
+        <flight>
+            <!-- enable auto-coordination, since the original bonanza had it -->
+            <auto-coordination type="bool">true</auto-coordination>
+        </flight>
         <lighting>
             <nav-lights type="bool">false</nav-lights>
             <beacon type="bool">false</beacon>
         </lighting>
-        <engines>
-            <engine n="0">
-                <fuel-pump type="bool">false</fuel-pump>
-            </engine>
-        </engines>
         <gear>
             <brake-parking type="bool">true</brake-parking>
         </gear>
     </controls>
     <sim>
-        <!-- enable auto-coordination, since the original bonanza had it -->
-        <auto-coordination type="bool">true</auto-coordination>
-    </sim>
-    <sim>
+        
         <description>Beech V35 Bonanza</description>
         <aircraft-version>0.0.1</aircraft-version>
         <author>flyingfisch</author>
@@ -283,6 +279,7 @@
         <v35>
             <file>Aircraft/beech-v35/Nasal/action-sim.nas</file>
             <file>Aircraft/beech-v35/Nasal/livery.nas</file>
+            <file>Aircraft/beech-v35/Nasal/bonanza.nas</file>
         </v35>
         <century3>
             <file>Aircraft/beech-v35/Nasal/century3.nas</file>

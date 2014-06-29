@@ -499,7 +499,7 @@
             <z2-m>-1.00834</z2-m>
         </axis>
     </animation>
-    <animation>
+    <!--<animation>
         <type>rotate</type>
         <object-name>NoseGear</object-name>
         <object-name>NGChassis</object-name>
@@ -514,7 +514,7 @@
             <y2-m>.00311665</y2-m>
             <z2-m>-1.00834</z2-m>
         </axis>
-    </animation>
+    </animation>-->
 
     <animation>
         <type>rotate</type>
