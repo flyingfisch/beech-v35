@@ -449,7 +449,7 @@
         <type>translate</type>
         <object-name>LGLeft</object-name>
         <object-name>LGChassisLeft</object-name>
-        <property>gear/gear[0]/compression-norm</property>
+        <property>gear/gear[2]/compression-norm</property>
         <axis>
             <x1-m>2.76055</x1-m>
             <y1-m>-1.58882</y1-m>
@@ -487,8 +487,24 @@
         <type>translate</type>
         <object-name>NoseGear</object-name>
         <object-name>NGChassis</object-name>
-        <property>gear/gear[2]/compression-norm</property>
-        <factor>-.5</factor>
+        <property>gear/gear[0]/compression-norm</property>
+        <factor>-.2</factor>
+        <axis>
+            <x1-m>.5890513</x1-m>
+            <y1-m>.00311665</y1-m>
+            <z1-m>-.9135096</z1-m>
+
+            <x2-m>.5758244</x2-m>
+            <y2-m>.00311665</y2-m>
+            <z2-m>-1.00834</z2-m>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>NoseGear</object-name>
+        <object-name>NGChassis</object-name>
+        <property>gear/gear[0]/turn-pos-norm</property>
+        <factor>-90</factor>
         <axis>
             <x1-m>.5890513</x1-m>
             <y1-m>.00311665</y1-m>
