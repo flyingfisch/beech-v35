@@ -488,7 +488,7 @@
         <object-name>NoseGear</object-name>
         <object-name>NGChassis</object-name>
         <property>gear/gear[2]/compression-norm</property>
-        <factor>-.25</factor>
+        <factor>-.5</factor>
         <axis>
             <x1-m>.5890513</x1-m>
             <y1-m>.00311665</y1-m>
