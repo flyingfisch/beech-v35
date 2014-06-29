@@ -151,10 +151,10 @@
             </config>
         </view>
 
-        <!--<startup>
-        <splash-texture>Aircraft/pa28-236/Splashes/splash.png</splash-texture>
-        <splash-title>Beech V35 Bonanza</splash-title>
-        </startup>-->
+        <startup>
+            <splash-texture>splash1.png</splash-texture>
+            <splash-title>Beech A35 Bonanza</splash-title>
+        </startup>
 
         <model>
             <path>Aircraft/beech-v35/Models/beech-v35.xml</path>
@@ -169,12 +169,6 @@
         <!--autopilot>
         <path></path>
         </autopilot-->
-
-        <!--<flaps>
-        <setting>0.00</setting>
-        <setting>0.5</setting>
-        <setting>1.00</setting>
-        </flaps>-->
 
         <!-- Menubar -->
         <!--<menubar include="Dialogs/pa28-236-menu.xml" />-->
