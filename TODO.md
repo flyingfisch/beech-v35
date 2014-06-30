@@ -4,18 +4,25 @@ TODO List
 Interior
 --------
 
-* _Add radio stack_
-* _Make ledges for the windows_
-* _Add throttle_
-* _Add mixture control_
-* _Add dome light_
-* _Find prop for ampmeter in center gauge cluster_
+* <strike>Add radio stack</strike>
+* <strike>Make ledges for the windows</strike>
+* <strike>Add throttle</strike>
+* <strike>Add mixture control</strike>
+* <strike>Add dome light</strike>
+* <strike>Find prop for ampmeter in center gauge cluster</strike>
 * Add door handle
+* Make pilot's wndow open
 
 Exterior
 --------
 
-* _Add cargo door_
+* <strike>Add cargo door</strike>
 * Add wires for the ruddervons
 * Get the dirt on the exterior to look a bit more real
-* _Add lights_
+* <strike>Add lights</strike>
+* Put latches on door
+
+Other
+-----
+
+* Fix pulling back on the stick affecting rudder-pos-norm.
