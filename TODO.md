@@ -4,16 +4,18 @@ TODO List
 Interior
 --------
 
-* Add radio stack
+* _Add radio stack_
 * _Make ledges for the windows_
 * _Add throttle_
 * _Add mixture control_
-* Add dome light
-* Find prop for ampmeter in center gauge cluster
+* _Add dome light_
+* _Find prop for ampmeter in center gauge cluster_
+* Add door handle
 
 Exterior
 --------
 
 * _Add cargo door_
 * Add wires for the ruddervons
-* Add lights
+* Get the dirt on the exterior to look a bit more real
+* _Add lights_

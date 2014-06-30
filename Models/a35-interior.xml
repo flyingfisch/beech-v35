@@ -588,6 +588,13 @@
                 <value type="bool">false</value>
             </binding>
         </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <label>Middle click: gear down, Left click: gear up</label>
+                <tooltip-id>gear-button</tooltip-id>
+            </binding>
+        </hovered>
     </animation>
     <animation>
         <type>pick</type>
@@ -765,7 +772,7 @@
         <object-name>navlightsw</object-name>
         <action>
             <button>0</button>
-            <repeatable>true</repeatable>
+            <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
                 <property>controls/lighting/nav-lights</property>
@@ -794,7 +801,7 @@
         <object-name>beaconsw</object-name>
         <action>
             <button>0</button>
-            <repeatable>true</repeatable>
+            <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
                 <property>controls/lighting/beacon</property>
@@ -851,7 +858,7 @@
         <object-name>generatorbutton</object-name>
         <action>
             <button>0</button>
-            <repeatable>true</repeatable>
+            <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
                 <property>controls/electric/battery-switch</property>
@@ -892,8 +899,8 @@
             <binding>
                 <command>property-adjust</command>
                 <property>controls/flight/elevator-trim</property>
-                <factor>.1</factor>
-                <min>0</min>
+                <factor>.05</factor>
+                <min>-1</min>
                 <max>1</max>
                 <wrap>false</wrap>
             </binding>
