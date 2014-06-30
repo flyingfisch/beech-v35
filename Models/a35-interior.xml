@@ -16,6 +16,7 @@
         <object-name>yokeport</object-name>
         <object-name>emblem</object-name>
         <object-name>centerpiece</object-name>
+        <object-name>centerpiecebottom</object-name>
         <object-name>pbuttontrimleft</object-name>
         <object-name>pbuttontrimright</object-name>
         <object-name>gearbutton</object-name>
@@ -33,6 +34,9 @@
         <object-name>fuelpumplightring</object-name>
         <object-name>yokerod</object-name>
         <object-name>gearlightring</object-name>
+        <object-name>headsetjack1</object-name>
+        <object-name>headsetjack2</object-name>
+        <object-name>heatvent</object-name>
     </effect>
 
     <effect>
