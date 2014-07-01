@@ -31,3 +31,4 @@ Other
 -----
 
 * FIXME: elevator input affects rudder-pos-norm.
+* Add structural limits.
