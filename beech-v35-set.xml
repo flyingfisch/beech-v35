@@ -157,7 +157,7 @@
         </startup>
 
         <model>
-            <path>Aircraft/beech-v35/Models/beech-v35.xml</path>
+            <path>Models/beech-v35.xml</path>
             <yokes-alpha type="double">1</yokes-alpha>
         </model>
 
@@ -219,7 +219,7 @@
             </autopilot>
             <autopilot>
                 <name>APConfig</name>
-                <path>Aircraft/beech-v35/Systems/CENTURYIII.xml</path>
+                <path>Systems/CENTURYIII.xml</path>
             </autopilot>
         </systems>
 
@@ -267,12 +267,12 @@
     <!-- Incorporate Century-III AP -->
     <nasal>
         <v35>
-            <file>Aircraft/beech-v35/Nasal/action-sim.nas</file>
-            <file>Aircraft/beech-v35/Nasal/livery.nas</file>
-            <file>Aircraft/beech-v35/Nasal/bonanza.nas</file>
+            <file>Nasal/action-sim.nas</file>
+            <file>Nasal/livery.nas</file>
+            <file>Nasal/bonanza.nas</file>
         </v35>
         <century3>
-            <file>Aircraft/beech-v35/Nasal/century3.nas</file>
+            <file>Nasal/century3.nas</file>
         </century3>
     </nasal>
     
