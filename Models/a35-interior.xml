@@ -473,8 +473,17 @@
         <hovered>
             <binding>
                 <command>set-tooltip</command>
-                <label>Gear down indicator</label>
+                <label>Gear Status: %s</label>
                 <tooltip-id>gearindicator</tooltip-id>
+                <property>controls/gear/gear-down</property>
+                <mapping>nasal</mapping>
+                <script>
+                    if(arg[0]) {
+                        return 'Down';
+                    } else {
+                        return 'Up';
+                    }
+                </script>
             </binding>
         </hovered>
     </animation>
@@ -507,8 +516,14 @@
         <hovered>
             <binding>
                 <command>set-tooltip</command>
-                <label>Cowl flaps</label>
+                <label>Cowl Flaps: %s</label>
                 <tooltip-id>cowl-flaps</tooltip-id>
+                <property>controls/engines/engine/cowl-flaps-norm</property>
+                <mapping>nasal</mapping>
+                <script>
+                    var pos = ['Closed', 'Open'];
+                    return pos[arg[0]];
+                </script>
             </binding>
         </hovered>
     </animation>
@@ -541,8 +556,14 @@
         <hovered>
             <binding>
                 <command>set-tooltip</command>
-                <label>Parking brake</label>
-                <tooltip-id>parking-brake</tooltip-id>
+                <label>Parking Brakes: %s</label>
+                <tooltip-id>cowl-flaps</tooltip-id>
+                <property>controls/gear/brake-parking</property>
+                <mapping>nasal</mapping>
+                <script>
+                    var pos = ['Released', 'Set'];
+                    return pos[arg[0]];
+                </script>
             </binding>
         </hovered>
     </animation>
@@ -664,6 +685,13 @@
                 <max>1</max>
             </binding>
         </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <label>Middle click: flap down, Left click: flap up</label>
+                <tooltip-id>flap-button</tooltip-id>
+            </binding>
+        </hovered>
     </animation>
     <animation>
         <type>pick</type>
@@ -720,6 +748,22 @@
                 <property>controls/lighting/landing-light[0]</property>
             </binding>
         </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <label>Left landing light: %s</label>
+                <tooltip-id>ldg-light1</tooltip-id>
+                <property>controls/lighting/landing-light[0]</property>
+                <mapping>nasal</mapping>
+                <script>
+                    if(arg[0]) {
+                        return 'on';
+                    } else {
+                        return 'off';
+                    }
+                </script>
+            </binding>
+        </hovered>
     </animation>
 
     <animation>
@@ -749,6 +793,22 @@
                 <property>controls/lighting/landing-light[1]</property>
             </binding>
         </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <label>Right landing light: %s</label>
+                <tooltip-id>ldg-light2</tooltip-id>
+                <property>controls/lighting/landing-light[1]</property>
+                <mapping>nasal</mapping>
+                <script>
+                    if(arg[0]) {
+                        return 'on';
+                    } else {
+                        return 'off';
+                    }
+                </script>
+            </binding>
+        </hovered>
     </animation>
 
     <animation>
@@ -778,6 +838,22 @@
                 <property>controls/lighting/nav-lights</property>
             </binding>
         </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <label>Nav lights: %s</label>
+                <tooltip-id>nav-light</tooltip-id>
+                <property>controls/lighting/nav-lights</property>
+                <mapping>nasal</mapping>
+                <script>
+                    if(arg[0]) {
+                        return 'on';
+                    } else {
+                        return 'off';
+                    }
+                </script>
+            </binding>
+        </hovered>
     </animation>
 
     <animation>
@@ -807,6 +883,22 @@
                 <property>controls/lighting/beacon</property>
             </binding>
         </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <label>Rotating Beacon: %s</label>
+                <tooltip-id>beacon</tooltip-id>
+                <property>controls/lighting/beacon</property>
+                <mapping>nasal</mapping>
+                <script>
+                    if(arg[0]) {
+                        return 'on';
+                    } else {
+                        return 'off';
+                    }
+                </script>
+            </binding>
+        </hovered>
     </animation>
 
     <animation>
@@ -836,6 +928,22 @@
                 <property>controls/engines/engine/fuel-pump</property>
             </binding>
         </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <label>Fuel Pump: %s</label>
+                <tooltip-id>fuel-pump</tooltip-id>
+                <property>controls/lighting/beacon</property>
+                <mapping>nasal</mapping>
+                <script>
+                    if(arg[0]) {
+                        return 'on';
+                    } else {
+                        return 'off';
+                    }
+                </script>
+            </binding>
+        </hovered>
     </animation>
     <animation>
         <type>rotate</type>
@@ -863,6 +971,22 @@
                 <command>property-toggle</command>
                 <property>controls/electric/battery-switch</property>
             </binding>
+            <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <label>Master Avionics: %s</label>
+                <tooltip-id>master-avionics</tooltip-id>
+                <property>controls/lighting/beacon</property>
+                <mapping>nasal</mapping>
+                <script>
+                    if(arg[0]) {
+                        return 'on';
+                    } else {
+                        return 'off';
+                    }
+                </script>
+            </binding>
+        </hovered>
         </action>
     </animation>
 
@@ -952,6 +1076,13 @@
                 <wrap>false</wrap>
             </binding>
         </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <label>Panel Lighting</label>
+                <tooltip-id>panel-lights</tooltip-id>
+            </binding>
+        </hovered>
     </animation>
 
     
@@ -982,6 +1113,13 @@
                 <property>sim/model/yokes-alpha</property>
             </binding>
         </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <label>Show/Hide Yoke</label>
+                <tooltip-id>yoke-tip</tooltip-id>
+            </binding>
+        </hovered>
     </animation>
 
     <!-- Yoke -->

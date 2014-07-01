@@ -851,9 +851,9 @@
         <name>rbf-pitot</name>
         <path>rbf.xml</path>
         <offsets>
-            <x-m>1.9769</x-m>
-            <y-m>-3.1567</y-m>
-            <z-m>-.267079</z-m>
+            <x-m>1.9752</x-m>
+            <y-m>-2.2225</y-m>
+            <z-m>-.408219</z-m>
         </offsets>
     </model>
     <animation>
