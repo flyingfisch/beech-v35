@@ -164,7 +164,7 @@ var update_actions = func {
     flaps = flapPosition.getValue();
     gforce = pilotGs.getValue();
 #  pa24-250 Vs = 65 knots,  warn at 67
-    stall = 65 - 7*flaps + 20*(gforce - 1.0);
+    stall = 55 - 7*flaps + 20*(gforce - 1.0);
 
     BSW = batterySwitch.getValue();
     OnGround = ( noseGearWow.getValue() );
