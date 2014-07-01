@@ -3,7 +3,7 @@
     <path>beecha35int.ac</path>
 
     <effect>
-        <inherits-from>Aircraft/beech-v35/Models/Effects/bonanza-glass-int</inherits-from>
+        <inherits-from>Models/Effects/bonanza-glass-int</inherits-from>
         <object-name>domelightglass</object-name>
         <object-name>fuelpumpglass</object-name>
         <object-name>gearglass</object-name>
@@ -74,7 +74,7 @@
             <red>.5</red>
             <green>.5</green>
             <blue>0</blue>
-            <factor-prop>/sim/model/material/instruments/factor</factor-prop>
+            <factor-prop>sim/model/material/instruments/factor</factor-prop>
         </emission>
     </animation>
 
@@ -82,7 +82,7 @@
         <inherits-from>Effects/lightmap</inherits-from>
         <parameters>
             <texture n="1">
-                <image>Aircraft/beech-v35/Models/Effects/Textures/lightmapint.png</image>
+                <image>Models/Effects/Textures/lightmapint.png</image>
             </texture>
             <factor><use>systems/electrical/outputs/dome-light</use></factor>
         </parameters>
@@ -173,7 +173,7 @@
             <red>1</red>
             <green>0.1</green>
             <blue>0.1</blue>
-            <factor-prop>/sim/model/material/instruments/factor</factor-prop>
+            <factor-prop>sim/model/material/instruments/factor</factor-prop>
         </emission>
     </animation>
 
@@ -1045,7 +1045,7 @@
     <animation>
         <type>knob</type>
         <object-name>intlightknob</object-name>
-        <property>/controls/lighting/panel-norm</property>
+        <property>controls/lighting/panel-norm</property>
         <factor>90</factor>
 
         <axis>
@@ -1196,7 +1196,7 @@
     <animation>
         <type>translate</type>
         <object-name>LRpedal</object-name>
-        <property>/surface-positions/rudder-pos-norm</property>
+        <property>surface-positions/rudder-pos-norm</property>
         <factor>-0.1</factor>
         <axis>
             <x>1.0</x>
@@ -1208,7 +1208,7 @@
     <animation>
         <type>translate</type>
         <object-name>RRpedal</object-name>
-        <property>/surface-positions/rudder-pos-norm</property>
+        <property>surface-positions/rudder-pos-norm</property>
         <factor>0.1</factor>
         <axis>
             <x>1.0</x>
@@ -1221,7 +1221,7 @@
     <animation>
         <type>rotate</type>
         <object-name>leftfuelmeter</object-name>
-        <property>/consumables/fuel/tank[0]/level-gal_us</property>
+        <property>consumables/fuel/tank[0]/level-gal_us</property>
         <axis>
             <x1-m>2.0337</x1-m>
             <y1-m>-.0468291</y1-m>
@@ -1243,7 +1243,7 @@
     <animation>
         <type>rotate</type>
         <object-name>rightfuelmeter</object-name>
-        <property>/consumables/fuel/tank[1]/level-gal_us</property>
+        <property>consumables/fuel/tank[1]/level-gal_us</property>
         <axis>
             <x1-m>2.0337</x1-m>
             <y1-m>-.000056556</y1-m>
@@ -1265,7 +1265,7 @@
     <animation>
         <type>rotate</type>
         <object-name>oiltempmeter</object-name>
-        <property>/engines/engine[0]/oil-temperature-degf</property>
+        <property>engines/engine[0]/oil-temperature-degf</property>
         <axis>
             <x1-m>2.0337</x1-m>
             <y1-m>.0461874</y1-m>
@@ -1291,7 +1291,7 @@
     <animation>
         <type>rotate</type>
         <object-name>ampmeter</object-name>
-        <property>/systems/electrical/amps</property>
+        <property>systems/electrical/amps</property>
         <axis>
             <x1-m>2.0337</x1-m>
             <y1-m>-.0468291</y1-m>
@@ -1317,7 +1317,7 @@
         <type>rotate</type>
         <object-name>oilheadmeter</object-name>
         <!-- fake this prop for now -->
-        <property>/engines/engine[0]/oil-temperature-degf</property>
+        <property>engines/engine[0]/oil-temperature-degf</property>
         <axis>
             <x1-m>2.0337</x1-m>
             <y1-m>-.000056556</y1-m>
@@ -1342,7 +1342,7 @@
     <animation>
         <type>rotate</type>
         <object-name>oilpressmeter</object-name>
-        <property>/engines/engine[0]/oil-pressure-psi</property>
+        <property>engines/engine[0]/oil-pressure-psi</property>
         <axis>
             <x1-m>2.0337</x1-m>
             <y1-m>.0461874</y1-m>
@@ -1482,7 +1482,7 @@
         <object-name>cardboardbox</object-name>
         <condition>
             <greater-than>
-                <property>/sim/weight[4]/weight-lb</property>
+                <property>sim/weight[4]/weight-lb</property>
                 <value>0</value>
             </greater-than>
         </condition>
@@ -1492,7 +1492,7 @@
         <object-name>suitcase1</object-name>
         <condition>
             <greater-than>
-                <property>/sim/weight[4]/weight-lb</property>
+                <property>sim/weight[4]/weight-lb</property>
                 <value>50</value>
             </greater-than>
         </condition>
@@ -1502,7 +1502,7 @@
         <object-name>suitcase2</object-name>
         <condition>
             <greater-than>
-                <property>/sim/weight[4]/weight-lb</property>
+                <property>sim/weight[4]/weight-lb</property>
                 <value>100</value>
             </greater-than>
         </condition>
@@ -1512,7 +1512,7 @@
         <object-name>suitcase3</object-name>
         <condition>
             <greater-than>
-                <property>/sim/weight[4]/weight-lb</property>
+                <property>sim/weight[4]/weight-lb</property>
                 <value>150</value>
             </greater-than>
         </condition>
@@ -1520,7 +1520,7 @@
 
     <!-- Pilot -->
     <model>
-        <path>Aircraft/beech-v35/Models/Pilot/pilot.xml</path>
+        <path>Models/Pilot/pilot.xml</path>
         <offsets>
             <x-m> 2.2 </x-m>
             <y-m> -.22 </y-m>

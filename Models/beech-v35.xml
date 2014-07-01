@@ -22,7 +22,7 @@
     <!-- Livery -->
     <nasal>
         <load>
-            var livery_update = aircraft.livery_update.new("Aircraft/beech-v35/Models/Liveries");
+            var livery_update = aircraft.livery_update.new("Models/Liveries");
         </load>
 
         <unload>
@@ -118,7 +118,7 @@
     </animation>-->
 
     <effect>
-        <inherits-from>Aircraft/beech-v35/Models/Effects/bonanza-glass</inherits-from>
+        <inherits-from>Models/Effects/bonanza-glass</inherits-from>
         <object-name>rearwindow</object-name>
         <object-name>frontwindow</object-name>
         <object-name>frontwindowright</object-name>
@@ -131,7 +131,7 @@
     </effect>
 
     <effect>
-        <inherits-from>Aircraft/beech-v35/Models/Effects/bonanza-glass-int</inherits-from>
+        <inherits-from>Models/Effects/bonanza-glass-int</inherits-from>
         <object-name>rearwindowint</object-name>
         <object-name>frontwindowint</object-name>
         <object-name>frontwindowrightint</object-name>
@@ -312,7 +312,7 @@
     <animation>
         <type>rotate</type>
         <object-name>leftruddervator</object-name>
-        <property>/surface-positions/rvator-left-pos-norm</property>
+        <property>surface-positions/rvator-left-pos-norm</property>
         <factor>20</factor>
         <axis>
             <x1-m>7.03682</x1-m>
@@ -328,7 +328,7 @@
     <animation>
         <type>rotate</type>
         <object-name>rightruddervator</object-name>
-        <property>/surface-positions/rvator-right-pos-norm</property>
+        <property>surface-positions/rvator-right-pos-norm</property>
         <factor>-20</factor>
         <axis>
             <x1-m>7.03682</x1-m>
@@ -724,7 +724,7 @@
         <inherits-from>Effects/lightmap</inherits-from>
         <parameters>
             <texture n="1">
-                <image>Aircraft/beech-v35/Models/Effects/Textures/lightmapint.png</image>
+                <image>Models/Effects/Textures/lightmapint.png</image>
             </texture>
             <factor><use>systems/electrical/outputs/dome-light</use></factor>
         </parameters>
