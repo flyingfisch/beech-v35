@@ -20,7 +20,7 @@ Exterior
 * Add wires for the ruddervons
 * Get the dirt on the exterior to look a bit more real
 * <strike>Add lights</strike>
-* Put latches on door
+* <strike>Put latches on door</strike>
 * Redo the landing gear
 
 Other
