@@ -21,6 +21,7 @@ Exterior
 * Get the dirt on the exterior to look a bit more real
 * <strike>Add lights</strike>
 * Put latches on door
+* Redo the landing gear
 
 Other
 -----
