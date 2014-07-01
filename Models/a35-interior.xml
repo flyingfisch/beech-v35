@@ -933,7 +933,7 @@
                 <command>set-tooltip</command>
                 <label>Fuel Pump: %s</label>
                 <tooltip-id>fuel-pump</tooltip-id>
-                <property>controls/lighting/beacon</property>
+                <property>controls/engines/engine/fuel-pump</property>
                 <mapping>nasal</mapping>
                 <script>
                     if(arg[0]) {
