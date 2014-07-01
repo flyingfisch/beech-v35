@@ -30,11 +30,11 @@ General Public License for more details.
 <airplane mass="2295.5" version="YASIM_VERSION_32">
  
 <!-- Approach configuration BaseLine  Vs: 55kn Vapp: 1.3 x Vs  AOA = AOAcrit/2  Flap 15   -->
-    <approach speed="55.0" aoa="10.0" fuel="0.6">
-    <control-setting axis="/controls/engines/engine[0]/throttle"        value="0.3"/>
+    <approach speed="60.0" aoa="12.0" fuel="0.6">
+    <control-setting axis="/controls/engines/engine[0]/throttle"        value="0.8"/>
     <control-setting axis="/controls/engines/engine[0]/mixture"         value="1.0"/>
     <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
-    <control-setting axis="/controls/flight/flaps"                      value="0.5"/>
+    <control-setting axis="/controls/flight/flaps"                      value="0.4"/>
     <solve-weight idx="0" weight="170"/>
     <solve-weight idx="1" weight="170"/>
     <solve-weight idx="2" weight="100"/>
@@ -58,10 +58,10 @@ General Public License for more details.
 <!-- Main Wing xyz Half Chord at Root  Incid Root: 4  Tip:1                               -->
 <!--      BaseLine Cmbr (0.100 / 1.475)  Wstall Try 8  AOA: (AOAcrit - Wstall/4)          -->
 
-  <wing x="-2.755"     y="0.5"    z="-0.53"     taper="0.48" incidence="2.50" twist="-3"
-    length="4.3"   chord="2.25" sweep="-2.0" dihedral="6.00" camber="0.068"   idrag="0.95">
-    <stall aoa="14" width="6" peak="1.5"/>
-    <flap0 start="0.00" end="0.54" lift="1.1" drag="4.0"/>
+  <wing x="-2.755"     y="0.5"    z="-0.53"     taper="0.48" incidence="2.0" twist="-3"
+    length="4.3"   chord="2.25" sweep="-2.0" dihedral="6.00" camber="0.068"   idrag="0.8">
+    <stall aoa="14.0" width="4.0" peak="1.5"/>
+    <flap0 start="0.00" end="0.54" lift="1.1" drag="12.0"/>
     <flap1 start="0.54" end="1.00" lift="1.3" drag="1.2"/>
     <control-input axis="/controls/flight/flaps" control="FLAP0"/>
     <control-speed control="FLAP0" transition-time="5"/>
@@ -99,9 +99,9 @@ General Public License for more details.
  
 <!-- V-Tail HStab -->
   <hstab x="-7.0" y="0.0" z="0.31" taper="0.72"
-        length="1.72" chord="1.06" sweep="0" dihedral="30" >
-    <stall aoa="12.0" width="4.0" peak="1.5"/>
-    <flap0 start="0.05" end="1.0" lift="3.2" drag="1.0"      />
+        length="1.72" chord="1.06" sweep="0" dihedral="30"  camber="0.2" idrag="1" >
+    <stall aoa="16.0" width="2.0" peak="1.5"/>
+    <flap0 start="0.05" end="1.0" lift="3.6" drag="1.0"      />
     <control-input axis="/controls/flight/elevator-trim"
                      control="FLAP0"/>
     <control-input axis="/controls/flight/elevator_fdm"
@@ -129,7 +129,7 @@ General Public License for more details.
 	takeoff-power="285" takeoff-rpm="2700"
 	x="-1.00" y="0.0" z="-0.27" mass="540" moment="10"
 	min-rpm="800" max-rpm="2700"
-	fine-stop="0.8" coarse-stop="1.77" >
+	fine-stop="0.500" coarse-stop="4" >
 		<piston-engine eng-rpm="2700" alt="0" eng-power="285"
 		displacement="520.0" compression="8.5"/>
 		<actionpt x="-0.2" y="0.0" z="0.0" />
@@ -181,7 +181,7 @@ General Public License for more details.
     spring=".2" damp="2.8" retract-time="5">
     <control-input axis="/controls/flight/rudder" control="STEER"
                   src0="-1.0" src1="1.0"
-                  dst0="-0.1" dst1="0.1"/>
+                  dst0="-0.5" dst1="0.5"/>
     <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
     <control-speed control="EXTEND" transition-time="5"/>
     <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
@@ -197,7 +197,7 @@ General Public License for more details.
     <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
   </gear>
  
-<!-- LH Main Gear -->
+<!-- RH Main Gear -->
   <gear x="-2.76" y="-1.47" z="-1.215" compression=".1" sfric="0.9" dfric="0.8"
 		spring=".25" damp="2.8" retract-time="5"> <!--  -1.17 right main -->
     <control-input axis="/controls/gear/brake-right" control="BRAKE" split="true"/>
