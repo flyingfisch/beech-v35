@@ -180,9 +180,24 @@
     <animation>
         <type>spin</type>
         <object-name>propeller</object-name>
-        <object-name>propdisk</object-name>
         <property>engines/engine/rpm</property>
         <factor>-1</factor>
+        <center>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>spin</type>
+        <object-name>propdisk</object-name>
+        <property>engines/engine/rpm</property>
+        <factor>-.1</factor>
         <center>
             <x-m>0</x-m>
             <y-m>0</y-m>
