@@ -103,6 +103,8 @@
         <object-name>lndlightR</object-name>
         <object-name>windowframe</object-name>
         <object-name>pitottube</object-name>
+        <object-name>doorlatch</object-name>
+        <object-name>doorlatch2</object-name>
     </effect>
 
     <!--<animation>
@@ -178,6 +180,7 @@
     <animation>
         <type>spin</type>
         <object-name>propeller</object-name>
+        <object-name>propdisk</object-name>
         <property>engines/engine/rpm</property>
         <factor>-1</factor>
         <center>
@@ -636,6 +639,8 @@
         <object-name>frontdoorinner</object-name>
         <object-name>frontwindowright</object-name>
         <object-name>frontwindowrightint</object-name>
+        <object-name>doorlatch</object-name>
+        <object-name>doorlatch2</object-name>
         <property>model/doors/position[0]</property>
         <factor>-80</factor>
 
