@@ -15,21 +15,24 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="New document 1">
+   sodipodi:docname="propdisk.svg"
+   inkscape:export-filename="/home/flyingfisch/myflightgearaddons/Aircraft/beech-v35/Blender/textures/propdisk.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
   <defs
      id="defs4">
     <linearGradient
        id="linearGradient3794">
       <stop
-         style="stop-color:#a40000;stop-opacity:0;"
+         style="stop-color:#fdff00;stop-opacity:0;"
          offset="0"
          id="stop3796" />
       <stop
          id="stop3802"
          offset="0.5"
-         style="stop-color:#a40000;stop-opacity:1;" />
+         style="stop-color:#fff800;stop-opacity:1;" />
       <stop
-         style="stop-color:#a40000;stop-opacity:0;"
+         style="stop-color:#faff00;stop-opacity:0;"
          offset="1"
          id="stop3798" />
     </linearGradient>
@@ -85,8 +88,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.70000001"
-     inkscape:cx="132.86444"
-     inkscape:cy="232.01979"
+     inkscape:cx="155.72158"
+     inkscape:cy="174.87693"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
