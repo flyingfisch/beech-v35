@@ -1367,7 +1367,7 @@
     <animation>
         <type>rotate</type>
         <object-name>LFseatback</object-name>
-        <property>bonanza/seats/seat[0]/position-rec</property>
+        <property>model/seats/seat[0]/position-rec</property>
         <factor>30</factor>
         <axis>
             <x1-m>2.53506</x1-m>
@@ -1387,7 +1387,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
-                <property>bonanza/seats/seat[0]/position-rec</property>
+                <property>model/seats/seat[0]/position-rec</property>
             </binding>
         </action>
     </animation>
@@ -1395,7 +1395,7 @@
     <animation>
         <type>rotate</type>
         <object-name>RFseatback</object-name>
-        <property>bonanza/seats/seat[1]/position-rec</property>
+        <property>model/seats/seat[1]/position-rec</property>
         <factor>30</factor>
         <axis>
             <x1-m>2.53506</x1-m>
@@ -1415,7 +1415,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
-                <property>bonanza/seats/seat[1]/position-rec</property>
+                <property>model/seats/seat[1]/position-rec</property>
             </binding>
         </action>
     </animation>
@@ -1423,7 +1423,7 @@
     <animation>
         <type>rotate</type>
         <object-name>RBseatback</object-name>
-        <property>bonanza/seats/seat[2]/position-rec</property>
+        <property>model/seats/seat[2]/position-rec</property>
         <factor>30</factor>
         <axis>
             <x1-m>3.42814</x1-m>
@@ -1443,7 +1443,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
-                <property>bonanza/seats/seat[2]/position-rec</property>
+                <property>model/seats/seat[2]/position-rec</property>
             </binding>
         </action>
     </animation>
@@ -1451,7 +1451,7 @@
     <animation>
         <type>rotate</type>
         <object-name>LBseatback</object-name>
-        <property>bonanza/seats/seat[3]/position-rec</property>
+        <property>model/seats/seat[3]/position-rec</property>
         <factor>30</factor>
         <axis>
             <x1-m>3.42814</x1-m>
@@ -1471,7 +1471,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
-                <property>bonanza/seats/seat[3]/position-rec</property>
+                <property>model/seats/seat[3]/position-rec</property>
             </binding>
         </action>
     </animation>
