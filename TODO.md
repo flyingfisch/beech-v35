@@ -11,7 +11,8 @@ Interior
 * <strike>Add dome light</strike>
 * <strike>Find prop for ampmeter in center gauge cluster</strike>
 * Add door handle
-* Make pilot's wndow open
+* Make pilot's window open and close
+* Add models for passengers (visible if passenger weight >0)
 
 Exterior
 --------
@@ -22,8 +23,11 @@ Exterior
 * <strike>Add lights</strike>
 * <strike>Put latches on door</strike>
 * Redo the landing gear
+* Add engine intake plug
+* Add chocks
+* Add tarp covering
 
 Other
 -----
 
-* Fix pulling back on the stick affecting rudder-pos-norm.
+* FIXME: elevator input affects rudder-pos-norm.
