@@ -10,7 +10,7 @@ Interior
 * <strike>Add mixture control</strike>
 * <strike>Add dome light</strike>
 * <strike>Find prop for ampmeter in center gauge cluster</strike>
-* Add door handle
+* <strike>Add door handle</strike>
 * Make pilot's window open and close
 * Add models for passengers (visible if passenger weight >0)
 
