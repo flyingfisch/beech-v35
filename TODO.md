@@ -26,7 +26,7 @@ Exterior
 * Add engine intake plug
 * Add chocks
 * Add tarp covering
-* Add ridge to landing gear door
+* <strike>Add ridge to landing gear door</strike>
 * Landing gear and gear door should be linked (animation linked, linker model still needs to be done)
 
 Other
