@@ -377,7 +377,8 @@
         </axis>
         <interpolation>
             <entry><ind>0</ind><dep>0</dep></entry>
-            <entry><ind>.6</ind><dep>-90</dep></entry>
+            <entry><ind>.2</ind><dep>-90</dep></entry>
+            <entry><ind>.8</ind><dep>-90</dep></entry>
             <entry><ind>1</ind><dep>0</dep></entry>
         </interpolation>
     </animation>
@@ -417,7 +418,8 @@
         </axis>
         <interpolation>
             <entry><ind>0</ind><dep>0</dep></entry>
-            <entry><ind>.6</ind><dep>90</dep></entry>
+            <entry><ind>.2</ind><dep>90</dep></entry>
+            <entry><ind>.8</ind><dep>90</dep></entry>
             <entry><ind>1</ind><dep>0</dep></entry>
         </interpolation>
     </animation>
@@ -437,8 +439,8 @@
             <z2-m>-.378781</z2-m>
         </axis>
         <interpolation>
-            <entry><ind>0</ind><dep>75.5</dep></entry>
-            <entry><ind>.2</ind><dep>75.5</dep></entry>
+            <entry><ind>0</ind><dep>75.7</dep></entry>
+            <entry><ind>.5</ind><dep>0</dep></entry>
             <entry><ind>1</ind><dep>0</dep></entry>
         </interpolation>
     </animation>
@@ -458,8 +460,8 @@
             <z2-m>-.378781</z2-m>
         </axis>
         <interpolation>
-            <entry><ind>0</ind><dep>-75.5</dep></entry>
-            <entry><ind>.2</ind><dep>-75.5</dep></entry>
+            <entry><ind>0</ind><dep>-75.7</dep></entry>
+            <entry><ind>.5</ind><dep>0</dep></entry>
             <entry><ind>1</ind><dep>0</dep></entry>
         </interpolation>
     </animation>

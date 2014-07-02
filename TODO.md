@@ -27,7 +27,7 @@ Exterior
 * Add chocks
 * Add tarp covering
 * Add ridge to landing gear door
-* Landing gear and gear door should be linked
+* Landing gear and gear door should be linked (animation linked, linker model still needs to be done)
 
 Other
 -----
