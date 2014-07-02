@@ -28,6 +28,7 @@ Exterior
 * Add tarp covering
 * <strike>Add ridge to landing gear door</strike>
 * Landing gear and gear door should be linked (animation linked, linker model still needs to be done)
+* Add trim tabs
 
 Other
 -----
