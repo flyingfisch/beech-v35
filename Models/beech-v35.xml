@@ -70,6 +70,7 @@
     <effect>
         <inherits-from>Models/Effects/bonanza-reflect</inherits-from>
         <object-name>pitottube</object-name>
+        <object-name>cowlpipe</object-name>
     </effect>
 
     <effect>
