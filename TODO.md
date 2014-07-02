@@ -26,6 +26,8 @@ Exterior
 * Add engine intake plug
 * Add chocks
 * Add tarp covering
+* Add ridge to landing gear door
+* Landing gear and gear door should be linked
 
 Other
 -----
