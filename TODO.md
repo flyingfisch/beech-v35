@@ -25,7 +25,7 @@ Exterior
 * <strike>Add lights</strike>
 * <strike>Put latches on door</strike>
 * Redo the landing gear
-* Add engine intake plug
+* <strike>Add engine intake plug</strike>
 * Add chocks
 * Add tarp covering
 * <strike>Add ridge to landing gear door</strike>
