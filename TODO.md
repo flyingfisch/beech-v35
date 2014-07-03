@@ -14,6 +14,7 @@ Interior
 * Make pilot's window open and close
 * Add models for passengers (visible if passenger weight >0)
 * Find out if the bonanza had a fuel selector, and if so, where it is located.
+* Either add a different autopilot, or modify this one to remove the piper logo.
 
 Exterior
 --------
