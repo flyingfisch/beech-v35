@@ -896,4 +896,27 @@
             </equals>
         </condition>
     </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>intakeplug</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>bonanza/rbf[1]/inplace</property>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>select</type>
+        <object-name>intakeplug</object-name>
+        <condition>
+            <equals>
+                <property>bonanza/rbf[1]/inplace</property>
+                <value>true</value>
+            </equals>
+        </condition>
+    </animation>
 </PropertyList>

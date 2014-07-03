@@ -5,6 +5,9 @@
         <rbf n="0">
             <inplace type="bool">true</inplace>
         </rbf>
+        <rbf n="1">
+            <inplace type="bool">true</inplace>
+        </rbf>
     </bonanza>
     <controls>
         <electric>
@@ -243,12 +246,22 @@
                             <property>bonanza/rbf[0]/inplace</property>
                             <value>true</value>
                         </binding>
+                        <binding>
+                            <command>property-assign</command>
+                            <property>bonanza/rbf[1]/inplace</property>
+                            <value>true</value>
+                        </binding>
                     </item>
                     <item>
                         <label>Remove all RBF flags</label>
                         <binding>
                             <command>property-assign</command>
                             <property>bonanza/rbf[0]/inplace</property>
+                            <value>false</value>
+                        </binding>
+                        <binding>
+                            <command>property-assign</command>
+                            <property>bonanza/rbf[1]/inplace</property>
                             <value>false</value>
                         </binding>
                     </item>
