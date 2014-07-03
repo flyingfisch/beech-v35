@@ -37,3 +37,4 @@ Other
 
 * FIXME: elevator input affects rudder-pos-norm.
 * Add structural limits.
+* Add in-game help.
