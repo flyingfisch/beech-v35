@@ -13,6 +13,7 @@ Interior
 * <strike>Add door handle</strike>
 * Make pilot's window open and close
 * Add models for passengers (visible if passenger weight >0)
+* Find out if the bonanza had a fuel selector, and if so, where it is located.
 
 Exterior
 --------
