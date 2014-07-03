@@ -30,12 +30,12 @@
         <description>Beech A35 Bonanza</description>
         <aircraft-version>0.0.1</aircraft-version>
         <author>flyingfisch</author>
-        <status>beta</status>
+        <status>alpha</status>
         <rating>
             <FDM type="int">2</FDM>
-            <systems type="int">1</systems>
-            <cockpit type="int">4</cockpit>
-            <model type="int">4</model>
+            <systems type="int">2</systems>
+            <cockpit type="int">2</cockpit>
+            <model type="int">2</model>
         </rating>
 
         <flight-model>yasim</flight-model>

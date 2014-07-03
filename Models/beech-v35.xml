@@ -30,6 +30,56 @@
         </unload>
     </nasal>
 
+    <!-- immatriculation -->
+    <text>
+        <name>LHreg</name>
+        <offsets>
+            <x-m>5.228</x-m>
+            <y-m>.3816</y-m>
+            <z-m>.067151</z-m>
+            <roll-deg>0</roll-deg>
+            <pitch-deg>0</pitch-deg>
+            <heading-deg>7.65</heading-deg>
+        </offsets>
+        <alignment>center-center</alignment>
+        <axis-alignment>xz-plane</axis-alignment>
+        <type type="string">text-value</type>
+        <property type="string">sim/multiplay/generic/string[0]</property>
+        <format type="string">%.7s</format>
+        <font>arial_black.txf</font>
+        <character-size>0.4</character-size>
+        <character-aspect-ratio type="double">1.5</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">128</width>
+            <height type="int">128</height>
+        </font-resolution>
+    </text>
+    <animation>
+        <type>material</type>
+         <object-name>LHreg</object-name>
+         <object-name>RHreg</object-name>
+        <emission>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </emission>
+        <ambient>
+            <red-prop>sim/multiplay/generic/float[1]</red-prop>
+            <green-prop>sim/multiplay/generic/float[2]</green-prop>
+            <blue-prop>sim/multiplay/generic/float[3]</blue-prop>
+        </ambient>
+        <diffuse>
+            <red-prop>sim/multiplay/generic/float[1]</red-prop>
+            <green-prop>sim/multiplay/generic/float[2]</green-prop>
+            <blue-prop>sim/multiplay/generic/float[3]</blue-prop>
+        </diffuse>
+        <specular>
+            <red-prop>sim/multiplay/generic/float[1]</red-prop>
+            <green-prop>sim/multiplay/generic/float[2]</green-prop>
+            <blue-prop>sim/multiplay/generic/float[3]</blue-prop>
+        </specular>
+    </animation>
+
     <animation>
         <type>material</type>
         <texture-prop>texture</texture-prop>
