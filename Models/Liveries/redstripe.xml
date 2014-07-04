@@ -4,7 +4,7 @@
     <sim>
         <model>
             <livery>
-                <name type="string">Red Stripe</name>
+                <name type="string">Red Stripe - Weathered</name>
                 <texture>Liveries/redstripe.png</texture>
             </livery>
         </model>
