@@ -758,20 +758,83 @@
 <!--      so rudder offset is set to zero as a bodge                                      -->
 
   <filter>
-   <name>ELEV OFFS</name>
+   <name>ELV LIM POS</name>
    <debug>false</debug>
    <type>gain</type>
-   <gain>1.00</gain>  
+   <enable>
+     <condition>
+       <not>
+         <less-than>
+           <property>/controls/flight/elevator</property>
+           <value>0</value>
+         </less-than>
+       </not>
+     </condition>
+   </enable>
+   <gain>0.432</gain>  
    <input>
-     <expression>
-       <sum>
-         <property>/controls/flight/elevator_srce</property>
-         <value>-0.0395</value>
-         <!--value>-0.0</value-->
-       </sum>
-     </expression>
+     <property>/controls/flight/elevator_srce</property>
    </input>
    <output>/controls/flight/elevator_fdm</output>
+  </filter>
+
+  <filter>
+   <name>ELV LIM NEG</name>
+   <debug>false</debug>
+   <type>gain</type>
+   <enable>
+     <condition>
+       <less-than>
+         <property>/controls/flight/elevator</property>
+         <value>0</value>
+       </less-than>
+     </condition>
+   </enable>
+   <gain>0.511</gain>  
+   <input>
+     <property>/controls/flight/elevator_srce</property>
+   </input>
+   <output>/controls/flight/elevator_fdm</output>
+  </filter>
+
+  <filter>
+   <name>RDDR LIM POS</name>
+   <debug>false</debug>
+   <type>gain</type>
+   <enable>
+     <condition>
+       <not>
+         <less-than>
+           <property>/controls/flight/rudder</property>
+           <value>0</value>
+         </less-than>
+       </not>
+     </condition>
+   </enable>
+   <gain>0.523</gain>  
+   <input>
+     <property>/controls/flight/rudder</property>
+   </input>
+   <output>/controls/flight/rudder_only</output>
+  </filter>
+
+  <filter>
+   <name>RDDR LIM NEG</name>
+   <debug>false</debug>
+   <type>gain</type>
+   <enable>
+     <condition>
+       <less-than>
+         <property>/controls/flight/rudder</property>
+         <value>0</value>
+       </less-than>
+     </condition>
+   </enable>
+   <gain>0.591</gain>  
+   <input>
+     <property>/controls/flight/rudder</property>
+   </input>
+   <output>/controls/flight/rudder_only</output>
   </filter>
 
   <filter>
@@ -791,24 +854,7 @@
        </difference>
      </expression>
    </gain>  
-   <input>/controls/flight/rudder</input>
-   <output>/controls/flight/rudder_lmtd</output>
-  </filter>
-
-  <filter>
-   <name>RDDR OFFS</name>
-   <debug>false</debug>
-   <type>gain</type>
-   <gain>1.00</gain>  
-   <input>
-     <expression>
-       <sum>
-         <property>/controls/flight/rudder_lmtd</property>
-         <!--value>-0.034</value-->
-         <value>-0.0</value>
-       </sum>
-     </expression>
-   </input>
+   <input>/controls/flight/rudder_only</input>
    <output>/controls/flight/rudder_fdm</output>
   </filter>
 
