@@ -9,8 +9,6 @@
  This file is part of FlightGear, the free flight simulator
  http://www.flightgear.org/
 
- Copyright (C) 2010 Dave Perry, skidavem (at) mindspring _dot_ com
-
  This program is free software; you can redistribute it and/or
  modify it under the terms of the GNU General Public License as
  published by the Free Software Foundation; either version 2 of the
@@ -747,11 +745,11 @@
 <!--  Elv-, Up 22.5/44 = 0.511 Elv+, Dn 0.432 Rdr-, Lf 26/44 = 0.591  Rdr+ Rt  0.523      -->
 <!--                                                                                      -->
 <!--  Elv Max Up and Rddr Max Right demands 22.5 + 26 = 48.5 RH Down                      -->
-<!--  Rudder demand is limited in AP xml so max demand, above, is scaled to <=35 deg      -->
+<!--  Rudder demand is limited in RDR COMB so max demand is scaled to <=35 deg            -->
 <!--                                                                                      -->
-<!--  For elevator 0 , want rudder_in = full range 0-1                                    -->
-<!--  For elevator 1 , want rudder_in =      range = (Comb Max - Elevator)                -->
-<!--                   gain = 1 - (35 - 22.5) / 35                                        -->
+<!--  For elevator 0 , want rudder_fdm = full range                                       -->
+<!--  For elevator 1 , want rudder_fdm = range = (Comb Max - Elevator)                    -->
+<!--                   combo gain = ( 35 - 22.5) / 26  == 0.480 applied after RDR LIM     -->
 <!--                                                                                      -->
 <!--  Zero for elev axis is offset = -0.0395 Zero offset for rudder axis = -0.034         -->
 <!--    Offset filters are not working proerly when combined in yasim V-Tail section      -->
@@ -838,7 +836,7 @@
   </filter>
 
   <filter>
-   <name>RDDR LIM</name>
+   <name>RDDR COMBO</name>
    <debug>false</debug>
    <type>gain</type>
    <gain>
@@ -849,7 +847,7 @@
            <abs>
              <property>/controls/flight/elevator_srce</property>
            </abs>  
-           <value type="float">0.35714</value>
+           <value type="float">0.480</value>
          </product>
        </difference>
      </expression>
