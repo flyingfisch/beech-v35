@@ -44,10 +44,10 @@ General Public License for more details.
   </approach>
  
 <!-- Cruise configuration -->
-  <cruise speed="165.0" alt="11500.0" fuel="0.9">
-    <control-setting axis="/controls/engines/engine[0]/throttle"        value="1.0"/>
-    <control-setting axis="/controls/engines/engine[0]/mixture"         value="0.6"/>
-    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
+  <cruise speed="165" alt="8000" fuel="0.9">
+    <control-setting axis="/controls/engines/engine[0]/throttle"        value="0.8"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture"         value="0.8"/>
+    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.8"/>
     <control-setting axis="/controls/flight/flaps"                      value="0.0"/>
     <solve-weight idx="0" weight="170"/>
     <solve-weight idx="1" weight="170"/>
@@ -101,7 +101,7 @@ General Public License for more details.
 <!-- V-Tail HStab -->
   <hstab x="-7.0" y="0.0" z="0.31" taper="0.72"
         length="1.72" chord="1.06" sweep="0" dihedral="30" >
-    <stall aoa="8.0" width="4.0" peak="1.5"/>
+    <stall aoa="12.0" width="4.0" peak="1.5"/>
     <flap0 start="0.05" end="1.0" lift="2.25" drag="1.7" />
     <control-input axis="/controls/flight/elevator-trim"
                      control="FLAP0"/>
@@ -140,8 +140,8 @@ General Public License for more details.
 <!-- Nose Gear -->
   <gear x="-0.5" y="0" z="-1.43"
 		upx="-0.1" upy="0" upz="0.9"
-		compression="0.27" sfric="0.99" dfric="0.8"
-		spring=".35" damp="2.8" retract-time="5"> <!-- nose -->
+		compression="0.29" sfric="0.99" dfric="0.8"
+		spring=".288" damp="2.8" retract-time="5"> <!-- nose -->
     <control-input axis="/controls/flight/rudder" control="STEER"
                   src0="-1.0" src1="1.0"
                   dst0="-0.1" dst1="0.1"/>
