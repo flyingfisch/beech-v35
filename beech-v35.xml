@@ -31,7 +31,7 @@ General Public License for more details.
 <airplane mass="2295.5" version="YASIM_VERSION_32">
  
 <!-- Approach configuration BaseLine  Vs: 55kn Vapp: 1.3 x Vs  AOA = AOAcrit/2  Flap 15   -->
-    <approach speed="55.0" aoa="4.0" fuel="0.6">
+    <approach speed="60.0" aoa="4.0" fuel="0.6">
     <control-setting axis="/controls/engines/engine[0]/throttle"        value="0.4"/>
     <control-setting axis="/controls/engines/engine[0]/mixture"         value="1.0"/>
     <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
@@ -44,10 +44,10 @@ General Public License for more details.
   </approach>
  
 <!-- Cruise configuration -->
-  <cruise speed="165" alt="8000" fuel="0.9">
-    <control-setting axis="/controls/engines/engine[0]/throttle"        value="0.8"/>
-    <control-setting axis="/controls/engines/engine[0]/mixture"         value="0.8"/>
-    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.8"/>
+  <cruise speed="155" alt="8000" fuel="0.9">
+    <control-setting axis="/controls/engines/engine[0]/throttle"        value="0.75"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture"         value="0.75"/>
+    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.75"/>
     <control-setting axis="/controls/flight/flaps"                      value="0.0"/>
     <solve-weight idx="0" weight="170"/>
     <solve-weight idx="1" weight="170"/>
@@ -141,10 +141,10 @@ General Public License for more details.
   <gear x="-0.5" y="0" z="-1.43"
 		upx="-0.1" upy="0" upz="0.9"
 		compression="0.29" sfric="0.99" dfric="0.8"
-		spring=".288" damp="2.8" retract-time="5"> <!-- nose -->
-    <control-input axis="/controls/flight/rudder" control="STEER"
+		spring=".280" damp="3.2" retract-time="5"> <!-- nose -->
+    <control-input axis="/controls/flight/nose-steer" control="STEER"
                   src0="-1.0" src1="1.0"
-                  dst0="-0.1" dst1="0.1"/>
+                  dst0="-1.0" dst1="1.0"/>
     <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
     <control-speed control="EXTEND" transition-time="5"/>
     <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>

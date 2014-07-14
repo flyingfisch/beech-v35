@@ -857,7 +857,7 @@
   </filter>
 
   <filter>
-   <name>NOSE STEER</name>
+   <name>NOSE COMP</name>
    <debug>false</debug>
    <type>gain</type>
    <gain>
@@ -866,13 +866,26 @@
          <value>1.00</value>
          <product>
            <property>/velocities/airspeed-kts</property>
-           <value>0.012</value>
+           <value>0.020</value>
          </product>
        </difference>
      </expression>
    </gain>  
    <input>
-     <property>/controls/flight/rudder</property>
+     <property>/controls/flight/rudder_only</property>
+   </input>
+   <output>/controls/flight/nose-comp</output>
+  </filter>
+
+  <filter>
+   <name>NOSE STEER</name>
+   <debug>false</debug>
+   <type>gain</type>
+   <gain>
+     <value>0.100</value>
+   </gain>  
+   <input>
+     <property>/controls/flight/nose-comp</property>
    </input>
    <output>/controls/flight/nose-steer</output>
   </filter>
