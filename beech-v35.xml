@@ -141,7 +141,7 @@ General Public License for more details.
   <gear x="-0.5" y="0" z="-1.43"
 		upx="-0.1" upy="0" upz="0.9"
 		compression="0.29" sfric="0.99" dfric="0.8"
-		spring=".280" damp="3.2" retract-time="5"> <!-- nose -->
+		spring=".26" damp="3.2" retract-time="5"> <!-- nose -->
     <control-input axis="/controls/flight/nose-steer" control="STEER"
                   src0="-1.0" src1="1.0"
                   dst0="-1.0" dst1="1.0"/>
