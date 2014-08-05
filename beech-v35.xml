@@ -31,11 +31,11 @@ General Public License for more details.
 <airplane mass="2295.5" version="YASIM_VERSION_32">
  
 <!-- Approach configuration BaseLine  Vs: 55kn Vapp: 1.3 x Vs  AOA = AOAcrit/2  Flap 15   -->
-    <approach speed="60.0" aoa="4.0" fuel="0.6">
+    <approach speed="60.0" aoa="8" fuel="0.6">
     <control-setting axis="/controls/engines/engine[0]/throttle"        value="0.4"/>
     <control-setting axis="/controls/engines/engine[0]/mixture"         value="1.0"/>
     <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
-    <control-setting axis="/controls/flight/flaps"                      value="0.5"/>
+    <control-setting axis="/controls/flight/flaps"                      value="0"/>
     <solve-weight idx="0" weight="170"/>
     <solve-weight idx="1" weight="170"/>
     <solve-weight idx="2" weight="100"/>
@@ -44,7 +44,7 @@ General Public License for more details.
   </approach>
  
 <!-- Cruise configuration -->
-  <cruise speed="155" alt="8000" fuel="0.9">
+  <cruise speed="155.0" alt="8000.0" fuel="0.9">
     <control-setting axis="/controls/engines/engine[0]/throttle"        value="0.75"/>
     <control-setting axis="/controls/engines/engine[0]/mixture"         value="0.75"/>
     <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.75"/>
@@ -100,8 +100,8 @@ General Public License for more details.
  
 <!-- V-Tail HStab -->
   <hstab x="-7.0" y="0.0" z="0.31" taper="0.72"
-        length="1.72" chord="1.06" sweep="0" dihedral="30" >
-    <stall aoa="12.0" width="4.0" peak="1.5"/>
+        length="1.72" chord="1.06" sweep="0" dihedral="30" camber="0.2" idrag="1" >
+    <stall aoa="16" width="2.0" peak="1.5"/>
     <flap0 start="0.05" end="1.0" lift="2.25" drag="1.7" />
     <control-input axis="/controls/flight/elevator-trim"
                      control="FLAP0"/>
@@ -123,13 +123,13 @@ General Public License for more details.
   <propeller radius="1.055"
     cruise-speed="180"  cruise-rpm="2550"
     cruise-alt="11500" cruise-power="275"
-	takeoff-power="285" takeoff-rpm="2700"
-	x="-1.00" y="0.0" z="-0.27" mass="540" moment="12"
-	min-rpm="800" max-rpm="2700"
-	fine-stop="0.8" coarse-stop="1.77" >
+	  takeoff-power="250" takeoff-rpm="2700"
+	  x="-1.00" y="0.0" z="-0.27" mass="540" moment="12"
+	  min-rpm="800" max-rpm="2700"
+	  fine-stop="0.8" coarse-stop="1.77" >
 		<piston-engine eng-rpm="2700" alt="0" eng-power="285"
-		displacement="520.0" compression="8.5"/>
-		<actionpt x="-0.2" y="0.0" z="0.0" />
+		  displacement="520.0" compression="8.5"/>
+    <actionpt x="-0.2" y="0.0" z="0.0" />
 		<control-input control="THROTTLE" axis="/controls/engines/engine[0]/throttle" />
 		<control-input control="STARTER" axis="/controls/engines/engine[0]/starter" />
 		<control-input control="MAGNETOS" axis="/controls/engines/engine[0]/magnetos" />
@@ -140,7 +140,7 @@ General Public License for more details.
 <!-- Nose Gear -->
   <gear x="-0.5" y="0" z="-1.43"
 		upx="-0.1" upy="0" upz="0.9" sfric="0.99" dfric="0.8" retract-time="5"
-		compression="0.40" spring="0.50" damp="2.4" > <!-- nose -->
+		compression="0.45" spring="1.35" damp="2.4" initial-load="0.4"> <!-- nose -->
     <control-input axis="/controls/flight/nose-steer" control="STEER"
                   src0="-1.0" src1="1.0"
                   dst0="-1.0" dst1="1.0"/>
@@ -150,8 +150,8 @@ General Public License for more details.
   </gear>
  
 <!-- LH Main Gear -->
-  <gear x="-2.76" y="1.47" z="-1.215" compression=".1" sfric="0.9" dfric="0.8"
-		spring=".25" damp="2.8" retract-time="5"> <!--  -1.17 left main -->
+  <gear x="-2.76" y="1.47" z="-1.215" sfric="0.9" dfric="0.8" retract-time="5"
+		compression="0.1" spring="1.5" damp="8.8" initial-load="0.0"> <!--  -1.17 left main -->
     <control-input axis="/controls/gear/brake-left" control="BRAKE" split="true"/>
     <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
     <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
@@ -159,9 +159,9 @@ General Public License for more details.
     <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
   </gear>
  
-<!-- LH Main Gear -->
-  <gear x="-2.76" y="-1.47" z="-1.215" compression=".1" sfric="0.9" dfric="0.8"
-		spring=".25" damp="2.8" retract-time="5"> <!--  -1.17 right main -->
+<!-- RH Main Gear -->
+  <gear x="-2.76" y="-1.47" z="-1.215" sfric="0.9" dfric="0.8" retract-time="5"
+		compression="0.1" spring="1.5" damp="8.8" initial-load="0.0"> <!--  -1.17 right main -->
     <control-input axis="/controls/gear/brake-right" control="BRAKE" split="true"/>
     <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
     <control-input axis="/controls/gear/gear-down" control="EXTEND"/>

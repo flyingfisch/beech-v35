@@ -865,8 +865,8 @@
        <difference>
          <value>1.00</value>
          <product>
-           <property>/velocities/airspeed-kts</property>
-           <value>0.020</value>
+           <property>/velocities/groundspeed-kt</property>
+           <value>0.02</value>
          </product>
        </difference>
      </expression>
@@ -882,7 +882,7 @@
    <debug>false</debug>
    <type>gain</type>
    <gain>
-     <value>0.050</value>
+     <value>0.25</value>
    </gain>  
    <input>
      <property>/controls/flight/nose-comp</property>

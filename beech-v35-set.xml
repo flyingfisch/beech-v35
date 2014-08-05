@@ -222,6 +222,40 @@
                 </menu>
             </default>
         </menubar>
+        <help>    
+          <title>                        Beech Bonanza V-35</title>
+          <line></line>
+          <line>           V Never Exceed: 225kt       V Max Manouver: 152kt</line>
+          <line>     V Max Flaps Extended: 130kt  V Max Gear Extended: 160kt</line>
+          <line>Stall Speed  Flaps+Gear Up: 58kt        Flaps+Gear Dn: 52kt </line>
+          <line> </line>
+          <line>TakeOff ~60kt </line>
+          <line>  Nose steering is more sensitive at low speed: line up early</line>
+          <line>  V-Tail rudder inputs will cause exaggerated roll input  </line>
+          <line>  Allowing wing liftoff with nosewheel in contact will cause uncontrolled yaw</line>
+          <line></line>
+          <line>  Flaps: 0  Throttle: Max  RPM: Max (2700rpm) </line>
+          <line>  At 50kt IAS: Pull stick slowly back to raise nose </line>
+          <line>  At 60kt IAS: Pull stick fully  back to rotate     </line>
+          <line></line>
+          <line>Climb-Out 80kt </line>
+          <line>  Reduce RPM to 2500, Keep VS below 250fpm until 80kt IAS is reached</line>
+          <line>  Adjust trim after >= 80kt IAS is attained  </line>
+          <line></line>
+          <line>Approach Vapp = 75kt </line>
+          <line>  Approach throttle/RPM: 15/2000, Flap1, Gear (Use flaps 2, 3 for Descent Only)</line>
+          <line>  At throttle / RPM Min (15psi / 2000rpm) Flap 0: Level flight maintains 120kt </line>
+          <line>  At throttle / RPM Min (15psi / 2000rpm) Flap 1: Level flight maintains  80kt </line>
+          <line>  At throttle / RPM Min With Gear Down    Flap 1: Level flight Leads to Stall  </line>
+          <line>  Any throttle, RPM               Flap 2, Flap 3: Level flight Leads to Stall  </line>
+          <line>  Speed rapidly increases descending with Flaps 0: Prepare for approach early</line>
+          <line>  Speed rapidly decreases with Flaps 2,3: Be ready to retract and apply power</line>
+          <line></line>
+          <line>Roll Out </line>
+          <line>  Keep nose wheel elevated with elevator and steer with rudder until speed decays </line>
+          <line>  Apply brakes sparingly in bursts, extended braking will cause nose to collapse  </line>
+          <line></line>
+        </help>    
     </sim>
 
     <model>
