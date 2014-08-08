@@ -265,6 +265,12 @@
             <file type="string"/>
         </livery>
     </model>
+ 
+    <controls>
+      <fligth>
+        <elevator-trim type="dpouble">-0.2</elevator-trim>
+      </fligth>
+    </controls>
 
     <!-- Incorporate Century-III AP -->
     <nasal>
