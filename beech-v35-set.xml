@@ -268,7 +268,7 @@
  
     <controls>
       <fligth>
-        <elevator-trim type="dpouble">-0.2</elevator-trim>
+        <elevator-trim type="double">-0.2</elevator-trim>
       </fligth>
     </controls>
 
