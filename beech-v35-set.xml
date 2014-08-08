@@ -267,9 +267,9 @@
     </model>
  
     <controls>
-      <fligth>
+      <flight>
         <elevator-trim type="double">-0.2</elevator-trim>
-      </fligth>
+      </flight>
     </controls>
 
     <!-- Incorporate Century-III AP -->
