@@ -882,7 +882,7 @@
    <debug>false</debug>
    <type>gain</type>
    <gain>
-     <value>0.25</value>
+     <value>0.50</value>
    </gain>  
    <input>
      <property>/controls/flight/nose-comp</property>

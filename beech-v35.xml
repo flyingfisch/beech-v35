@@ -31,11 +31,11 @@ General Public License for more details.
 <airplane mass="2295.5" version="YASIM_VERSION_32">
  
 <!-- Approach configuration BaseLine  Vs: 55kn Vapp: 1.3 x Vs  AOA = AOAcrit/2  Flap 15   -->
-    <approach speed="60.0" aoa="8" fuel="0.6">
+    <approach speed="55" aoa="8" fuel="0.6">
     <control-setting axis="/controls/engines/engine[0]/throttle"        value="0.4"/>
     <control-setting axis="/controls/engines/engine[0]/mixture"         value="1.0"/>
     <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
-    <control-setting axis="/controls/flight/flaps"                      value="0"/>
+    <control-setting axis="/controls/flight/flaps"                      value="0.3"/>
     <solve-weight idx="0" weight="170"/>
     <solve-weight idx="1" weight="170"/>
     <solve-weight idx="2" weight="100"/>
@@ -44,8 +44,8 @@ General Public License for more details.
   </approach>
  
 <!-- Cruise configuration -->
-  <cruise speed="155.0" alt="8000.0" fuel="0.9">
-    <control-setting axis="/controls/engines/engine[0]/throttle"        value="0.75"/>
+  <cruise speed="165" alt="8000" fuel="0.9">
+    <control-setting axis="/controls/engines/engine[0]/throttle"        value="0.7"/>
     <control-setting axis="/controls/engines/engine[0]/mixture"         value="0.75"/>
     <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.75"/>
     <control-setting axis="/controls/flight/flaps"                      value="0.0"/>
@@ -60,8 +60,8 @@ General Public License for more details.
 <!--      BaseLine Cmbr (0.100 / 1.475)  Wstall Try 8  AOA: (AOAcrit - Wstall/4)          -->
 
   <wing x="-2.755"     y="0.5"    z="-0.53"     taper="0.48" incidence="4.00" twist="-3"
-    length="4.3"  chord="2.25" sweep="-2.0"  dihedral="6.00" camber="0.068"   idrag="0.95">
-    <stall aoa="14.0" width="4.0" peak="1.5"/>
+    length="4.3"  chord="2.25" sweep="-2"  dihedral="6" camber="0.068"   idrag="0.95">
+    <stall aoa="14" width="4" peak="1.5"/>
     <flap0 start="0.00" end="0.54" lift="1.8" drag="1.7"/>
     <flap1 start="0.54" end="1.00" lift="1.3" drag="1.2"/>
     <control-input axis="/controls/flight/flaps" control="FLAP0"/>
@@ -100,9 +100,9 @@ General Public License for more details.
  
 <!-- V-Tail HStab -->
   <hstab x="-7.0" y="0.0" z="0.31" taper="0.72"
-        length="1.72" chord="1.06" sweep="0" dihedral="30" camber="0.2" idrag="1" >
-    <stall aoa="16" width="2.0" peak="1.5"/>
-    <flap0 start="0.05" end="1.0" lift="2.25" drag="1.7" />
+        length="1.72" chord="1.06" sweep="0" dihedral="30" camber="0" idrag="1" >
+    <stall aoa="14" width="4" peak="1.5"/>
+    <flap0 start="0.05" end="1" lift="2.5" drag="1.7" />
     <control-input axis="/controls/flight/elevator-trim"
                      control="FLAP0"/>
     <control-input axis="/controls/flight/elevator_fdm"

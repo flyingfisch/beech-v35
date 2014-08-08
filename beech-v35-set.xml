@@ -233,6 +233,7 @@
           <line>  Nose steering is more sensitive at low speed: line up early</line>
           <line>  V-Tail rudder inputs will cause exaggerated roll input  </line>
           <line>  Allowing wing liftoff with nosewheel in contact will cause uncontrolled yaw</line>
+          <line>  Elevator trim: -0.2 (nose-up) is added in -set file for normal takeoff     </line>
           <line></line>
           <line>  Flaps: 0  Throttle: Max  RPM: Max (2700rpm) </line>
           <line>  At 50kt IAS: Pull stick slowly back to raise nose </line>
