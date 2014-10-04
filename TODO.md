@@ -32,6 +32,8 @@ Exterior
 * Landing gear and gear door should be linked (animation linked, linker model still needs to be done)
 * Add trim tabs
 * Round and fill the leading side of the control surfaces.
+* Fix the windshield
+* Fix the nose
 
 Other
 -----
